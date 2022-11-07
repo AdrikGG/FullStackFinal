@@ -11,7 +11,6 @@ const PORT = process.env.PORT || 5002;
 let server;
 
 // middleware config
-
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 app.use(bodyParser.json({ limit: '10mb' }));
