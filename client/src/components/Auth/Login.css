@@ -1,0 +1,33 @@
+.login-wrapper {
+  background-color: purple;
+}
+
+.form {
+  margin: auto;
+  margin-top: 2rem;
+  max-width: 420px;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  background-color: blueviolet;
+}
+
+.form-header {
+}
+
+.form-group {
+}
+
+.form-label {
+}
+
+.form-input {
+}
+
+.btn-group {
+}
+
+.btn-submit {
+}
+
+.btn-reset {
+}
