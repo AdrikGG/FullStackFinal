@@ -70,9 +70,28 @@ function submitAnswer(){
 }
 
 function endGame(){
-    console.log("give end");
+    let answer = confirmClick();
+    if(answer == true) {
+        //Store Answer to profile
+        //Return to main page
+    } 
 }
 
 function resetGame(){
-    startGame();
+    let answer = confirmClick();
+    if(answer == true) {
+        window.location.reload();
+    }
+}
+
+function confirmClick() {
+    let text;
+    if(confirm("Reset the Score?") == true) {
+        text = "Score reset"
+        return true;
+    } else {
+        text = "Cancelled";
+        return false;
+    }
+
 }
