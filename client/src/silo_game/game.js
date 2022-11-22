@@ -14,7 +14,7 @@ function getCountry() {
     //Remove country from list of available countries and stored in current value
     currentCountry = countries.splice(randomCounty, 1)[0];
     
-    //Get image from countryshapes/ 
+    //Get image from countryshapes/
     let image = document.getElementById("preview");
     image.src = "./countryshapes/" + currentCountry['imageSrc'];
 
@@ -86,7 +86,7 @@ function resetGame(){
 
 function confirmClick() {
     let text;
-    if(confirm("Reset the Score?") == true) {
+    if(confirm("Are you sure?") == true) {
         text = "Score reset"
         return true;
     } else {
