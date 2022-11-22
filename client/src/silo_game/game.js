@@ -8,6 +8,12 @@ function randomNum(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
+function randomRotation() {
+    var rotationValues = [0, 90, 180, 270];
+    var randomRotationValue = "rotate(" + rotationValues[Math.floor(Math.random()*rotationValues.length)].toString() + "deg)";
+    return randomRotationValue;
+}
+
 function getCountry() {
     // Grab random country
     let randomCounty = randomNum(0, countries.length-1);
@@ -16,7 +22,9 @@ function getCountry() {
     
     //Get image from countryshapes/
     let image = document.getElementById("preview");
+    image.style.transform = randomRotation();
     image.src = "./countryshapes/" + currentCountry['imageSrc'];
+    
 
 }
 //Brute force a start game **NEED TO CHANGE BASED ON ADRIK**
