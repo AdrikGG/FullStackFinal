@@ -22,6 +22,7 @@ const Quiz01 = () => {
           <label htmlFor="rotation">Random Rotation</label>
         </div>
       </div>
+      <button className="start">Start</button>
     </div>
   );
 };
