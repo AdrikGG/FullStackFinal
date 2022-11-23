@@ -4,17 +4,17 @@ var currentCountry;
 var maxScore = 0;
 
 //Random number generator to pick random country at random
-function randomNum(min, max) { // min and max included 
+export function randomNum(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-function randomRotation() {
+export function randomRotation() {
     var rotationValues = [0, 90, 180, 270];
     var randomRotationValue = "rotate(" + rotationValues[Math.floor(Math.random()*rotationValues.length)].toString() + "deg)";
     return randomRotationValue;
 }
 
-function getCountry() {
+export function getCountry() {
     // Grab random country
     let randomCounty = randomNum(0, countries.length-1);
     //Remove country from list of available countries and stored in current value
@@ -28,7 +28,7 @@ function getCountry() {
 
 }
 //Brute force a start game **NEED TO CHANGE BASED ON ADRIK**
-function startGame(){
+export function startGame(){
     //Get max score before country removed
     maxScore = countries.length;
     //get random Country
@@ -40,13 +40,13 @@ function startGame(){
     
 }
 
-function scoreBoard() {
+export function scoreBoard() {
     let scoreBox = document.getElementById("currentScore");
     
     scoreBox.textContent = currentScore + " / " + maxScore;
 }
 
-function giveHint(){
+export function giveHint(){
     let hint = document.getElementById("hintOutput");
     hint.innerHTML =
         '<div class="alert alert-primary" role="alert">'
@@ -54,13 +54,13 @@ function giveHint(){
         '</div>';
 }
 
-function giveError() {
+export function giveError() {
     let err = document.getElementById("hintOutput");
     err.innerHTML =
         '<div class="alert alert-danger" role="alert">Incorrect</div>';
 }
 
-function submitAnswer(){
+export function submitAnswer(){
     console.log(currentCountry); //REMOVE
 
     let error = document.getElementById("hintOutput");
@@ -77,7 +77,7 @@ function submitAnswer(){
     document.getElementById("guess").value = "";
 }
 
-function endGame(){
+export function endGame(){
     let answer = confirmClick();
     if(answer == true) {
         //Store Answer to profile
@@ -85,14 +85,14 @@ function endGame(){
     } 
 }
 
-function resetGame(){
+export function resetGame(){
     let answer = confirmClick();
     if(answer == true) {
         window.location.reload();
     }
 }
 
-function confirmClick() {
+export function confirmClick() {
     let text;
     if(confirm("Are you sure?") == true) {
         text = "Score reset"
