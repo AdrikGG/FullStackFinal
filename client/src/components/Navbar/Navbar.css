@@ -1,0 +1,15 @@
+.header {
+  grid-area: header;
+}
+
+.user {
+  grid-area: user;
+  border-left: 1px solid black;
+}
+
+.navbar-wrapper {
+  display: grid;
+  grid-template-columns: 12fr 1fr;
+  grid-template-areas: 'header user';
+  border: 1px solid black;
+}

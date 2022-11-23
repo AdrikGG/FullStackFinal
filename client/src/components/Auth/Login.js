@@ -3,7 +3,6 @@ import './Login.css';
 const Login = (props) => {
   const state = {
     username: '',
-    email: '',
     password: '',
   };
 
@@ -28,18 +27,6 @@ const Login = (props) => {
           />
         </div>
         <div className="form-group">
-          <label className="form-label" htmlFor="email">
-            Email:
-          </label>
-          <input
-            className="form-input"
-            type="email"
-            id="email"
-            name="email"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="form-group">
           <label className="form-label" htmlFor="password">
             Password:
           </label>
@@ -58,7 +45,7 @@ const Login = (props) => {
             id="submit"
             onClick={(e) => {
               e.preventDefault();
-              props.submit(state.username, state.email, state.password);
+              props.submit(state.username, state.password);
             }}
           >
             Submit

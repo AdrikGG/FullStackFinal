@@ -17,12 +17,12 @@ router.post('/login', (req, res) => {
   if (!isValid) {
     res.json({ success: false, errors });
   } else {
-    // search database for user with entered email
-    Users.findOne({ email: req.body.email }).then((user) => {
+    // search database for user with entered username
+    Users.findOne({ username: req.body.username }).then((user) => {
       // if no found user, throw error
       if (!user) {
         res.json({
-          message: 'No account found with that email',
+          message: 'No account found with the username ' + req.body.username,
           success: false,
         });
       } else {
@@ -39,7 +39,7 @@ router.post('/login', (req, res) => {
             };
             jwt.sign(
               payload,
-              process.env.APP_SECRET,
+              process.env.APP_SECRET || 'secret',
               { expiresIn: 2160000 },
               (err, token) => {
                 res.json({
@@ -64,11 +64,10 @@ router.post('/register', (req, res) => {
     res.json({ success: false, errors });
   } else {
     // destructure req.body
-    const { username, email, password } = req.body;
+    const { username, password } = req.body;
     // create new user object with register data
     const registerUser = new Users({
       username,
-      email,
       password,
       createdOn: new Date(),
     });
@@ -87,7 +86,7 @@ router.post('/register', (req, res) => {
           .then(() => {
             res.json({ message: 'User created succefully', success: true });
           })
-          // catches errors with storing new user, such as email or username already taked
+          // catches errors with storing new user, such as username already taked
           .catch((err) => res.json({ message: err.message, success: false }));
       });
     });
@@ -103,6 +102,39 @@ router.get('/:id', checkAuth, (req, res) => {
     .catch((err) => {
       res.json({ success: false, message: err.message });
     });
+});
+
+router.post('/upload-image', checkAuth, async (req, res) => {
+  try {
+    const fileStr = req.body.data;
+    // const uploaded = await cloudinary.uploader.upload(fileStr);
+    Users.findOne({ _id: req.body._id }).then((user) => {
+      user.avatar = {
+        url: uploaded.url,
+        publicId: uploaded.public_id,
+      };
+      user.save();
+      if (user.images) {
+        user.images.push({
+          url: uploaded.url,
+          publicId: uploaded.public_id,
+        });
+      } else {
+        user.images = [];
+        user.images.push({
+          url: uploaded.url,
+          publicId: uploaded.public_id,
+        });
+      }
+      res.json({ success: true });
+    });
+  } catch (err) {
+    console.log(err);
+    res.json({
+      success: false,
+      message: 'Something went wrong, please try again.',
+    });
+  }
 });
 
 module.exports = router;
