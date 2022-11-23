@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
+import Form from 'react-bootstrap/Form';
 
 const FormBox = () => {
   const [key, setKey] = useState('Login');
@@ -23,14 +24,16 @@ const FormBox = () => {
       className='m-5'
     >
       <Tab eventKey='Login' title='Login'>
-        <form onSubmit={handleSubmitLogin}>
-          <label className='form-label'>Username</label>
-          <input
-            type='text'
-            className='form-control m-5'
-            onChange={(e) => setUsername(e.target.value)}
-            value={username}
-          />
+        <Form onSubmit={handleSubmitLogin}>
+          <Form.Group className='mb-3' controlID='formUsername'>
+            <Form.Label>Username</Form.Label>
+            <Form.Control
+              type='text'
+              placeholder='Enter Username'
+              onChange={(e) => setUsername(e.target.value)}
+              value={username}
+            />
+          </Form.Group>
           <label className='form-label'>Password</label>
           <input
             type='password'
@@ -39,7 +42,7 @@ const FormBox = () => {
             value={password}
           />
           <button type='submit'>Log In</button>
-        </form>
+        </Form>
       </Tab>
       <Tab eventKey='Register' title='Register'>
         <form>
