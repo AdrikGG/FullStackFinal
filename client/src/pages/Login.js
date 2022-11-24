@@ -1,5 +1,5 @@
-import FormBox from '../components/FormBox';
+import LoginRegisterBox from '../components/LoginRegisterBox';
 const Login = () => {
-  return <FormBox></FormBox>;
+  return <LoginRegisterBox></LoginRegisterBox>;
 };
 export default Login;
