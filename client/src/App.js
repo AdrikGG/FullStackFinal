@@ -1,24 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import ScoreCard from './silo_game/ScoreCard';
+import DisplayGame from './silo_game/DisplayGame';
+import GameStart from './silo_game/GameStart';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return( 
+    <GameStart />,
+    <DisplayGame />,
+    <ScoreCard />
   );
 }
 

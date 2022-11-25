@@ -1,0 +1,10 @@
+import React from 'react';
+import { startGame } from './game';
+import { Button } from 'react-bootstrap/Button';
+import { useEffect } from 'react/cjs/react.development';
+
+
+function GameStart() {
+    return(
+    );
+}
