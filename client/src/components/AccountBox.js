@@ -114,7 +114,7 @@ const AccountBox = () => {
                   </Form.Group>
                   <div className='d-grid m-3'>
                     <Button className='accButton mx-5' type='submit'>
-                      Submit
+                      Create Account
                     </Button>
                   </div>
                 </Form>
