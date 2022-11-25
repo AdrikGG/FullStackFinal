@@ -6,9 +6,18 @@
   color: white;
 }
 
+.accButton {
+  border: none !important;
+  background-color: #6d8fae !important;
+}
+.accButton:hover {
+  border: none !important;
+  background-color: #54718c !important;
+}
+
 .pill1 .nav-link:hover,
 .pill2 .nav-link:hover {
-  background-color: #b6d0e8;
+  background-color: #e5e4e4;
   color: #5d7c98;
 }
 

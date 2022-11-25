@@ -1,5 +1,9 @@
-import LoginRegisterBox from '../components/LoginRegisterBox';
+import AccountBox from '../components/AccountBox';
 const Login = () => {
-  return <LoginRegisterBox></LoginRegisterBox>;
+  return (
+    <div className='p-5'>
+      <AccountBox></AccountBox>
+    </div>
+  );
 };
 export default Login;
