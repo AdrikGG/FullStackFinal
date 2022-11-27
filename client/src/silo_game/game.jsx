@@ -1,4 +1,6 @@
 
+<script type="module" src="main.js"></script>
+
 var currentScore = 0;
 var currentCountry;
 var maxScore = 0;

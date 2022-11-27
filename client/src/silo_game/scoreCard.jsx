@@ -1,8 +1,10 @@
+import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import {scoreBoard} from './game';
 
 function ScoreCard() {
     let score = scoreBoard();
+    
     return(
         <Card className="text-center" style={{ width: '20rem'}}>
             <Card.body>
