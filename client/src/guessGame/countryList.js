@@ -216,14 +216,6 @@ var countryList = [
           "longitude" : 24
         },
     {
-          "country" : "Bouvet Island",
-          "alpha2" : "BV",
-          "alpha3" : "BVT",
-          "numeric" : 74,
-          "latitude" : -54.4333,
-          "longitude" : 3.4
-        },
-    {
           "country" : "Brazil",
           "alpha2" : "BR",
           "alpha3" : "BRA",
@@ -232,15 +224,7 @@ var countryList = [
           "longitude" : -55
         },
     {
-          "country" : "British Indian Ocean Territory",
-          "alpha2" : "IO",
-          "alpha3" : "IOT",
-          "numeric" : 86,
-          "latitude" : -6,
-          "longitude" : 71.5
-        },
-    {
-          "country" : "Brunei Darussalam",
+          "country" : "Brunei",
           "alpha2" : "BN",
           "alpha3" : "BRN",
           "numeric" : 96,
@@ -304,14 +288,6 @@ var countryList = [
           "longitude" : -24
         },
     {
-          "country" : "Cayman Islands",
-          "alpha2" : "KY",
-          "alpha3" : "CYM",
-          "numeric" : 136,
-          "latitude" : 19.5,
-          "longitude" : -80.5
-        },
-    {
           "country" : "Central African Republic",
           "alpha2" : "CF",
           "alpha3" : "CAF",
@@ -344,22 +320,6 @@ var countryList = [
           "longitude" : 105
         },
     {
-          "country" : "Christmas Island",
-          "alpha2" : "CX",
-          "alpha3" : "CXR",
-          "numeric" : 162,
-          "latitude" : -10.5,
-          "longitude" : 105.6667
-        },
-    {
-          "country" : "Cocos (Keeling) Islands",
-          "alpha2" : "CC",
-          "alpha3" : "CCK",
-          "numeric" : 166,
-          "latitude" : -12.5,
-          "longitude" : 96.8333
-        },
-    {
           "country" : "Colombia",
           "alpha2" : "CO",
           "alpha3" : "COL",
@@ -384,20 +344,12 @@ var countryList = [
           "longitude" : 15
         },
     {
-          "country" : "Congo, the Democratic Republic of the",
+          "country" : "Congo",
           "alpha2" : "CD",
           "alpha3" : "COD",
           "numeric" : 180,
           "latitude" : 0,
           "longitude" : 25
-        },
-    {
-          "country" : "Cook Islands",
-          "alpha2" : "CK",
-          "alpha3" : "COK",
-          "numeric" : 184,
-          "latitude" : -21.2333,
-          "longitude" : -159.7667
         },
     {
           "country" : "Costa Rica",
@@ -406,14 +358,6 @@ var countryList = [
           "numeric" : 188,
           "latitude" : 10,
           "longitude" : -84
-        },
-    {
-          "country" : "Côte d'Ivoire",
-          "alpha2" : "CI",
-          "alpha3" : "CIV",
-          "numeric" : 384,
-          "latitude" : 8,
-          "longitude" : -5
         },
     {
           "country" : "Croatia",
@@ -504,7 +448,7 @@ var countryList = [
           "longitude" : -88.9167
         },
     {
-          "country" : "Equatorial Guinea",
+          "country" : "Guinea",
           "alpha2" : "GQ",
           "alpha3" : "GNQ",
           "numeric" : 226,
@@ -536,22 +480,6 @@ var countryList = [
           "longitude" : 38
         },
     {
-          "country" : "Falkland Islands (Malvinas)",
-          "alpha2" : "FK",
-          "alpha3" : "FLK",
-          "numeric" : 238,
-          "latitude" : -51.75,
-          "longitude" : -59
-        },
-    {
-          "country" : "Faroe Islands",
-          "alpha2" : "FO",
-          "alpha3" : "FRO",
-          "numeric" : 234,
-          "latitude" : 62,
-          "longitude" : -7
-        },
-    {
           "country" : "Fiji",
           "alpha2" : "FJ",
           "alpha3" : "FJI",
@@ -574,30 +502,6 @@ var countryList = [
           "numeric" : 250,
           "latitude" : 46,
           "longitude" : 2
-        },
-    {
-          "country" : "French Guiana",
-          "alpha2" : "GF",
-          "alpha3" : "GUF",
-          "numeric" : 254,
-          "latitude" : 4,
-          "longitude" : -53
-        },
-    {
-          "country" : "French Polynesia",
-          "alpha2" : "PF",
-          "alpha3" : "PYF",
-          "numeric" : 258,
-          "latitude" : -15,
-          "longitude" : -140
-        },
-    {
-          "country" : "French Southern Territories",
-          "alpha2" : "TF",
-          "alpha3" : "ATF",
-          "numeric" : 260,
-          "latitude" : -43,
-          "longitude" : 67
         },
     {
           "country" : "Gabon",
@@ -640,14 +544,6 @@ var countryList = [
           "longitude" : -2
         },
     {
-          "country" : "Gibraltar",
-          "alpha2" : "GI",
-          "alpha3" : "GIB",
-          "numeric" : 292,
-          "latitude" : 36.1833,
-          "longitude" : -5.3667
-        },
-    {
           "country" : "Greece",
           "alpha2" : "GR",
           "alpha3" : "GRC",
@@ -672,36 +568,12 @@ var countryList = [
           "longitude" : -61.6667
         },
     {
-          "country" : "Guadeloupe",
-          "alpha2" : "GP",
-          "alpha3" : "GLP",
-          "numeric" : 312,
-          "latitude" : 16.25,
-          "longitude" : -61.5833
-        },
-    {
-          "country" : "Guam",
-          "alpha2" : "GU",
-          "alpha3" : "GUM",
-          "numeric" : 316,
-          "latitude" : 13.4667,
-          "longitude" : 144.7833
-        },
-    {
           "country" : "Guatemala",
           "alpha2" : "GT",
           "alpha3" : "GTM",
           "numeric" : 320,
           "latitude" : 15.5,
           "longitude" : -90.25
-        },
-    {
-          "country" : "Guernsey",
-          "alpha2" : "GG",
-          "alpha3" : "GGY",
-          "numeric" : 831,
-          "latitude" : 49.5,
-          "longitude" : -2.56
         },
     {
           "country" : "Guinea",
@@ -736,36 +608,12 @@ var countryList = [
           "longitude" : -72.4167
         },
     {
-          "country" : "Heard Island and McDonald Islands",
-          "alpha2" : "HM",
-          "alpha3" : "HMD",
-          "numeric" : 334,
-          "latitude" : -53.1,
-          "longitude" : 72.5167
-        },
-    {
-          "country" : "Holy See (Vatican City State)",
-          "alpha2" : "VA",
-          "alpha3" : "VAT",
-          "numeric" : 336,
-          "latitude" : 41.9,
-          "longitude" : 12.45
-        },
-    {
           "country" : "Honduras",
           "alpha2" : "HN",
           "alpha3" : "HND",
           "numeric" : 340,
           "latitude" : 15,
           "longitude" : -86.5
-        },
-    {
-          "country" : "Hong Kong",
-          "alpha2" : "HK",
-          "alpha3" : "HKG",
-          "numeric" : 344,
-          "latitude" : 22.25,
-          "longitude" : 114.1667
         },
     {
           "country" : "Hungary",
@@ -800,7 +648,7 @@ var countryList = [
           "longitude" : 120
         },
     {
-          "country" : "Iran, Islamic Republic of",
+          "country" : "Iran",
           "alpha2" : "IR",
           "alpha3" : "IRN",
           "numeric" : 364,
@@ -822,14 +670,6 @@ var countryList = [
           "numeric" : 372,
           "latitude" : 53,
           "longitude" : -8
-        },
-    {
-          "country" : "Isle of Man",
-          "alpha2" : "IM",
-          "alpha3" : "IMN",
-          "numeric" : 833,
-          "latitude" : 54.23,
-          "longitude" : -4.55
         },
     {
           "country" : "Israel",
@@ -864,14 +704,6 @@ var countryList = [
           "longitude" : 138
         },
     {
-          "country" : "Jersey",
-          "alpha2" : "JE",
-          "alpha3" : "JEY",
-          "numeric" : 832,
-          "latitude" : 49.21,
-          "longitude" : -2.13
-        },
-    {
           "country" : "Jordan",
           "alpha2" : "JO",
           "alpha3" : "JOR",
@@ -904,7 +736,7 @@ var countryList = [
           "longitude" : 173
         },
     {
-          "country" : "Korea, Democratic People's Republic of",
+          "country" : "North Korea",
           "alpha2" : "KP",
           "alpha3" : "PRK",
           "numeric" : 408,
@@ -912,7 +744,7 @@ var countryList = [
           "longitude" : 127
         },
     {
-          "country" : "Korea, Republic of",
+          "country" : "South Korea",
           "alpha2" : "KR",
           "alpha3" : "KOR",
           "numeric" : 410,
@@ -936,7 +768,7 @@ var countryList = [
           "longitude" : 75
         },
     {
-          "country" : "Lao People's Democratic Republic",
+          "country" : "Laos",
           "alpha2" : "LA",
           "alpha3" : "LAO",
           "numeric" : 418,
@@ -976,7 +808,7 @@ var countryList = [
           "longitude" : -9.5
         },
     {
-          "country" : "Libyan Arab Jamahiriya",
+          "country" : "Libya",
           "alpha2" : "LY",
           "alpha3" : "LBY",
           "numeric" : 434,
@@ -1016,7 +848,7 @@ var countryList = [
           "longitude" : 113.55
         },
     {
-          "country" : "Macedonia, the former Yugoslav Republic of",
+          "country" : "Macedonia",
           "alpha2" : "MK",
           "alpha3" : "MKD",
           "numeric" : 807,
@@ -1080,14 +912,6 @@ var countryList = [
           "longitude" : 168
         },
     {
-          "country" : "Martinique",
-          "alpha2" : "MQ",
-          "alpha3" : "MTQ",
-          "numeric" : 474,
-          "latitude" : 14.6667,
-          "longitude" : -61
-        },
-    {
           "country" : "Mauritania",
           "alpha2" : "MR",
           "alpha3" : "MRT",
@@ -1104,14 +928,6 @@ var countryList = [
           "longitude" : 57.55
         },
     {
-          "country" : "Mayotte",
-          "alpha2" : "YT",
-          "alpha3" : "MYT",
-          "numeric" : 175,
-          "latitude" : -12.8333,
-          "longitude" : 45.1667
-        },
-    {
           "country" : "Mexico",
           "alpha2" : "MX",
           "alpha3" : "MEX",
@@ -1120,7 +936,7 @@ var countryList = [
           "longitude" : -102
         },
     {
-          "country" : "Micronesia, Federated States of",
+          "country" : "Micronesia",
           "alpha2" : "FM",
           "alpha3" : "FSM",
           "numeric" : 583,
@@ -1128,7 +944,7 @@ var countryList = [
           "longitude" : 158.25
         },
     {
-          "country" : "Moldova, Republic of",
+          "country" : "Moldova",
           "alpha2" : "MD",
           "alpha3" : "MDA",
           "numeric" : 498,
@@ -1158,14 +974,6 @@ var countryList = [
           "numeric" : 499,
           "latitude" : 42,
           "longitude" : 19
-        },
-    {
-          "country" : "Montserrat",
-          "alpha2" : "MS",
-          "alpha3" : "MSR",
-          "numeric" : 500,
-          "latitude" : 16.75,
-          "longitude" : -62.2
         },
     {
           "country" : "Morocco",
@@ -1224,22 +1032,6 @@ var countryList = [
           "longitude" : 5.75
         },
     {
-          "country" : "Netherlands Antilles",
-          "alpha2" : "AN",
-          "alpha3" : "ANT",
-          "numeric" : 530,
-          "latitude" : 12.25,
-          "longitude" : -68.75
-        },
-    {
-          "country" : "New Caledonia",
-          "alpha2" : "NC",
-          "alpha3" : "NCL",
-          "numeric" : 540,
-          "latitude" : -21.5,
-          "longitude" : 165.5
-        },
-    {
           "country" : "New Zealand",
           "alpha2" : "NZ",
           "alpha3" : "NZL",
@@ -1272,30 +1064,6 @@ var countryList = [
           "longitude" : 8
         },
     {
-          "country" : "Niue",
-          "alpha2" : "NU",
-          "alpha3" : "NIU",
-          "numeric" : 570,
-          "latitude" : -19.0333,
-          "longitude" : -169.8667
-        },
-    {
-          "country" : "Norfolk Island",
-          "alpha2" : "NF",
-          "alpha3" : "NFK",
-          "numeric" : 574,
-          "latitude" : -29.0333,
-          "longitude" : 167.95
-        },
-    {
-          "country" : "Northern Mariana Islands",
-          "alpha2" : "MP",
-          "alpha3" : "MNP",
-          "numeric" : 580,
-          "latitude" : 15.2,
-          "longitude" : 145.75
-        },
-    {
           "country" : "Norway",
           "alpha2" : "NO",
           "alpha3" : "NOR",
@@ -1326,14 +1094,6 @@ var countryList = [
           "numeric" : 585,
           "latitude" : 7.5,
           "longitude" : 134.5
-        },
-    {
-          "country" : "Palestinian Territory, Occupied",
-          "alpha2" : "PS",
-          "alpha3" : "PSE",
-          "numeric" : 275,
-          "latitude" : 32,
-          "longitude" : 35.25
         },
     {
           "country" : "Panama",
@@ -1376,14 +1136,6 @@ var countryList = [
           "longitude" : 122
         },
     {
-          "country" : "Pitcairn",
-          "alpha2" : "PN",
-          "alpha3" : "PCN",
-          "numeric" : 612,
-          "latitude" : -24.7,
-          "longitude" : -127.4
-        },
-    {
           "country" : "Poland",
           "alpha2" : "PL",
           "alpha3" : "POL",
@@ -1416,14 +1168,6 @@ var countryList = [
           "longitude" : 51.25
         },
     {
-          "country" : "Réunion",
-          "alpha2" : "RE",
-          "alpha3" : "REU",
-          "numeric" : 638,
-          "latitude" : -21.1,
-          "longitude" : 55.6
-        },
-    {
           "country" : "Romania",
           "alpha2" : "RO",
           "alpha3" : "ROU",
@@ -1432,7 +1176,7 @@ var countryList = [
           "longitude" : 25
         },
     {
-          "country" : "Russian Federation",
+          "country" : "Russia",
           "alpha2" : "RU",
           "alpha3" : "RUS",
           "numeric" : 643,
@@ -1446,14 +1190,6 @@ var countryList = [
           "numeric" : 646,
           "latitude" : -2,
           "longitude" : 30
-        },
-    {
-          "country" : "Saint Helena, Ascension and Tristan da Cunha",
-          "alpha2" : "SH",
-          "alpha3" : "SHN",
-          "numeric" : 654,
-          "latitude" : -15.9333,
-          "longitude" : -5.7
         },
     {
           "country" : "Saint Kitts and Nevis",
@@ -1470,14 +1206,6 @@ var countryList = [
           "numeric" : 662,
           "latitude" : 13.8833,
           "longitude" : -61.1333
-        },
-    {
-          "country" : "Saint Pierre and Miquelon",
-          "alpha2" : "PM",
-          "alpha3" : "SPM",
-          "numeric" : 666,
-          "latitude" : 46.8333,
-          "longitude" : -56.3333
         },
     {
           "country" : "Saint Vincent and the Grenadines",
@@ -1600,14 +1328,6 @@ var countryList = [
           "longitude" : 24
         },
     {
-          "country" : "South Georgia and the South Sandwich Islands",
-          "alpha2" : "GS",
-          "alpha3" : "SGS",
-          "numeric" : 239,
-          "latitude" : -54.5,
-          "longitude" : -37
-        },
-    {
           "country" : "Spain",
           "alpha2" : "ES",
           "alpha3" : "ESP",
@@ -1640,14 +1360,6 @@ var countryList = [
           "longitude" : -56
         },
     {
-          "country" : "Svalbard and Jan Mayen",
-          "alpha2" : "SJ",
-          "alpha3" : "SJM",
-          "numeric" : 744,
-          "latitude" : 78,
-          "longitude" : 20
-        },
-    {
           "country" : "Swaziland",
           "alpha2" : "SZ",
           "alpha3" : "SWZ",
@@ -1672,7 +1384,7 @@ var countryList = [
           "longitude" : 8
         },
     {
-          "country" : "Syrian Arab Republic",
+          "country" : "Syria",
           "alpha2" : "SY",
           "alpha3" : "SYR",
           "numeric" : 760,
@@ -1680,7 +1392,7 @@ var countryList = [
           "longitude" : 38
         },
     {
-          "country" : "Taiwan, Province of China",
+          "country" : "Taiwan",
           "alpha2" : "TW",
           "alpha3" : "TWN",
           "numeric" : 158,
@@ -1696,7 +1408,7 @@ var countryList = [
           "longitude" : 71
         },
     {
-          "country" : "Tanzania, United Republic of",
+          "country" : "Tanzania",
           "alpha2" : "TZ",
           "alpha3" : "TZA",
           "numeric" : 834,
@@ -1712,7 +1424,7 @@ var countryList = [
           "longitude" : 100
         },
     {
-          "country" : "Timor-Leste",
+          "country" : "Timor Leste",
           "alpha2" : "TL",
           "alpha3" : "TLS",
           "numeric" : 626,
@@ -1726,14 +1438,6 @@ var countryList = [
           "numeric" : 768,
           "latitude" : 8,
           "longitude" : 1.1667
-        },
-    {
-          "country" : "Tokelau",
-          "alpha2" : "TK",
-          "alpha3" : "TKL",
-          "numeric" : 772,
-          "latitude" : -9,
-          "longitude" : -172
         },
     {
           "country" : "Tonga",
@@ -1774,14 +1478,6 @@ var countryList = [
           "numeric" : 795,
           "latitude" : 40,
           "longitude" : 60
-        },
-    {
-          "country" : "Turks and Caicos Islands",
-          "alpha2" : "TC",
-          "alpha3" : "TCA",
-          "numeric" : 796,
-          "latitude" : 21.75,
-          "longitude" : -71.5833
         },
     {
           "country" : "Tuvalu",
@@ -1832,14 +1528,6 @@ var countryList = [
           "longitude" : -97
         },
     {
-          "country" : "United States Minor Outlying Islands",
-          "alpha2" : "UM",
-          "alpha3" : "UMI",
-          "numeric" : 581,
-          "latitude" : 19.2833,
-          "longitude" : 166.6
-        },
-    {
           "country" : "Uruguay",
           "alpha2" : "UY",
           "alpha3" : "URY",
@@ -1864,7 +1552,7 @@ var countryList = [
           "longitude" : 167
         },
     {
-          "country" : "Venezuela, Bolivarian Republic of",
+          "country" : "Venezuela",
           "alpha2" : "VE",
           "alpha3" : "VEN",
           "numeric" : 862,
@@ -1872,44 +1560,12 @@ var countryList = [
           "longitude" : -66
         },
     {
-          "country" : "Viet Nam",
+          "country" : "Vietnam",
           "alpha2" : "VN",
           "alpha3" : "VNM",
           "numeric" : 704,
           "latitude" : 16,
           "longitude" : 106
-        },
-    {
-          "country" : "Virgin Islands, British",
-          "alpha2" : "VG",
-          "alpha3" : "VGB",
-          "numeric" : 92,
-          "latitude" : 18.5,
-          "longitude" : -64.5
-        },
-    {
-          "country" : "Virgin Islands, U.S.",
-          "alpha2" : "VI",
-          "alpha3" : "VIR",
-          "numeric" : 850,
-          "latitude" : 18.3333,
-          "longitude" : -64.8333
-        },
-    {
-          "country" : "Wallis and Futuna",
-          "alpha2" : "WF",
-          "alpha3" : "WLF",
-          "numeric" : 876,
-          "latitude" : -13.3,
-          "longitude" : -176.2
-        },
-    {
-          "country" : "Western Sahara",
-          "alpha2" : "EH",
-          "alpha3" : "ESH",
-          "numeric" : 732,
-          "latitude" : 24.5,
-          "longitude" : -13
         },
     {
           "country" : "Yemen",
