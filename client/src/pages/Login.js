@@ -1,7 +1,7 @@
 import AccountBox from '../components/AccountBox';
 const Login = () => {
   return (
-    <div className='p-5'>
+    <div>
       <AccountBox></AccountBox>
     </div>
   );
