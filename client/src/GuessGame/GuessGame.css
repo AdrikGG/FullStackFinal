@@ -1,9 +1,7 @@
-.container {
-    flex-direction: column;
-  }
-  
+
+
   .card {
-    margin-bottom: 2rem;
+    margin-bottom: 8rem;
   }
   
   .map {

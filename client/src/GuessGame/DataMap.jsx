@@ -18,11 +18,13 @@ export default class Datamap extends React.Component {
     width: PropTypes.any
   };
 
+  //Resize of map and construct it
   constructor(props) {
     super(props);
     this.resizeMap = this.resizeMap.bind(this);
   }
 
+    //Verify components are mounting per react
   componentDidMount() {
     if (this.props.responsive) {
       window.addEventListener('resize', this.resizeMap);
@@ -30,16 +32,19 @@ export default class Datamap extends React.Component {
     this.drawMap();
   }
 
+  // Make sure new properties are being passed in
   componentWillReceiveProps(newProps) {
     if (propChangeRequiresMapClear(this.props, newProps)) {
       this.clear();
     }
   }
 
+  //Draw the map
   componentDidUpdate() {
     this.drawMap();
   }
 
+  //Unmount the map as needed
   componentWillUnmount() {
     this.clear();
     if (this.props.responsive) {
@@ -47,6 +52,7 @@ export default class Datamap extends React.Component {
     }
   }
 
+  //Clear any containers/arrays
   clear() {
     const { container } = this.refs;
 
@@ -57,6 +63,7 @@ export default class Datamap extends React.Component {
     delete this.map;
   }
 
+  // Draw the map onto the screen
   drawMap() {
     const { data, updateChoroplethOptions, ...props } = this.props;
 
@@ -86,10 +93,12 @@ export default class Datamap extends React.Component {
     }
   }
 
+  //Resize of map
   resizeMap() {
     this.map.resize();
   }
 
+  //Render
   render() {
     const style = {
       height: '100%',
