@@ -1,5 +1,5 @@
 import './App.css';
-import DisplayGame from './silo_game/DisplayGame';
+import SiloGame from './silo_game/SiloGame';
 
 import ScoreCard from './silo_game/ScoreCard';
 //import DisplayGame from './silo_game/DisplayGame';
@@ -10,7 +10,7 @@ import ScoreCard from './silo_game/ScoreCard';
 function App() {
   return (
     <div className='App'>
-      <DisplayGame />
+      <SiloGame />
       <ScoreCard />
     </div>
   );

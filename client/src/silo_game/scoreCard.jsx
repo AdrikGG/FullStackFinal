@@ -1,5 +1,5 @@
 import Card from 'react-bootstrap/Card';
-import { scoreBoard } from './game';
+import { scoreBoard } from './SiloGame';
 
 function ScoreCard() {
   let score = scoreBoard();
