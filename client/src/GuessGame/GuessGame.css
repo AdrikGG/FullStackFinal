@@ -1,0 +1,12 @@
+.container {
+    flex-direction: column;
+  }
+  
+  .card {
+    margin-bottom: 2rem;
+  }
+  
+  .map {
+    height: 70vh;
+    width: 100vw;
+  }
