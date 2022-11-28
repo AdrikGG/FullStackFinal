@@ -7,7 +7,7 @@ import MainButton from '../components/MainButton';
 import cat from './cat.jpg';
 import { FaUserCircle } from 'react-icons/fa';
 
-const ProfileBox = () => {
+const ProfileBoxEdit = () => {
   const displayAvi = (hasAvi) => {
     let profilePic = '';
     if (hasAvi) {
@@ -41,6 +41,7 @@ const ProfileBox = () => {
     <Container className='mt-5 pt-3 bg-light border rounded w-50'>
       <Row>
         <Col className='d-flex justify-content-center'>{pix}</Col>
+        <MainButton text='Upload Profile Picture'></MainButton>
       </Row>
       <Row className='my-3'>
         <Col className='d-flex justify-content-around fw-bold'>Username:</Col>
@@ -54,6 +55,15 @@ const ProfileBox = () => {
           mnaya@pdx.edu
         </Col>
       </Row>
+      <Row>
+        <label for={'emailUpdate'}>Change Email:</label>
+        <input type={'email'} id={'emailUpdate'} name={'emailUpdate'}></input>
+      </Row>
+      <Row>
+        <label for={'passUpdate'}>Change Password:</label>
+        <input type={'password'} id={'passUpdate'} name={'passUpdate'}></input>
+      </Row>
+
       <Row className='border m-2'>
         <Row className='m-2'>
           <Col className='d-flex justify-content-around fw-bold'>
@@ -61,6 +71,9 @@ const ProfileBox = () => {
           </Col>
           <Col className='d-flex justify-content-around  text-primary'>
             1000
+          </Col>
+          <Col>
+            <MainButton text='Clear'></MainButton>
           </Col>
         </Row>
         <Row className='m-2'>
@@ -70,13 +83,33 @@ const ProfileBox = () => {
           <Col className='d-flex justify-content-around  text-primary'>
             2000
           </Col>
+          <Col>
+            <MainButton text='Clear'></MainButton>
+          </Col>
         </Row>
       </Row>
       <Row>
-        <MainButton text='Edit Profile' type='button' looks={{ width: 500 }} />
+        <label for={'passCheck'}>Enter old password to save changes:</label>
+        <input type={'password'} id={'passCheck'} name={'passCheck'}></input>
+      </Row>
+      <Row>
+        <Col className='d-flex justify-content-start'>
+          <MainButton
+            text='Delete Account'
+            type='button'
+            looks={{ width: 200 }}
+          />
+        </Col>
+        <Col className='d-flex justify-content-end'>
+          <MainButton
+            text='Save Changes'
+            type='button'
+            looks={{ width: 200 }}
+          />
+        </Col>
       </Row>
     </Container>
   );
 };
 
-export default ProfileBox;
+export default ProfileBoxEdit;

@@ -1,14 +1,21 @@
 import ProfileBox from '../components/ProfileBox';
-import MainButton from '../components/MainButton';
+import ProfileBoxEdit from '../components/ProfileBoxEdit';
+
 import EasyEdit, { Types } from 'react-easy-edit';
 import Row from 'react-bootstrap/Row';
 
 const Profile = () => {
+  let editMode = true;
+
+  if (editMode) {
+  } else {
+  }
+
   return (
     <div className='p-5'>
       <Row>
         <ProfileBox></ProfileBox>
-        <MainButton text='Edit Profile' type='button' />
+        <ProfileBoxEdit></ProfileBoxEdit>
       </Row>
     </div>
   );
