@@ -18,7 +18,7 @@ const Auth = () => {
             user: res.data.user,
             token: res.data.token,
           });
-          window.location = '/dashboard';
+          window.location = '/';
         } else {
           console.log(res);
         }

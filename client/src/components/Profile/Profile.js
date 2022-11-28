@@ -1,7 +1,11 @@
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Profile = () => {
+  const navigate = useNavigate();
+
   const state = {
     user: useSelector((state) => state.user),
     previewSource: '',
@@ -17,12 +21,17 @@ const Profile = () => {
     console.log('change avatar');
   };
 
+  useEffect(() => {
+    getUser();
+  });
+
   const getUser = () => {
     console.log('get user');
     let id = localStorage.getItem('_ID');
     if (!id) {
+      console.log('invalid path: no user logged in');
       localStorage.clear();
-      window.location = '/';
+      navigate('/dashboard');
     }
     axios.get('/api/users/' + id).then((res) => {
       state.user = res.data.user;

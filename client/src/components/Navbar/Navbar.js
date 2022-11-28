@@ -1,13 +1,18 @@
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   const logout = () => {
     // log user out
+    localStorage.clear();
+    navigate('/dashboard');
   };
 
   const user = useSelector((state) => state.user);
-  //   if (user) console.log(user.avatar);
+  if (user) console.log(user);
 
   let userInfo;
   if (user) {
@@ -16,7 +21,7 @@ const Navbar = () => {
         <div
           className="profile-wrapper"
           onClick={() => {
-            window.location = '/profile';
+            navigate('/profile');
           }}
         >
           <div
@@ -38,7 +43,13 @@ const Navbar = () => {
   } else {
     userInfo = (
       <div>
-        <div>Loading</div>
+        <button
+          onClick={() => {
+            navigate('/account');
+          }}
+        >
+          Login
+        </button>
       </div>
     );
   }
@@ -48,7 +59,7 @@ const Navbar = () => {
       <div
         className="header-wrapper"
         onClick={() => {
-          window.location = '/';
+          navigate('/dashboard');
         }}
       >
         <h1 className="header">GeoQuiz</h1>

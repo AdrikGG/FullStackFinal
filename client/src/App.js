@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Auth from './components/Auth/Auth';
 import Dashboard from './components/Dashboard/Dashboard';
 import Navbar from './components/Navbar/Navbar';
@@ -29,12 +29,12 @@ const App = () => {
     <div className="app">
       <Navbar />
       <Routes>
-        <Route exact path="/" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/account" element={<Auth />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/quiz01" element={<Quiz01 />} />
         <Route path="/quiz02" element />
-        {/* redirect all other paths to "/" */}
+        <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </div>
   );
