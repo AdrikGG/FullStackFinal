@@ -30,7 +30,7 @@ export function getCountry() {
   //let image = document.getElementById('preview');
   //image.style.transform = randomRotation();
   //image.src = './countryshapes/' + currentCountry['imageSrc'];
-  return './countryshapes/' + currentCountry['AD.'];
+  return './countryshapes/' + currentCountry['imageSrc'];
 }
 //Brute force a start game **NEED TO CHANGE BASED ON ADRIK**
 export function startGame() {
