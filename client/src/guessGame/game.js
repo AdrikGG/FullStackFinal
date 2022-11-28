@@ -2,24 +2,28 @@ var currCountry;
 var currScore = 0;
 var maxScore = countryList.length;
 
+//Get Random integer for the random country
 function getRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+//Get a random country to use as answer
 function getRandCountry() {
   let countryNum = getRandomInteger(0, maxScore - 1);
   currCountry = countryList[countryNum];
   console.log(currCountry["country"] + " " + currCountry["alpha3"] + " Lat: " + currCountry["latitude"] + " Long: " + currCountry["longitude"]);
 }
 
+//Get distance from one country to another. Yay euclidean measurements
 function distance(sourceLat, sourceLong) {
   return Math.sqrt( Math.pow((currCountry["longitude"]-sourceLong), 2) + Math.pow((currCountry["latitude"]-sourceLat), 2));
 }
 
+//Submit answer
 function submitGuess() {
-
-  // if we get a correct guess, then run this code
+  // If answer is correct
   if($("#userInput").val() == currCountry["country"]) {
+    // Update Score
     currScore++;
     $('#score').text(currScore + " / " + maxScore);
     $("#userInput").val("");
@@ -29,7 +33,7 @@ function submitGuess() {
     map.updateChoropleth(updatedData);
   }
 
-  //otherwise we need to do some other work
+  //Otherwise continue
   else {
     let guessCode = countryList.filter(obj => {
       return obj.country.toLowerCase() === $("#userInput").val().toLowerCase();
@@ -47,6 +51,7 @@ function submitGuess() {
 
     */
 
+    //Current Distance setup  
     if(dist >= 75) {
       color = '#540600';
     } else if( dist >= 50) {
@@ -57,8 +62,7 @@ function submitGuess() {
       color = '#bad90d';
     }
 
-    console.log(color);
-    
+    // Console log information to look at if you want.
     let updatedData = {};
     updatedData[guessCode['alpha3']] = color;
 

@@ -1232,14 +1232,6 @@ var countryList = [
           "longitude" : 12.4167
         },
     {
-          "country" : "Sao Tome and Principe",
-          "alpha2" : "ST",
-          "alpha3" : "STP",
-          "numeric" : 678,
-          "latitude" : 1,
-          "longitude" : 7
-        },
-    {
           "country" : "Saudi Arabia",
           "alpha2" : "SA",
           "alpha3" : "SAU",
@@ -1262,14 +1254,6 @@ var countryList = [
           "numeric" : 688,
           "latitude" : 44,
           "longitude" : 21
-        },
-    {
-          "country" : "Seychelles",
-          "alpha2" : "SC",
-          "alpha3" : "SYC",
-          "numeric" : 690,
-          "latitude" : -4.5833,
-          "longitude" : 55.6667
         },
     {
           "country" : "Sierra Leone",

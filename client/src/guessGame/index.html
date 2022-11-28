@@ -11,36 +11,57 @@
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 
 
 
 <body id="game" onload="getRandCountry()">
-    <input id="userInput" type="text" style="width:50vw; height:50px; margin-bottom: 4em;"></input>
-    <button onclick="submitGuess()" id="submitButton">Submit</button>
-    <div id="score" style="float: right;">
-        <p>0 / 176</p>
+    <div class="container d-flex align-items-center justify-content-center" style="width: 75vw;">
+        <div class="card mx-auto mt-5">
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <input id="userInput" type="text" style="width:25vw; height:25px; margin-bottom: 4em;"></input>
+                </div>
+                <div>
+                    <div class="card mx-auto mt-3 text-center" style="width:25vw; height:25px" id="score">
+                        <!--Update the font/styling-->
+                        <p>Total Guesses: 0</p>
+                        <p id="currentScore"></p>
+                    </div>
+                    <div class="container">
+                        <div class="col-md-12 text-center">
+                            <button type="button" class="btn btn-primary mt-2 mx-auto"
+                                onclick="submitGuess()">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="container" style="width: 75vw; height: 75vh"></div>
-    <script>
-        var map = new Datamap({
-            scope: 'world',
-            element: document.getElementById('container'),
-            projection: 'mercator',
-            geographyConfig: {
-                highlightOnHover: false,
-            },
-            fills: {
-                defaultFill: '#919191',
-                farthest: '#540600',
-                far: '#963f0c',
-                close: '#dbb21f',
-                closest: '#bad90d',
-                correct: 'green'
-            },
-            data: {}
-        });
-    </script>
+    <div class="container d-flex align-items-center justify-content-center" id="container"
+        style="width: 75vw; height: 75vh ">
+        <script>
+            var map = new Datamap({
+                scope: 'world',
+                element: document.getElementById('container'),
+                projection: 'mercator',
+                geographyConfig: {
+                    highlightOnHover: false,
+                },
+                fills: {
+                    defaultFill: '#919191',
+                    farthest: '#540600',
+                    far: '#963f0c',
+                    close: '#dbb21f',
+                    closest: '#bad90d',
+                    correct: 'green'
+                },
+                data: {}
+            });
+        </script>
+    </div>
 </body>
 
 </html>
