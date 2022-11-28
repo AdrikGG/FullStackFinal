@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
+import MainButton from './MainButton';
 import './AccountBox.css';
 
 const AccountBox = () => {
@@ -67,10 +67,8 @@ const AccountBox = () => {
                     />
                   </Form.Group>
                   <Form.Group>
-                    <div className='d-grid m-3'>
-                      <Button className='accButton mx-5' type='submit'>
-                        Submit
-                      </Button>
+                    <div className='d-grid mx-5'>
+                      <MainButton text='Submit' type='submit' />
                     </div>
                   </Form.Group>
                 </Form>
@@ -112,10 +110,8 @@ const AccountBox = () => {
                       value={repassword}
                     />
                   </Form.Group>
-                  <div className='d-grid m-3'>
-                    <Button className='accButton mx-5' type='submit'>
-                      Create Account
-                    </Button>
+                  <div className='d-grid mx-5'>
+                    <MainButton text='Create Account' type='submit' />
                   </div>
                 </Form>
               </Tab.Pane>
