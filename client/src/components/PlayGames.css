@@ -48,7 +48,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: black !important;
+  background-color: #6d8fae !important;
   font-size: 70px !important;
   border: none !important;
   cursor: pointer;
@@ -56,9 +56,9 @@
 }
 
 .playButton:hover {
-  background-color: rgb(40, 40, 40) !important;
+  background-color: #54718c !important;
 }
 
 .playButton:active {
-  background-color: rgb(0, 0, 0) !important;
+  background-color: #6d8fae !important;
 }
