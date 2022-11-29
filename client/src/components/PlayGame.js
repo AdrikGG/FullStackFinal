@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import WorldMap from '../images/WorldMap.png';
 import AD from '../images/AD.png';
+import question from '../images/question.gif';
 import Button from 'react-bootstrap/Button';
 import './PlayGames.css';
 
@@ -20,11 +21,14 @@ const PlayGame = (props) => {
   const checkGame = () => {
     if (props.isGame1) {
       return (
-        <Image
-          className='gameOnePic mx-auto d-block pt-4'
-          src={AD}
-          alt='Picture of a country map.'
-        ></Image>
+        <div>
+          <Image
+            className='gameOnePic mx-auto d-block pt-4'
+            src={AD}
+            alt='Picture of a country map.'
+          ></Image>
+          <Image className={'qMark'} src={question}></Image>
+        </div>
       );
     } else if (props.isGame2) {
       return (
