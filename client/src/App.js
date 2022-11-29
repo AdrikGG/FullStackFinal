@@ -7,6 +7,7 @@ import axios from 'axios';
 import store from './store/index';
 import Profile from './components/Profile/Profile';
 import Quiz01 from './components/Quizzes/Quiz01';
+import GuessGame from './components/Quizzes/GuessGame/GuessGame';
 
 const App = () => {
   useEffect(() => {
@@ -16,7 +17,7 @@ const App = () => {
         .then((res) => {
           store.dispatch({
             user: res.data.user,
-            type: 'set_user',
+            type: 'set_user'
           });
         })
         .catch((err) => {
@@ -33,7 +34,7 @@ const App = () => {
         <Route path="/account" element={<Auth />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/quiz01" element={<Quiz01 />} />
-        <Route path="/quiz02" element />
+        <Route path="/guess-game" element={<GuessGame />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </div>

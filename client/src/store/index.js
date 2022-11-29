@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 
 const initState = {
-  user: null,
+  user: null
 };
 
 const reducer = (state = initState, action) => {
@@ -12,12 +12,17 @@ const reducer = (state = initState, action) => {
     console.log(action);
     return {
       ...state,
-      user: action.user,
+      user: action.user
     };
   } else if (action.type === 'set_user') {
     return {
       ...state,
-      user: action.user,
+      user: action.user
+    };
+  } else if (action.type === 'update_user') {
+    return {
+      ...state,
+      user: action.user
     };
   } else {
     return state;

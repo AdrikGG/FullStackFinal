@@ -1,16 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
   const play = (e) => {
     console.log(e.target.id);
     // initialize games with game options
     if (e.target.id === 'game1') {
       // play game 1
-      window.location = '/quiz01';
+      navigate('/quiz01');
     } else if (e.target.id === 'game2') {
       // play game 2
-      window.location = '/quiz02';
+      navigate('/guess-game');
     }
   };
 

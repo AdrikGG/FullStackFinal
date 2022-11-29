@@ -1,0 +1,13 @@
+.container {
+  flex-direction: column;
+}
+
+.card {
+  margin-bottom: 0;
+}
+
+.map {
+  margin: 1vw;
+  height: 80vh;
+  width: 98%;
+}

@@ -6,32 +6,44 @@ const UserSchema = new Schema({
   username: {
     type: String,
     required: true,
-    unique: true,
+    unique: true
   },
   password: {
     type: String,
-    required: true,
+    required: true
   },
   avatar: {
     type: Object,
     required: false,
     contains: {
       url: {
-        type: String,
+        type: String
       },
       publicID: {
-        type: String,
+        type: String
+      }
+    }
+  },
+  highscores: {
+    type: Object,
+    required: false,
+    contains: {
+      quiz1: {
+        type: String
       },
-    },
+      quiz2: {
+        type: String
+      }
+    }
   },
   createdOn: {
     type: Date,
-    default: new Date(),
+    default: new Date()
   },
   deleted: {
     type: Boolean,
-    default: false,
-  },
+    default: false
+  }
 });
 
 module.exports = User = mongoose.model('Users', UserSchema);

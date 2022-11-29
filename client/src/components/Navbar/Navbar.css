@@ -9,7 +9,7 @@
 
 .navbar-wrapper {
   display: grid;
-  grid-template-columns: 12fr 1fr;
-  grid-template-areas: 'header user';
+  grid-template-columns: 1fr 8fr 1fr;
+  grid-template-areas: 'header spacer user';
   border: 1px solid black;
 }

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import Login from './Login';
 import Signup from './Signup';
-import axios from 'axios';
 import store from '../../store/index';
 
 const Auth = () => {
+  const navigate = useNavigate();
   const [page, setPage] = useState('login');
 
   const login = (username, password) => {
@@ -16,9 +18,10 @@ const Auth = () => {
             type: 'login',
             _id: res.data.user._id,
             user: res.data.user,
-            token: res.data.token,
+            token: res.data.token
           });
-          window.location = '/';
+          navigate('/dashboard');
+          window.location.reload();
         } else {
           console.log(res);
         }
