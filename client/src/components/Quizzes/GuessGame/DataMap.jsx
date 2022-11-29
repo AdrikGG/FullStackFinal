@@ -18,13 +18,13 @@ export default class Datamap extends React.Component {
     width: PropTypes.any
   };
 
-  //Resize of map and construct it
+  // Resize of map and construct it
   constructor(props) {
     super(props);
     this.resizeMap = this.resizeMap.bind(this);
   }
 
-    //Verify components are mounting per react
+  // Verify components are mounting per react
   componentDidMount() {
     if (this.props.responsive) {
       window.addEventListener('resize', this.resizeMap);
@@ -39,12 +39,12 @@ export default class Datamap extends React.Component {
     }
   }
 
-  //Draw the map
+  // Draw the map
   componentDidUpdate() {
     this.drawMap();
   }
 
-  //Unmount the map as needed
+  // Unmount the map as needed
   componentWillUnmount() {
     this.clear();
     if (this.props.responsive) {
@@ -52,7 +52,7 @@ export default class Datamap extends React.Component {
     }
   }
 
-  //Clear any containers/arrays
+  // Clear any containers/arrays
   clear() {
     const { container } = this.refs;
 
@@ -93,12 +93,12 @@ export default class Datamap extends React.Component {
     }
   }
 
-  //Resize of map
+  // Resize of map
   resizeMap() {
     this.map.resize();
   }
 
-  //Render
+  // Render
   render() {
     const style = {
       height: '100%',
