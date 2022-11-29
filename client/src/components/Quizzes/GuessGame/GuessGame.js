@@ -21,22 +21,28 @@ const GuessGame = () => {
     return () => {};
   }, []);
 
+  //Get a random integer to grab random country.
   const getRandInteger = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
+  // Using random integer get the random country
   const getRandCountry = () => {
     const countryNum = getRandInteger(0, maxScore - 1);
     setCurrCountry(countryList[countryNum]);
     console.log('Random country: ', currCountry, countryList[countryNum]);
   };
 
+  //Get the distance via euclidean maths
   const distance = (srcLat, srcLong) => {
     return Math.sqrt(
       Math.pow(currCountry['longitude'] - srcLong, 2) +
         Math.pow(currCountry['latitude'] - srcLat, 2)
     );
   };
+
+  // For the cheaters out there.
+  console.log(currCountry['country']);
 
   const submitGuess = (userInput) => {
     if (userInput.toLowerCase() === currCountry['country'].toLowerCase()) {
@@ -63,12 +69,10 @@ const GuessGame = () => {
       const guessCode = countryList.find((countryObj) => {
         return countryObj.country.toLowerCase() === userInput.toLowerCase();
       });
-      // console.log(guessCode);
       if (!guessCode) {
         return;
       }
-
-      const maxDist = 225;
+      const maxDist = 275;
       const dist = distance(guessCode['latitude'], guessCode['longitude']);
       const gradient = chroma.scale([
         'red',
@@ -79,7 +83,6 @@ const GuessGame = () => {
       ]);
 
       const color = gradient(dist / maxDist).hex();
-      // console.log(dist, color);
 
       // data[guessCode['alpha3']] = color;
       setData({ [guessCode['alpha3']]: color });
@@ -111,7 +114,7 @@ const GuessGame = () => {
   };
 
   return (
-    <div className="container d-flex align-items-center justify-content-center">
+    <div className="container">
       <div className="card mx-auto mt-5" style={{ width: 300, height: 150 }}>
         <div className="card-body">
           <div className="input-group mb-3">
@@ -122,11 +125,16 @@ const GuessGame = () => {
                 e.target.userInput.value = '';
               }}
             >
-              <input
-                id="userInput"
-                type="text"
-                style={{ width: 120, height: 25, marginBottom: 4 }}
-              />
+              <div className="form-row">
+                <div class="col-7">
+                  <input
+                    id="userInput"
+                    type="text"
+                    placeholder="Enter Guess"
+                    style={{ width: 120, height: 25, marginBottom: 4 }}
+                  />
+                </div>
+              </div>
             </form>
           </div>
           <div>
