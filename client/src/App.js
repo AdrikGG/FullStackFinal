@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Auth from './components/Auth/Auth';
-import GuessGame from './GuessGame/GuessGame';
+import GuessGame from './components/Quizzes/GuessGame/GuessGame';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
