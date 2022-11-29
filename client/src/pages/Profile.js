@@ -1,7 +1,5 @@
 import ProfileBox from '../components/ProfileBox';
 import ProfileBoxEdit from '../components/ProfileBoxEdit';
-
-import EasyEdit, { Types } from 'react-easy-edit';
 import Row from 'react-bootstrap/Row';
 
 const Profile = () => {
