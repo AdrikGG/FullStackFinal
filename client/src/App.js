@@ -8,6 +8,11 @@ import store from './store/index';
 import Profile from './components/Profile/Profile';
 import Quiz01 from './components/Quizzes/Quiz01';
 import GuessGame from './components/Quizzes/GuessGame/GuessGame';
+import './App.css';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Layout from './pages/Layout';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   useEffect(() => {
@@ -36,6 +41,13 @@ const App = () => {
         <Route path="/quiz01" element={<Quiz01 />} />
         <Route path="/guess-game" element={<GuessGame />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
+    <div className='App'>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path='Login' element={<Login />} />
+          <Route path='Profile' element={<Profile />} />
+        </Route>
       </Routes>
     </div>
   );

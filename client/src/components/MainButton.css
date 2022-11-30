@@ -1,0 +1,8 @@
+.mainButton {
+  border: none !important;
+  background-color: #6d8fae !important;
+}
+.mainButton:hover {
+  border: none !important;
+  background-color: #54718c !important;
+}
