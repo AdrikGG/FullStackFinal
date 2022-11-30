@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import store from '../store/index';
 
-const ProfileBoxEdit = () => {
+const ProfileBoxEdit = (props) => {
   const navigate = useNavigate();
   const [user, setUser] = useState(useSelector((state) => state.user));
   const [previewSrc, setPreviewSrc] = useState('');
@@ -23,11 +23,11 @@ const ProfileBoxEdit = () => {
     'jpeg',
     'image/jpg',
     'image/png',
-    'image/jpeg'
+    'image/jpeg',
   ];
 
   useEffect(() => {
-    getUser();
+    //getUser();
   }, []);
 
   const [username, setUsername] = useState(user ? user.username : '');
@@ -86,7 +86,7 @@ const ProfileBoxEdit = () => {
         '/api/users/upload-image',
         JSON.stringify({
           data: previewSrc,
-          _id: user._id
+          _id: user._id,
         })
       )
       .then((res) => {
@@ -118,7 +118,7 @@ const ProfileBoxEdit = () => {
         console.log(res);
         store.dispatch({
           type: 'update_user',
-          user: user
+          user: user,
         });
         window.location.reload();
       })
@@ -140,13 +140,13 @@ const ProfileBoxEdit = () => {
         username:
           username !== user.username && username !== '' ? username : null,
         password: password !== '' ? password : null,
-        oldPassword: oldPassword
+        oldPassword: oldPassword,
       })
       .then((res) => {
         console.log(res);
         store.dispatch({
           type: 'update_user',
-          user: user
+          user: user,
         });
         window.location.reload();
       })
@@ -180,14 +180,14 @@ const ProfileBoxEdit = () => {
           height={180}
           roundedCircle={true}
           src={cat}
-          alt="no"
+          alt='no'
         ></Image>
       );
     } else {
       profilePic = (
         <FaUserCircle
           size={180}
-          className="m-3"
+          className='m-3'
           style={{ color: '#6d8fae ' }}
         ></FaUserCircle>
       );
@@ -200,18 +200,18 @@ const ProfileBoxEdit = () => {
   let pix = displayAvi(true);
 
   return (
-    <Container className="mt-5 pt-3 bg-light border rounded w-50">
+    <Container>
       <Row>
-        <Col className="d-flex justify-content-center">{pix}</Col>
-        <input onChange={(e) => handleFileInputChange(e)} type="file" />
-        <MainButton
-          text="Upload Profile Picture"
-          onClick={(e) => handleSubmitFile(e)}
-        ></MainButton>
+        <Col className='d-flex justify-content-center'>{pix}</Col>
+        <input
+          className='m-3 text-center'
+          onChange={(e) => handleFileInputChange(e)}
+          type='file'
+        />
       </Row>
-      <Row className="my-3">
-        <Col className="d-flex justify-content-around fw-bold">Username:</Col>
-        <Col className="d-flex justify-content-around text-primary">
+      <Row className='m-3'>
+        <Col className='d-flex justify-content-around fw-bold'>Username:</Col>
+        <Col className='d-flex justify-content-around text-primary'>
           {user?.username}
         </Col>
       </Row>
@@ -221,7 +221,7 @@ const ProfileBoxEdit = () => {
           mnaya@pdx.edu
         </Col>
       </Row> */}
-      <Row>
+      <Row className='m-3'>
         <label htmlFor={'usernameUpdate'}>Change username:</label>
         <input
           type={'text'}
@@ -231,7 +231,7 @@ const ProfileBoxEdit = () => {
           onChange={(e) => setUsername(e.target.value)}
         ></input>
       </Row>
-      <Row>
+      <Row className='m-3'>
         <label htmlFor={'passUpdate'}>Change Password:</label>
         <input
           type={'password'}
@@ -241,37 +241,37 @@ const ProfileBoxEdit = () => {
           onChange={(e) => setPassword(e.target.value)}
         ></input>
       </Row>
-      <Row className="border m-2">
-        <Row className="m-2">
-          <Col className="d-flex justify-content-around fw-bold">
+      <Row className='border m-3'>
+        <Row className='m-2'>
+          <Col className='d-flex justify-content-around fw-bold'>
             High Score Game1
           </Col>
-          <Col className="d-flex justify-content-around  text-primary">
+          <Col className='d-flex justify-content-around  text-primary'>
             {user?.highscores?.quiz1 ? user.highscores.quiz1 : 'No score'}
           </Col>
           <Col>
             <MainButton
-              text="Clear"
+              text='Clear'
               onClick={() => clearHS('hsq1')}
             ></MainButton>
           </Col>
         </Row>
-        <Row className="m-2">
-          <Col className="d-flex justify-content-around fw-bold">
+        <Row className='m-2'>
+          <Col className='d-flex justify-content-around fw-bold'>
             High Score Game2
           </Col>
-          <Col className="d-flex justify-content-around  text-primary">
+          <Col className='d-flex justify-content-around  text-primary'>
             {user?.highscores?.quiz2 ? user.highscores.quiz2 : 'No score'}
           </Col>
           <Col>
             <MainButton
-              text="Clear"
+              text='Clear'
               onClick={() => clearHS('hsq2')}
             ></MainButton>
           </Col>
         </Row>
       </Row>
-      <Row>
+      <Row className='m-3'>
         <label htmlFor={'passCheck'}>Enter old password to save changes:</label>
         <input
           type={'password'}
@@ -281,19 +281,19 @@ const ProfileBoxEdit = () => {
           onChange={(e) => setOldPassword(e.target.value)}
         ></input>
       </Row>
-      <Row>
-        <Col className="d-flex justify-content-start">
+      <Row className='m-3'>
+        <Col className='d-flex justify-content-start'>
           <MainButton
-            text="Delete Account"
-            type="button"
+            text='Delete Account'
+            type='button'
             looks={{ width: 200 }}
             onClick={deleteUser}
           />
         </Col>
-        <Col className="d-flex justify-content-end">
+        <Col className='d-flex justify-content-end'>
           <MainButton
-            text="Save Changes"
-            type="button"
+            text='Save Changes'
+            type='button'
             looks={{ width: 200 }}
             onClick={updateProfile}
           />

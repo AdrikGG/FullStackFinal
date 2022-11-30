@@ -1,21 +1,47 @@
+import React, { useState } from 'react';
 import ProfileBox from '../components/ProfileBox';
 import ProfileBoxEdit from '../components/ProfileBoxEdit';
-//import ProfileBoxEdit from '../components/ProfileBoxEdit';
+import MainButton from '../components/MainButton';
 import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
 
 const Profile = () => {
-  let editMode = true;
+  const [isEdit, setIsEdit] = useState(false);
 
-  if (editMode) {
-  } else {
-  }
+  const setEditModeTrue = () => {
+    setIsEdit(true);
+  };
 
+  const setEditModeFalse = () => {
+    setIsEdit(false);
+  };
   return (
-    <div className="p-5">
-      <Row>
-        <ProfileBox></ProfileBox>
+    <Container className='mt-5 pt-3 bg-light border rounded w-50'>
+      <Row className='d-flex text-center my-3'>
+        {!isEdit && (
+          <div>
+            <ProfileBox></ProfileBox>
+            <MainButton
+              text='Edit Profile'
+              type='button'
+              looks={{ width: 150 }}
+              onClick={setEditModeTrue}
+            />
+          </div>
+        )}
+        {isEdit && (
+          <div>
+            <ProfileBoxEdit></ProfileBoxEdit>
+            <MainButton
+              text='Exit Edit Mode'
+              type='button'
+              looks={{ width: 150 }}
+              onClick={setEditModeFalse}
+            />
+          </div>
+        )}
       </Row>
-    </div>
+    </Container>
   );
 };
 export default Profile;
