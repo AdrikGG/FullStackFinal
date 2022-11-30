@@ -10,7 +10,7 @@ const Profile = () => {
   }
 
   return (
-    <div className='p-5'>
+    <div className="p-5">
       <Row>
         <ProfileBox></ProfileBox>
         <ProfileBoxEdit></ProfileBoxEdit>

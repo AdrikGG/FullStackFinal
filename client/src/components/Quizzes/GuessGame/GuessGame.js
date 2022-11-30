@@ -55,7 +55,7 @@ const GuessGame = () => {
           'orange',
           'yellow',
           'green',
-          'blue'
+          'blue',
         ]);
 
         const color = gradient(dist / maxDist).hex();
@@ -79,7 +79,7 @@ const GuessGame = () => {
         'orange',
         'yellow',
         'green',
-        'blue'
+        'blue',
       ]);
 
       const color = gradient(dist / maxDist).hex();
@@ -105,7 +105,7 @@ const GuessGame = () => {
     }
     axios
       .patch(`/api/users/${user._id}`, {
-        hsq2: guessCounter + 1
+        hsq2: guessCounter + 1,
       })
       .then((res) => {})
       .catch((err) => {
@@ -126,7 +126,7 @@ const GuessGame = () => {
               }}
             >
               <div className="form-row">
-                <div class="col-7">
+                <div className="col-7">
                   <input
                     id="userInput"
                     type="text"

@@ -5,13 +5,11 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Navbar from './components/Navbar/Navbar';
 import axios from 'axios';
 import store from './store/index';
-import Profile from './components/Profile/Profile';
+import Profile from './pages/Profile';
 import Quiz01 from './components/Quizzes/Quiz01';
 import GuessGame from './components/Quizzes/GuessGame/GuessGame';
 import './App.css';
-import Home from './pages/Home';
 import Login from './pages/Login';
-import Layout from './pages/Layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
@@ -35,14 +33,14 @@ const App = () => {
     <div className="app">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="Login" element={<Login />} />
-          <Route path="Profile" element={<Profile />} />
-        </Route>
+        {/* <Route path="/" element={<Layout />}> */}
+        {/* <Route index element={<Home />} /> */}
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/account" element={<Auth />} />
+        <Route path="/account" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
+        {/* </Route> */}
+        {/* <Route path="/account" element={<Auth />} /> */}
+        {/* <Route path="/profile" element={<Profile />} /> */}
         <Route path="/quiz01" element={<Quiz01 />} />
         <Route path="/guess-game" element={<GuessGame />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />

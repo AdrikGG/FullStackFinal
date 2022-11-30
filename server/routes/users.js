@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const checkAuth = require('../middleware/check-auth');
 const {
   loginValidator,
-  registerValidator
+  registerValidator,
 } = require('../validators/validators');
 
 const router = express.Router();
@@ -23,22 +23,22 @@ router.post('/login', (req, res) => {
       if (!user) {
         res.json({
           message: 'No account found with the username ' + req.body.username,
-          success: false
+          success: false,
         });
       } else {
         // check if passwords match
         bcrypt.compare(req.body.password, user.password).then((success) => {
           if (!success) {
             res.json({
-              message: `Incorrect password ${user.password} ${req.body.password}`,
-              success: false
+              message: `Incorrect password`,
+              success: false,
             });
           } else {
             // store data and token in jwt (stored in browser cache)
             // jwt is used for authentication and staying logged in
             const payload = {
               id: user._id,
-              username: user.username
+              username: user.username,
             };
             jwt.sign(
               payload,
@@ -48,7 +48,7 @@ router.post('/login', (req, res) => {
                 res.json({
                   user,
                   token: 'Bearer token: ' + token,
-                  success: true
+                  success: true,
                 });
               }
             );
@@ -72,7 +72,7 @@ router.post('/register', (req, res) => {
     const registerUser = new Users({
       username,
       password,
-      createdOn: new Date()
+      createdOn: new Date(),
     });
     // hash password
     bcrypt.genSalt(10, (genErr, salt) => {
@@ -114,19 +114,19 @@ router.post('/upload-image', checkAuth, async (req, res) => {
     Users.findOne({ _id: req.body._id }).then((user) => {
       user.avatar = {
         url: uploaded.url,
-        publicId: uploaded.public_id
+        publicId: uploaded.public_id,
       };
       user.save();
       if (user.images) {
         user.images.push({
           url: uploaded.url,
-          publicId: uploaded.public_id
+          publicId: uploaded.public_id,
         });
       } else {
         user.images = [];
         user.images.push({
           url: uploaded.url,
-          publicId: uploaded.public_id
+          publicId: uploaded.public_id,
         });
       }
       res.json({ success: true });
@@ -135,7 +135,7 @@ router.post('/upload-image', checkAuth, async (req, res) => {
     console.log(err);
     res.json({
       success: false,
-      message: 'Something went wrong, please try again.'
+      message: 'Something went wrong, please try again.',
     });
   }
 });
@@ -197,7 +197,7 @@ router.patch('/:id', checkAuth, (req, res) => {
   }
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', checkAuth, (req, res) => {
   const id = req.params.id;
   User.remove({ _id: id })
     .exec()
