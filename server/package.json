@@ -19,6 +19,7 @@
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.7.0",
+    "path": "^0.12.7",
     "validator": "^13.7.0"
   }
 }
