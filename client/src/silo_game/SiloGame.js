@@ -1,8 +1,13 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Image from 'react-bootstrap/Image';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
 import countries from './countryNames';
 import ScoreBox from './ScoreBox';
+import Stack from 'react-bootstrap/Stack';
 
 const imageFldr = require.context('./countryshapes/', false);
 const maxScore = countries.length;
@@ -86,19 +91,32 @@ const SiloGame = () => {
   };
 
   return (
-    <Card className='text-center' style={{ width: 20 }}>
-      <Card.Body>
-        <Card.Img src={currentMap} style={{ transform: rotationVal }} />
+    <Container className='flex-wrap justify-content-center'>
+      <Row className=' justify-content-center'>
+        <Col>
+          <Image
+            fluid={true}
+            className='m-5'
+            src={currentMap}
+            style={{ transform: rotationVal, maxWidth: 200, maxHeight: 200 }}
+            alt='Country map'
+          ></Image>
+        </Col>
+      </Row>
+
+      <Stack direction='horizontal' gap={3}>
+        <p>Guess an answer: </p>
         <input ref={inputRef} type='text' id='guess' name='guess'></input>
-        <Button variant='Submit' onClick={submitAnswer}>
-          Submit
-        </Button>
-        <Button onClick={showHint}>Hint</Button>
+        <Button onClick={submitAnswer}>Submit</Button>
+      </Stack>
+      {isError && <div>Incorrect Answer</div>}
+      <Stack direction='horizontal' gap={3}>
+        <Button onClick={showHint}>Hint</Button>{' '}
         {isHint && <div>{countryHint}</div>}
-        {isError && <div>Incorrect Answer</div>}
-        <ScoreBox score={score + '/' + maxScore} />
-      </Card.Body>
-    </Card>
+      </Stack>
+
+      <ScoreBox score={score + '/' + maxScore} />
+    </Container>
   );
 };
 

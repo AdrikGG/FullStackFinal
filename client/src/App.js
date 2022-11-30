@@ -6,6 +6,7 @@ import SiloGame from './silo_game/SiloGame';
 //import { Routes, Route } from 'react-router-dom';
 //import Layout from './pages/Layout';
 //import GameStart from './silo_game/GameStart';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
