@@ -9,31 +9,34 @@ import { GoGlobe } from 'react-icons/go';
 import MainButton from '../components/MainButton';
 import './MyNavbar.css';
 
+import { useSelector } from 'react-redux';
+
 const Layout = () => {
   //const [isUser, setIsUser] = useState(false);
   //let isUser = true;
-  let isUser = false;
+  const user = useSelector((state) => state.user);
+  if (user) console.log(user);
 
   return (
     <>
-      <Navbar bg='light'>
-        <LinkContainer to='/'>
-          <Navbar.Brand className='changeText'>
-            <GoGlobe className='mx-1' style={{ width: 50, height: 50 }} />
+      <Navbar bg="light">
+        <LinkContainer to="/dashboard">
+          <Navbar.Brand className="changeText">
+            <GoGlobe className="mx-1" style={{ width: 50, height: 50 }} />
             GeoQuiz
           </Navbar.Brand>
         </LinkContainer>
-        <Navbar.Collapse className='justify-content-end'>
+        <Navbar.Collapse className="justify-content-end">
           <Nav>
-            {isUser && (
-              <LinkContainer to='/profile'>
+            {user && (
+              <LinkContainer to="/profile">
                 <Nav.Link>
-                  <MdAccountCircle className='mx-1 changeIcon' />
+                  <MdAccountCircle className="mx-1 changeIcon" />
                 </Nav.Link>
               </LinkContainer>
             )}
-            {!isUser && (
-              <LinkContainer to='/login'>
+            {!user && (
+              <LinkContainer to="/login">
                 <Nav.Link>
                   <MainButton
                     text={'Login/Register'}

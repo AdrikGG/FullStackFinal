@@ -73,7 +73,7 @@ const GuessGame = () => {
       if (!guessCode) {
         return;
       }
-      const maxDist = 275;
+      const maxDist = 225;
       const dist = distance(guessCode['latitude'], guessCode['longitude']);
       const gradient = chroma.scale([
         'red',

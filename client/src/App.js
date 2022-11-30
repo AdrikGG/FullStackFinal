@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Auth from './components/Auth/Auth';
-import Dashboard from './components/Dashboard/Dashboard';
-import Navbar from './components/Navbar/Navbar';
 import axios from 'axios';
+
 import store from './store/index';
-import Profile from './pages/Profile';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+
+import MyNavbar from './pages/MyNavbar';
+import Home from './pages/Home';
 import Quiz01 from './components/Quizzes/Quiz01';
 import GuessGame from './components/Quizzes/GuessGame/GuessGame';
-import './App.css';
 import Login from './pages/Login';
-import MyNavbar from './pages/MyNavbar';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Profile from './pages/Profile';
 
 const App = () => {
   useEffect(() => {
@@ -32,24 +32,14 @@ const App = () => {
 
   return (
     <div className="app">
-      <Navbar />
+      <MyNavbar />
       <Routes>
-        {/* <Route path="/" element={<Layout />}> */}
-        {/* <Route index element={<Home />} /> */}
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/account" element={<Login />} />
+        <Route path="/dashboard" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
-        {/* </Route> */}
-        {/* <Route path="/account" element={<Auth />} /> */}
-        {/* <Route path="/profile" element={<Profile />} /> */}
-        <Route path="/quiz01" element={<Quiz01 />} />
+        <Route path="/silhouette" element={<Quiz01 />} />
         <Route path="/guess-game" element={<GuessGame />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
-        <Route path="/" element={<MyNavbar />}>
-          {/* <Route index element={<Home />} /> */}
-          <Route path="Login" element={<Login />} />
-          <Route path="Profile" element={<Profile />} />
-        </Route>
       </Routes>
     </div>
   );

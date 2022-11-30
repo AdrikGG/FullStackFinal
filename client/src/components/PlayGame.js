@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import WorldMap from '../images/WorldMap.png';
@@ -8,7 +10,16 @@ import Button from 'react-bootstrap/Button';
 import './PlayGames.css';
 
 const PlayGame = (props) => {
+  const navigate = useNavigate();
   const [isHovering, setIsHovering] = useState(false);
+
+  const play = () => {
+    if (props.isGame1) {
+      navigate('/silhouette');
+    } else if (props.isGame2) {
+      navigate('/guess-game');
+    }
+  };
 
   const handleMouseOver = () => {
     setIsHovering(true);
@@ -23,9 +34,9 @@ const PlayGame = (props) => {
       return (
         <div>
           <Image
-            className='gameOnePic mx-auto d-block pt-4'
+            className="gameOnePic mx-auto d-block pt-4"
             src={AD}
-            alt='Picture of a country map.'
+            alt="Picture of a country map."
           ></Image>
           <Image className={'qMark'} src={question}></Image>
         </div>
@@ -33,9 +44,9 @@ const PlayGame = (props) => {
     } else if (props.isGame2) {
       return (
         <Image
-          className='gameTwoPic mx-auto d-block pt-4'
+          className="gameTwoPic mx-auto d-block pt-4"
           src={WorldMap}
-          alt='Picture of world map.'
+          alt="Picture of world map."
         ></Image>
       );
     }
@@ -51,7 +62,10 @@ const PlayGame = (props) => {
     >
       {gameImage}
       {isHovering && (
-        <Button className='playButton mx-auto d-block text-center fw-bold font-monospace'>
+        <Button
+          className="playButton mx-auto d-block text-center fw-bold font-monospace"
+          onClick={play}
+        >
           Play!
         </Button>
       )}
