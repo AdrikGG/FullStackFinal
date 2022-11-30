@@ -26,9 +26,12 @@ const ProfileBoxEdit = () => {
     'image/jpeg'
   ];
 
-  useEffect(() => {
-    getUser();
-  }, []);
+  useEffect(
+    () => {
+      getUser();
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
   const [username, setUsername] = useState(user ? user.username : '');
   const [password, setPassword] = useState('');
@@ -200,16 +203,20 @@ const ProfileBoxEdit = () => {
   let pix = displayAvi(true);
 
   return (
-    <Container className="mt-5 pt-3 bg-light border rounded w-50">
+    <Container>
       <Row>
         <Col className="d-flex justify-content-center">{pix}</Col>
-        <input onChange={(e) => handleFileInputChange(e)} type="file" />
+        <input
+          className="m-3 text-center"
+          onChange={(e) => handleFileInputChange(e)}
+          type="file"
+        />
         <MainButton
           text="Upload Profile Picture"
           onClick={(e) => handleSubmitFile(e)}
         ></MainButton>
       </Row>
-      <Row className="my-3">
+      <Row className="m-3">
         <Col className="d-flex justify-content-around fw-bold">Username:</Col>
         <Col className="d-flex justify-content-around text-primary">
           {user?.username}
@@ -221,7 +228,7 @@ const ProfileBoxEdit = () => {
           mnaya@pdx.edu
         </Col>
       </Row> */}
-      <Row>
+      <Row className="m-3">
         <label htmlFor={'usernameUpdate'}>Change username:</label>
         <input
           type={'text'}
@@ -231,7 +238,7 @@ const ProfileBoxEdit = () => {
           onChange={(e) => setUsername(e.target.value)}
         ></input>
       </Row>
-      <Row>
+      <Row className="m-3">
         <label htmlFor={'passUpdate'}>Change Password:</label>
         <input
           type={'password'}
@@ -241,7 +248,7 @@ const ProfileBoxEdit = () => {
           onChange={(e) => setPassword(e.target.value)}
         ></input>
       </Row>
-      <Row className="border m-2">
+      <Row className="border m-3">
         <Row className="m-2">
           <Col className="d-flex justify-content-around fw-bold">
             High Score Game1
@@ -271,7 +278,7 @@ const ProfileBoxEdit = () => {
           </Col>
         </Row>
       </Row>
-      <Row>
+      <Row className="m-3">
         <label htmlFor={'passCheck'}>Enter old password to save changes:</label>
         <input
           type={'password'}
@@ -281,7 +288,7 @@ const ProfileBoxEdit = () => {
           onChange={(e) => setOldPassword(e.target.value)}
         ></input>
       </Row>
-      <Row>
+      <Row className="m-3">
         <Col className="d-flex justify-content-start">
           <MainButton
             text="Delete Account"

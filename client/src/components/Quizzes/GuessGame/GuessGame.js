@@ -16,11 +16,14 @@ const GuessGame = () => {
   const [data, setData] = useState({});
   const [win, setWin] = useState(false);
 
-  useEffect(() => {
-    getRandCountry();
-    getUser();
-    return () => {};
-  }, []);
+  useEffect(
+    () => {
+      getRandCountry();
+      getUser();
+      return () => {};
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
   const getUser = () => {
     // console.log('get user');
@@ -74,7 +77,7 @@ const GuessGame = () => {
           'orange',
           'yellow',
           'green',
-          'blue',
+          'blue'
         ]);
 
         const color = gradient(dist / maxDist).hex();
@@ -99,7 +102,7 @@ const GuessGame = () => {
         'orange',
         'yellow',
         'green',
-        'blue',
+        'blue'
       ]);
 
       const color = gradient(dist / maxDist).hex();
@@ -128,12 +131,12 @@ const GuessGame = () => {
       axios
         .patch(`/api/users/${user._id}`, {
           hsq1: user.highscores ? user.highscores.quiz1 : '0',
-          hsq2: guessCounter + 1,
+          hsq2: guessCounter + 1
         })
         .then((res) => {
           store.dispatch({
             type: 'update_user',
-            user: user,
+            user: user
           });
         })
         .catch((err) => {

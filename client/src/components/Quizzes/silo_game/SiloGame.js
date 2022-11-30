@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import store from '../../../store/index';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -74,12 +73,12 @@ const SiloGame = () => {
       axios
         .patch(`/api/users/${user._id}`, {
           hsq1: score + 1,
-          hsq2: user.highscores ? user.highscores.quiz2 : '0',
+          hsq2: user.highscores ? user.highscores.quiz2 : '0'
         })
         .then((res) => {
           store.dispatch({
             type: 'update_user',
-            user: user,
+            user: user
           });
         })
         .catch((err) => {

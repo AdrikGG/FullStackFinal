@@ -15,9 +15,12 @@ const ProfileBox = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(useSelector((state) => state.user));
 
-  useEffect(() => {
-    getUser();
-  }, []);
+  useEffect(
+    () => {
+      getUser();
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
   const getUser = () => {
     console.log('get user');
@@ -68,7 +71,7 @@ const ProfileBox = () => {
   let pix = displayAvi(false);
 
   return (
-    <Container className="mt-5 pt-3 bg-light border rounded w-50">
+    <Container className="">
       <Row>
         <Col className="d-flex justify-content-center">{pix}</Col>
       </Row>
@@ -81,7 +84,6 @@ const ProfileBox = () => {
       {/* <Row className="my-3">
         <Col className="d-flex justify-content-around fw-bold">Email:</Col>
         <Col className="d-flex justify-content-around  text-primary">
-          mnaya@pdx.edu
         </Col>
       </Row> */}
       <Row className="border m-2">
@@ -101,9 +103,6 @@ const ProfileBox = () => {
             {user?.highscores?.quiz2 ? user.highscores.quiz2 : 'No score'}
           </Col>
         </Row>
-      </Row>
-      <Row>
-        <MainButton text="Edit Profile" type="button" looks={{ width: 500 }} />
       </Row>
     </Container>
   );
