@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import store from '../../../store/index';
 import Button from 'react-bootstrap/Button';
@@ -17,7 +16,6 @@ const imageFldr = require.context('./countryshapes/', false);
 const maxScore = countries.length;
 
 const SiloGame = () => {
-  const navigate = useNavigate();
   const [user, setUser] = useState(useSelector((state) => state.user));
 
   const inputRef = useRef(null);
@@ -41,19 +39,18 @@ const SiloGame = () => {
     // console.log('get user');
     let id = localStorage.getItem('_ID');
     if (!id) {
-      console.log('invalid path: no user logged in');
+      console.log('no user logged in');
       localStorage.clear();
-      navigate('/dashboard');
-      window.location.reload();
+    } else {
+      axios
+        .get('/api/users/' + id)
+        .then((res) => {
+          setUser(res.data.user);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
-    axios
-      .get('/api/users/' + id)
-      .then((res) => {
-        setUser(res.data.user);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   };
 
   const startGame = () => {
@@ -66,27 +63,29 @@ const SiloGame = () => {
   };
 
   const endGame = () => {
-    if (user.highscores) {
-      if (user.highscores.quiz1) {
-        if (user.highscores.quiz1 >= score + 1) {
-          return;
+    if (user) {
+      if (user.highscores) {
+        if (user.highscores.quiz1) {
+          if (user.highscores.quiz1 >= score + 1) {
+            return;
+          }
         }
       }
-    }
-    axios
-      .patch(`/api/users/${user._id}`, {
-        hsq1: score + 1,
-        hsq2: user.highscores ? user.highscores.quiz2 : '0'
-      })
-      .then((res) => {
-        store.dispatch({
-          type: 'update_user',
-          user: user
+      axios
+        .patch(`/api/users/${user._id}`, {
+          hsq1: score + 1,
+          hsq2: user.highscores ? user.highscores.quiz2 : '0',
+        })
+        .then((res) => {
+          store.dispatch({
+            type: 'update_user',
+            user: user,
+          });
+        })
+        .catch((err) => {
+          console.log(err, 'Something went wrong updating your profile');
         });
-      })
-      .catch((err) => {
-        console.log(err, 'Something went wrong updating your profile');
-      });
+    }
   };
 
   const randomNum = (min, max) => {
