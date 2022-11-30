@@ -3,7 +3,9 @@
 Make sure the following dependecies are installed, follow the individual instructions on each website.
 
 MongoDB: https://www.mongodb.com/home
+
 Express: https://expressjs.com/
+
 NodeJS: https://nodejs.org/en/
 
 
