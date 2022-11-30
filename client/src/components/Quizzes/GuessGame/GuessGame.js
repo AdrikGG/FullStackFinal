@@ -55,7 +55,7 @@ const GuessGame = () => {
           'orange',
           'yellow',
           'green',
-          'blue',
+          'blue'
         ]);
 
         const color = gradient(dist / maxDist).hex();
@@ -65,6 +65,7 @@ const GuessGame = () => {
       setData(colorFill);
       setWin(true);
       updateProfile();
+      setGuessCounter(guessCounter + 1);
     } else {
       const guessCode = countryList.find((countryObj) => {
         return countryObj.country.toLowerCase() === userInput.toLowerCase();
@@ -79,7 +80,7 @@ const GuessGame = () => {
         'orange',
         'yellow',
         'green',
-        'blue',
+        'blue'
       ]);
 
       const color = gradient(dist / maxDist).hex();
@@ -105,7 +106,7 @@ const GuessGame = () => {
     }
     axios
       .patch(`/api/users/${user._id}`, {
-        hsq2: guessCounter + 1,
+        hsq2: guessCounter + 1
       })
       .then((res) => {})
       .catch((err) => {

@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const checkAuth = require('../middleware/check-auth');
 const {
   loginValidator,
-  registerValidator,
+  registerValidator
 } = require('../validators/validators');
 
 const router = express.Router();
@@ -23,7 +23,7 @@ router.post('/login', (req, res) => {
       if (!user) {
         res.json({
           message: 'No account found with the username ' + req.body.username,
-          success: false,
+          success: false
         });
       } else {
         // check if passwords match
@@ -31,14 +31,14 @@ router.post('/login', (req, res) => {
           if (!success) {
             res.json({
               message: `Incorrect password`,
-              success: false,
+              success: false
             });
           } else {
             // store data and token in jwt (stored in browser cache)
             // jwt is used for authentication and staying logged in
             const payload = {
               id: user._id,
-              username: user.username,
+              username: user.username
             };
             jwt.sign(
               payload,
@@ -48,7 +48,7 @@ router.post('/login', (req, res) => {
                 res.json({
                   user,
                   token: 'Bearer token: ' + token,
-                  success: true,
+                  success: true
                 });
               }
             );
@@ -72,7 +72,7 @@ router.post('/register', (req, res) => {
     const registerUser = new Users({
       username,
       password,
-      createdOn: new Date(),
+      createdOn: new Date()
     });
     // hash password
     bcrypt.genSalt(10, (genErr, salt) => {
@@ -114,19 +114,19 @@ router.post('/upload-image', checkAuth, async (req, res) => {
     Users.findOne({ _id: req.body._id }).then((user) => {
       user.avatar = {
         url: uploaded.url,
-        publicId: uploaded.public_id,
+        publicId: uploaded.public_id
       };
       user.save();
       if (user.images) {
         user.images.push({
           url: uploaded.url,
-          publicId: uploaded.public_id,
+          publicId: uploaded.public_id
         });
       } else {
         user.images = [];
         user.images.push({
           url: uploaded.url,
-          publicId: uploaded.public_id,
+          publicId: uploaded.public_id
         });
       }
       res.json({ success: true });
@@ -135,7 +135,7 @@ router.post('/upload-image', checkAuth, async (req, res) => {
     console.log(err);
     res.json({
       success: false,
-      message: 'Something went wrong, please try again.',
+      message: 'Something went wrong, please try again.'
     });
   }
 });
@@ -152,36 +152,72 @@ router.patch('/:id', checkAuth, (req, res) => {
     if (!updateOps.highscores) updateOps.highscores = {};
     updateOps.highscores.quiz2 = req.body.hsq2;
   }
-  if (req.body.username) {
-    updateOps.username = req.body.username;
-  }
-  if (req.body.password) {
-    let updatedPassword = req.body.password;
-    console.log('about to hash');
-    bcrypt.genSalt(10, (genErr, salt) => {
-      bcrypt.hash(updatedPassword, salt, (hashErr, hash) => {
-        if (genErr || hashErr) {
-          res.json({ message: 'Error occured while hashing', success: false });
-          return;
-        }
-        // store hashed password
-        updatedPassword = hash;
-        console.log('updated password: ', updatedPassword);
-        updateOps.password = updatedPassword;
+  if (req.body.oldPassword) {
+    Users.findOne({ _id: req.params.id })
+      .then((user) => {
+        bcrypt.compare(req.body.oldPassword, user.password).then((success) => {
+          if (!success) {
+            res.json({
+              message: `Incorrect password`,
+              success: false
+            });
+          } else {
+            if (req.body.username) {
+              updateOps.username = req.body.username;
+            }
+            if (req.body.password) {
+              let updatedPassword = req.body.password;
+              console.log('about to hash');
+              bcrypt.genSalt(10, (genErr, salt) => {
+                bcrypt.hash(updatedPassword, salt, (hashErr, hash) => {
+                  if (genErr || hashErr) {
+                    res.json({
+                      message: 'Error occured while hashing',
+                      success: false
+                    });
+                    return;
+                  }
+                  // store hashed password
+                  updatedPassword = hash;
+                  console.log('updated password: ', updatedPassword);
+                  updateOps.password = updatedPassword;
 
-        console.log('updating params', updateOps);
-        User.updateOne({ _id: id }, { $set: updateOps })
-          .exec()
-          .then((result) => {
-            console.log('res', result);
-            res.status(200).json(result);
-          })
-          .catch((err) => {
-            console.log('err', err);
-            res.status(500).json({ success: false, message: err.message });
-          });
+                  console.log('updating params', updateOps);
+                  User.updateOne({ _id: id }, { $set: updateOps })
+                    .exec()
+                    .then((result) => {
+                      console.log('res', result);
+                      res.status(200).json(result);
+                    })
+                    .catch((err) => {
+                      console.log('err', err);
+                      res
+                        .status(500)
+                        .json({ success: false, message: err.message });
+                    });
+                });
+              });
+            } else {
+              console.log('updating params', updateOps);
+              User.updateOne({ _id: id }, { $set: updateOps })
+                .exec()
+                .then((result) => {
+                  console.log('res', result);
+                  res.status(200).json(result);
+                })
+                .catch((err) => {
+                  console.log('err', err);
+                  res
+                    .status(500)
+                    .json({ success: false, message: err.message });
+                });
+            }
+          }
+        });
+      })
+      .catch((err) => {
+        res.json({ success: false, message: err.message });
       });
-    });
   } else {
     console.log('updating params', updateOps);
     User.updateOne({ _id: id }, { $set: updateOps })

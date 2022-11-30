@@ -23,7 +23,7 @@ const ProfileBoxEdit = () => {
     'jpeg',
     'image/jpg',
     'image/png',
-    'image/jpeg',
+    'image/jpeg'
   ];
 
   useEffect(() => {
@@ -51,17 +51,6 @@ const ProfileBoxEdit = () => {
       .catch((err) => {
         console.log(err);
       });
-  };
-
-  const checkPassword = () => {
-    // bcrypt.compare(oldPassword, user.password).then((success) => {
-    //   if (!success) {
-    //     setMessage('Incorrect password');
-    //     return false;
-    //   } else {
-    //     return true;
-    //   }
-    // });
   };
 
   const handleFileInputChange = (e) => {
@@ -97,7 +86,7 @@ const ProfileBoxEdit = () => {
         '/api/users/upload-image',
         JSON.stringify({
           data: previewSrc,
-          _id: user._id,
+          _id: user._id
         })
       )
       .then((res) => {
@@ -116,12 +105,32 @@ const ProfileBoxEdit = () => {
       });
   };
 
+  const clearHS = (hsTag) => {
+    let hs = { hsq1: user.highscores.quiz1, hsq2: user.highscores.quiz2 };
+    if (hsTag === 'hsq1') {
+      hs.hsq1 = null;
+    } else {
+      hs.hsq2 = null;
+    }
+    axios
+      .patch(`/api/users/${user._id}`, hs)
+      .then((res) => {
+        console.log(res);
+        store.dispatch({
+          type: 'update_user',
+          user: user
+        });
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.log(err);
+        setMessage('Something went wrong updating your profile');
+      });
+  };
+
   const updateProfile = (e) => {
     e.preventDefault();
     console.log('updating profile');
-    if (!checkPassword) {
-      return;
-    }
     console.log(
       username !== user.username ? username : null,
       password !== '' ? password : null
@@ -131,12 +140,13 @@ const ProfileBoxEdit = () => {
         username:
           username !== user.username && username !== '' ? username : null,
         password: password !== '' ? password : null,
+        oldPassword: oldPassword
       })
       .then((res) => {
         console.log(res);
         store.dispatch({
           type: 'update_user',
-          user: user,
+          user: user
         });
         window.location.reload();
       })
@@ -231,7 +241,6 @@ const ProfileBoxEdit = () => {
           onChange={(e) => setPassword(e.target.value)}
         ></input>
       </Row>
-
       <Row className="border m-2">
         <Row className="m-2">
           <Col className="d-flex justify-content-around fw-bold">
@@ -241,7 +250,10 @@ const ProfileBoxEdit = () => {
             {user?.highscores?.quiz1 ? user.highscores.quiz1 : 'No score'}
           </Col>
           <Col>
-            <MainButton text="Clear"></MainButton>
+            <MainButton
+              text="Clear"
+              onClick={() => clearHS('hsq1')}
+            ></MainButton>
           </Col>
         </Row>
         <Row className="m-2">
@@ -252,7 +264,10 @@ const ProfileBoxEdit = () => {
             {user?.highscores?.quiz2 ? user.highscores.quiz2 : 'No score'}
           </Col>
           <Col>
-            <MainButton text="Clear"></MainButton>
+            <MainButton
+              text="Clear"
+              onClick={() => clearHS('hsq2')}
+            ></MainButton>
           </Col>
         </Row>
       </Row>
