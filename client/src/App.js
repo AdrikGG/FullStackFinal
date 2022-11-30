@@ -1,7 +1,7 @@
 import './App.css';
+//import ScoreBox from './silo_game/ScoreBox';
 import SiloGame from './silo_game/SiloGame';
 
-import ScoreCard from './silo_game/ScoreCard';
 //import DisplayGame from './silo_game/DisplayGame';
 //import { Routes, Route } from 'react-router-dom';
 //import Layout from './pages/Layout';
@@ -11,7 +11,6 @@ function App() {
   return (
     <div className='App'>
       <SiloGame />
-      <ScoreCard />
     </div>
   );
 }

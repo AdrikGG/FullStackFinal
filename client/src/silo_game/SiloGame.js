@@ -1,155 +1,105 @@
-import React, { useEffect, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-//Imported this and fixed the countryNames file with what Adrik showed us.
 import countries from './countryNames';
+import ScoreBox from './ScoreBox';
+
+const imageFldr = require.context('./countryshapes/', false);
+const maxScore = countries.length;
 
 const SiloGame = () => {
-  const [currentScore] = useState(0);
-  const [currentCountry] = useState(0);
-  const maxScore = 0;
+  const inputRef = useRef(null);
+  const [score, setScore] = useState(0);
+  const [countryHint, setCountryHint] = useState('');
+  const [rotationVal, setRotationVal] = useState('');
+  const [currentMap, setCurrentMap] = useState('');
+  const [currentCountry, setCountry] = useState({});
+  const [isError, setIsError] = useState(false);
+  const [isHint, setIsHint] = useState(false);
 
-  useEffect(() => {
-    getCountry();
+  useEffect(
+    () => {
+      startGame();
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
-    return () => {};
-  }, []);
+  const startGame = () => {
+    setIsError(false);
+    let [currCountry, mapImg] = getCountry();
+    setCurrentMap(mapImg);
+    setCountry(currCountry);
+    console.log(currCountry);
+    setCountryHint(currCountry['hint']);
+  };
 
-  //From your game.js file.
   const randomNum = (min, max) => {
-    // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
-  //From your game.js file. No changes.
   let randomRotation = () => {
     const rotationValues = [0, 90, 180, 270];
-    const randomRotationValue =
+    setRotationVal(
       'rotate(' +
-      rotationValues[
-        Math.floor(Math.random() * rotationValues.length)
-      ].toString() +
-      'deg)';
-    return randomRotationValue;
+        rotationValues[
+          Math.floor(Math.random() * rotationValues.length)
+        ].toString() +
+        'deg)'
+    );
   };
 
-  export function startGame() {
-    //Get max score before country removed
-    maxScore = countries.length;
-    //get random Country
-    getCountry();
-    //Current Score
-    currentScore = 0;
-    //set Scoreboard
-    scoreBoard();
-  }
-  
-  //From game.js file. 
-  let getCountry = () => {
-
-    let randomCounty = randomNum(0, countries.length - 1);
-
-    let currCountry = countries.splice(randomCounty, 1)[0];
-  
-    let temp = currCountry['imageSrc'];
-    const imageFldr = require.context('./countryshapes/', false);
-
-    let image = imageFldr(`./${temp}`);
-
-    return image;
+  const getCountry = () => {
+    let randomCountry = randomNum(0, countries.length - 1);
+    let currCountry = countries.splice(randomCountry, 1)[0];
+    let mapImg = getCountryMap(currCountry['imageSrc']);
+    return [currCountry, mapImg];
   };
 
-  //call the getCountry function and store the image path into currentImage
-  let currentImage = getCountry();
+  const getCountryMap = (pathMap) => {
+    randomRotation();
+    return imageFldr(`./${pathMap}`);
+  };
 
-  let scoreBoard = () => {
-    //let scoreBox = document.getElementById('currentScore');
-    let scoreBox = currentScore + ' / ' + maxScore;
-    return scoreBox;
-  }
-  
-  const giveHint = () => {
-    let hint = document.getElementById('hintOutput');
-    hint.innerHTML =
-      '<div class="alert alert-primary" role="alert">' +
-      currCountry['hint'] +
-      '</div>';
-  }
-  
-  const giveError = () => {
-    let err = document.getElementById('hintOutput');
-    err.innerHTML =
-      '<div class="alert alert-danger" role="alert">Incorrect</div>';
-  }
-  
   const submitAnswer = () => {
-    console.log(currentCountry); //REMOVE
-  
-    let error = document.getElementById('hintOutput');
-    error.innerHTML = '';
-  
-    let guess = document.getElementById('guess').value.toLowerCase();
+    let userInput = inputRef.current.value;
     if (
-      (guess !== 'n/a' && guess === currCountry['answer']) ||
-      guess === currCountry['altAnswer']
+      userInput.toLowerCase() === currentCountry['answer'] ||
+      userInput.toLowerCase() === currentCountry['altAnswer']
     ) {
-      currentScore++;
-      getCountry();
-      scoreBoard();
-    } else {
-      giveError();
+      getScore();
+      startGame();
+      setIsHint(false);
+    } else if (
+      userInput.toLowerCase() !== currentCountry['answer'] ||
+      userInput.toLowerCase() !== currentCountry['altAnswer']
+    ) {
+      setIsError(true);
     }
-    document.getElementById('guess').value = '';
-  }
-  
-  const endGame = () => {
-    let answer = confirmClick();
-    if (answer === true) {
-      //Store Answer to profile
-      //Return to main page
-    }
-  }
-  
-  const resetGame = () => {
-    let answer = confirmClick();
-    if (answer === true) {
-      window.location.reload();
-    }
-  }
-  
-  const confirmClick = () => {
-    let text;
-    if (Window.confirm('Are you sure?') === true) {
-      text = 'Score reset';
-      return true;
-    } else {
-      text = 'Cancelled';
-      console.log(text);
-      return false;
-    }
-  }
-  
+  };
+
+  const getScore = () => {
+    setScore(score + 1);
+  };
+
+  const showHint = () => {
+    setIsHint(true);
+  };
 
   return (
     <Card className='text-center' style={{ width: 20 }}>
-      {/**
-       * (these are comments, to remove them make sure to delete the curly braces.)
-       *
-       * so in card.img use that path that is stored in currentImage. To do the rotation
-       * call the randomRotation function within the transform CSS property.
-       * the style prop in the <Card.Img> element lets you customize and style with CSS
-       */}
-      <Card.Img
-        src={currentImage}
-        fluid={true}
-        style={{ transform: randomRotation }}
-      />
       <Card.Body>
-        <Button variant='Success'>Submit</Button>
-        <Button variant='Warning'>Give Hint</Button>
+        <Card.Img src={currentMap} style={{ transform: rotationVal }} />
+        <input ref={inputRef} type='text' id='guess' name='guess'></input>
+        <Button variant='Submit' onClick={submitAnswer}>
+          Submit
+        </Button>
+        <Button onClick={showHint}>Hint</Button>
+        {isHint && <div>{countryHint}</div>}
+        {isError && <div>Incorrect Answer</div>}
+        <ScoreBox score={score + '/' + maxScore} />
       </Card.Body>
     </Card>
   );
-}
+};
 
 export default SiloGame;
