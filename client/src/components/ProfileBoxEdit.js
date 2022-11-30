@@ -11,7 +11,6 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import store from '../store/index';
-import bcrypt from 'bcrypt';
 
 const ProfileBoxEdit = () => {
   const navigate = useNavigate();
@@ -55,14 +54,14 @@ const ProfileBoxEdit = () => {
   };
 
   const checkPassword = () => {
-    bcrypt.compare(oldPassword, user.password).then((success) => {
-      if (!success) {
-        setMessage('Incorrect password');
-        return false;
-      } else {
-        return true;
-      }
-    });
+    // bcrypt.compare(oldPassword, user.password).then((success) => {
+    //   if (!success) {
+    //     setMessage('Incorrect password');
+    //     return false;
+    //   } else {
+    //     return true;
+    //   }
+    // });
   };
 
   const handleFileInputChange = (e) => {
