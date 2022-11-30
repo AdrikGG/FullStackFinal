@@ -1,5 +1,5 @@
 import ProfileBox from '../components/ProfileBox';
-import ProfileBoxEdit from '../components/ProfileBoxEdit';
+//import ProfileBoxEdit from '../components/ProfileBoxEdit';
 import Row from 'react-bootstrap/Row';
 
 const Profile = () => {
@@ -13,7 +13,6 @@ const Profile = () => {
     <div className='p-5'>
       <Row>
         <ProfileBox></ProfileBox>
-        <ProfileBoxEdit></ProfileBoxEdit>
       </Row>
     </div>
   );

@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   height: 300px;
-  background: rgb(125, 174, 137);
+  background: rgb(18, 43, 98);
   border-radius: 26px;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .qMark {
-  width: 100%;
+  width: 80%;
   height: 100%;
   position: absolute;
   top: 50%;
@@ -48,17 +48,17 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #6d8fae !important;
+  background-color: #567088 !important;
   font-size: 70px !important;
   border: none !important;
   cursor: pointer;
-  border-radius: 15px;
+  border-radius: 26px !important;
 }
 
 .playButton:hover {
-  background-color: #54718c !important;
+  background-color: #87a0b8 !important;
 }
 
 .playButton:active {
-  background-color: #6d8fae !important;
+  background-color: #567088 !important;
 }
