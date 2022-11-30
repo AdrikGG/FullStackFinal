@@ -1,3 +1,12 @@
+# Getting Started with the Geography Game
+
+Make sure the following dependecies are installed, follow the individual instructions on each website.
+
+MongoDB: https://www.mongodb.com/home
+Express: https://expressjs.com/
+NodeJS: https://nodejs.org/en/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
