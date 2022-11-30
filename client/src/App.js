@@ -22,7 +22,7 @@ const App = () => {
         .then((res) => {
           store.dispatch({
             user: res.data.user,
-            type: 'set_user'
+            type: 'set_user',
           });
         })
         .catch((err) => {
@@ -35,19 +35,17 @@ const App = () => {
     <div className="app">
       <Navbar />
       <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="Login" element={<Login />} />
+          <Route path="Profile" element={<Profile />} />
+        </Route>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/account" element={<Auth />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/quiz01" element={<Quiz01 />} />
         <Route path="/guess-game" element={<GuessGame />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
-    <div className='App'>
-      <Routes>
-        <Route path='/' element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path='Login' element={<Login />} />
-          <Route path='Profile' element={<Profile />} />
-        </Route>
       </Routes>
     </div>
   );
