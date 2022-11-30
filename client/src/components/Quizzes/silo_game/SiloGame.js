@@ -1,4 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import store from '../../../store/index';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
@@ -13,6 +17,9 @@ const imageFldr = require.context('./countryshapes/', false);
 const maxScore = countries.length;
 
 const SiloGame = () => {
+  const navigate = useNavigate();
+  const [user, setUser] = useState(useSelector((state) => state.user));
+
   const inputRef = useRef(null);
   const [score, setScore] = useState(0);
   const [countryHint, setCountryHint] = useState('');
@@ -25,9 +32,29 @@ const SiloGame = () => {
   useEffect(
     () => {
       startGame();
+      getUser();
     }, // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
+
+  const getUser = () => {
+    // console.log('get user');
+    let id = localStorage.getItem('_ID');
+    if (!id) {
+      console.log('invalid path: no user logged in');
+      localStorage.clear();
+      navigate('/dashboard');
+      window.location.reload();
+    }
+    axios
+      .get('/api/users/' + id)
+      .then((res) => {
+        setUser(res.data.user);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const startGame = () => {
     setIsError(false);
@@ -36,6 +63,30 @@ const SiloGame = () => {
     setCountry(currCountry);
     console.log(currCountry);
     setCountryHint(currCountry['hint']);
+  };
+
+  const endGame = () => {
+    if (user.highscores) {
+      if (user.highscores.quiz1) {
+        if (user.highscores.quiz1 >= score + 1) {
+          return;
+        }
+      }
+    }
+    axios
+      .patch(`/api/users/${user._id}`, {
+        hsq1: score + 1,
+        hsq2: user.highscores ? user.highscores.quiz2 : '0'
+      })
+      .then((res) => {
+        store.dispatch({
+          type: 'update_user',
+          user: user
+        });
+      })
+      .catch((err) => {
+        console.log(err, 'Something went wrong updating your profile');
+      });
   };
 
   const randomNum = (min, max) => {
@@ -65,8 +116,8 @@ const SiloGame = () => {
     return imageFldr(`./${pathMap}`);
   };
 
-  const submitAnswer = () => {
-    let userInput = inputRef.current.value;
+  const submitAnswer = (guess) => {
+    let userInput = guess;
     if (
       userInput.toLowerCase() === currentCountry['answer'] ||
       userInput.toLowerCase() === currentCountry['altAnswer']
@@ -91,31 +142,38 @@ const SiloGame = () => {
   };
 
   return (
-    <Container className='flex-wrap justify-content-center'>
-      <Row className=' justify-content-center'>
+    <Container className="flex-wrap justify-content-center">
+      <Row className=" justify-content-center">
         <Col>
           <Image
             fluid={true}
-            className='m-5'
+            className="m-5"
             src={currentMap}
             style={{ transform: rotationVal, maxWidth: 200, maxHeight: 200 }}
-            alt='Country map'
+            alt="Country map"
           ></Image>
         </Col>
       </Row>
-
-      <Stack direction='horizontal' gap={3}>
-        <p>Guess an answer: </p>
-        <input ref={inputRef} type='text' id='guess' name='guess'></input>
-        <Button onClick={submitAnswer}>Submit</Button>
+      <Stack direction="horizontal" gap={3}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            submitAnswer(e.target.guess.value);
+            e.target.guess.value = '';
+          }}
+        >
+          <p>Guess an answer: </p>
+          <input ref={inputRef} type="text" id="guess" name="guess"></input>
+          <Button type="submit">Submit</Button>
+        </form>
       </Stack>
       {isError && <div>Incorrect Answer</div>}
-      <Stack direction='horizontal' gap={3}>
+      <Stack direction="horizontal" gap={3}>
         <Button onClick={showHint}>Hint</Button>{' '}
         {isHint && <div>{countryHint}</div>}
       </Stack>
-
       <ScoreBox score={score + '/' + maxScore} />
+      <Button onClick={endGame}>End Game</Button>
     </Container>
   );
 };

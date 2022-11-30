@@ -144,17 +144,9 @@ router.patch('/:id', checkAuth, (req, res) => {
   const id = req.params.id;
   const updateOps = {};
   console.log(req.body);
-  if (req.body.hsq1) {
-    if (!updateOps.highscores) updateOps.highscores = {};
-    updateOps.highscores.quiz1 = req.body.hsq1;
-  }
-  if (req.body.hsq2) {
-    if (!updateOps.highscores) updateOps.highscores = {};
-    updateOps.highscores.quiz2 = req.body.hsq2;
-  }
-  if (req.body.oldPassword) {
-    Users.findOne({ _id: req.params.id })
-      .then((user) => {
+  Users.findOne({ _id: req.params.id })
+    .then((user) => {
+      if (req.body.oldPassword) {
         bcrypt.compare(req.body.oldPassword, user.password).then((success) => {
           if (!success) {
             res.json({
@@ -214,23 +206,36 @@ router.patch('/:id', checkAuth, (req, res) => {
             }
           }
         });
-      })
-      .catch((err) => {
-        res.json({ success: false, message: err.message });
-      });
-  } else {
-    console.log('updating params', updateOps);
-    User.updateOne({ _id: id }, { $set: updateOps })
-      .exec()
-      .then((result) => {
-        console.log('res', result);
-        res.status(200).json(result);
-      })
-      .catch((err) => {
-        console.log('err', err);
-        res.status(500).json({ success: false, message: err.message });
-      });
-  }
+      } else {
+        if (req.body.hsq1) {
+          if (!updateOps.highscores) updateOps.highscores = {};
+          updateOps.highscores.quiz1 = req.body.hsq1;
+        } else {
+          updateOps.highscores.quiz1 = user.highscores.quiz1;
+        }
+        if (req.body.hsq2) {
+          if (!updateOps.highscores) updateOps.highscores = {};
+          updateOps.highscores.quiz2 = req.body.hsq2;
+        } else {
+          updateOps.highscores.quiz2 = user.highscores.quiz2;
+        }
+
+        console.log('updating params', updateOps);
+        User.updateOne({ _id: id }, { $set: updateOps })
+          .exec()
+          .then((result) => {
+            console.log('res', result);
+            res.status(200).json(result);
+          })
+          .catch((err) => {
+            console.log('err', err);
+            res.status(500).json({ success: false, message: err.message });
+          });
+      }
+    })
+    .catch((err) => {
+      res.json({ success: false, message: err.message });
+    });
 });
 
 router.delete('/:id', checkAuth, (req, res) => {

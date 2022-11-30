@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import store from '../../../store/index';
 import chroma from 'chroma-js';
 import countryList from './countryList';
 import Datamap from './DataMap';
 import './GuessGame.css';
 
 const GuessGame = () => {
-  const user = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  const [user, setUser] = useState(useSelector((state) => state.user));
 
   const maxScore = countryList.length;
   const [guessCounter, setGuessCounter] = useState(0);
@@ -17,9 +20,28 @@ const GuessGame = () => {
 
   useEffect(() => {
     getRandCountry();
-
+    getUser();
     return () => {};
   }, []);
+
+  const getUser = () => {
+    // console.log('get user');
+    let id = localStorage.getItem('_ID');
+    if (!id) {
+      console.log('invalid path: no user logged in');
+      localStorage.clear();
+      navigate('/dashboard');
+      window.location.reload();
+    }
+    axios
+      .get('/api/users/' + id)
+      .then((res) => {
+        setUser(res.data.user);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   //Get a random integer to grab random country.
   const getRandInteger = (min, max) => {
@@ -100,15 +122,22 @@ const GuessGame = () => {
     if (user.highscores) {
       if (user.highscores.quiz2) {
         if (user.highscores.quiz2 <= guessCounter + 1) {
+          console.log('highscore is still: ', user.highscores.quiz2);
           return;
         }
       }
     }
     axios
       .patch(`/api/users/${user._id}`, {
+        hsq1: user.highscores ? user.highscores.quiz1 : '0',
         hsq2: guessCounter + 1
       })
-      .then((res) => {})
+      .then((res) => {
+        store.dispatch({
+          type: 'update_user',
+          user: user
+        });
+      })
       .catch((err) => {
         console.log(err, 'Something went wrong updating your profile');
       });
