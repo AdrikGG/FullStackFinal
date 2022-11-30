@@ -10,6 +10,7 @@ import Quiz01 from './components/Quizzes/Quiz01';
 import GuessGame from './components/Quizzes/GuessGame/GuessGame';
 import './App.css';
 import Login from './pages/Login';
+import MyNavbar from './pages/MyNavbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
@@ -20,7 +21,7 @@ const App = () => {
         .then((res) => {
           store.dispatch({
             user: res.data.user,
-            type: 'set_user',
+            type: 'set_user'
           });
         })
         .catch((err) => {
@@ -44,6 +45,11 @@ const App = () => {
         <Route path="/quiz01" element={<Quiz01 />} />
         <Route path="/guess-game" element={<GuessGame />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
+        <Route path="/" element={<MyNavbar />}>
+          {/* <Route index element={<Home />} /> */}
+          <Route path="Login" element={<Login />} />
+          <Route path="Profile" element={<Profile />} />
+        </Route>
       </Routes>
     </div>
   );

@@ -1,8 +1,9 @@
 .mainButton {
   border: none !important;
-  background-color: #6d8fae !important;
+  background-color: #567088 !important;
+  border-radius: 13px !important;
 }
 .mainButton:hover {
   border: none !important;
-  background-color: #54718c !important;
+  background-color: #87a0b8 !important;
 }

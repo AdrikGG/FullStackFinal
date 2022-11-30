@@ -1,0 +1,20 @@
+.changeIcon {
+  width: 50px;
+  height: 50px;
+  color: #567088 !important;
+}
+
+.changeText:hover,
+.changeIcon:hover {
+  color: #87a0b8 !important;
+}
+
+.changeText:active,
+.changeIcon:active {
+  color: #567088 !important;
+}
+
+.changeText {
+  font-weight: bold;
+  color: #567088 !important;
+}

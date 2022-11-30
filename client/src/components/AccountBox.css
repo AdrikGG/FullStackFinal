@@ -2,17 +2,17 @@
 .pill2 .nav-link.active,
 .pill1 .nav-link.active:hover,
 .pill2 .nav-link.active:hover {
-  background-color: #6d8fae !important;
+  background-color: #567088 !important;
   color: white;
 }
 
 .pill1 .nav-link:hover,
 .pill2 .nav-link:hover {
   background-color: #e5e4e4;
-  color: #5d7c98;
+  color: #567088;
 }
 
 .pill1 .nav-link,
 .pill2 .nav-link {
-  color: #6d8fae;
+  color: #567088;
 }
