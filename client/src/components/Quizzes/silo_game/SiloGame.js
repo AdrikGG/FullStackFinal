@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import store from '../../../store/index';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -63,6 +62,7 @@ const SiloGame = () => {
   };
 
   const endGame = () => {
+    setScore(0);
     if (user) {
       if (user.highscores) {
         if (user.highscores.quiz1) {
@@ -141,19 +141,23 @@ const SiloGame = () => {
   };
 
   return (
-    <Container className="flex-wrap justify-content-center">
-      <Row className=" justify-content-center">
+    <Container fluid className='p-5 flex-wrap text-center'>
+      <Row className=''>
         <Col>
           <Image
             fluid={true}
-            className="m-5"
+            className='m-5'
             src={currentMap}
             style={{ transform: rotationVal, maxWidth: 200, maxHeight: 200 }}
-            alt="Country map"
+            alt='Country map'
           ></Image>
         </Col>
       </Row>
-      <Stack direction="horizontal" gap={3}>
+      <Stack
+        className='d-flex justify-content-center'
+        direction='horizontal'
+        gap={3}
+      >
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -161,18 +165,44 @@ const SiloGame = () => {
             e.target.guess.value = '';
           }}
         >
-          <p>Guess an answer: </p>
-          <input ref={inputRef} type="text" id="guess" name="guess"></input>
-          <Button type="submit">Submit</Button>
+          <p className='fw-bold mt-4'>Your guess: </p>
+          <input
+            className='m-2'
+            ref={inputRef}
+            type='text'
+            id='guess'
+            name='guess'
+          ></input>
+          <Button
+            style={{ backgroundColor: '#567088', border: 'none' }}
+            type='submit'
+          >
+            Submit
+          </Button>
         </form>
       </Stack>
-      {isError && <div>Incorrect Answer</div>}
-      <Stack direction="horizontal" gap={3}>
-        <Button onClick={showHint}>Hint</Button>{' '}
+      {isError && <p className='text-danger'>Incorrect Answer</p>}
+      <Stack
+        className='d-flex justify-content-center my-3'
+        direction='horizontal'
+        gap={3}
+      >
+        <Button
+          style={{ width: 55, backgroundColor: '#567088', border: 'none' }}
+          onClick={showHint}
+        >
+          Hint
+        </Button>
         {isHint && <div>{countryHint}</div>}
       </Stack>
       <ScoreBox score={score + '/' + maxScore} />
-      <Button onClick={endGame}>End Game</Button>
+      <Button
+        className='m-2'
+        style={{ backgroundColor: '#567088', border: 'none' }}
+        onClick={endGame}
+      >
+        End Game
+      </Button>
     </Container>
   );
 };

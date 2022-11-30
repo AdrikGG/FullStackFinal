@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -13,30 +12,30 @@ import { useSelector } from 'react-redux';
 
 const Layout = () => {
   //const [isUser, setIsUser] = useState(false);
-  //let isUser = true;
-  const user = useSelector((state) => state.user);
-  if (user) console.log(user);
+  let user = true;
+  //const user = useSelector((state) => state.user);
+  //if (user) console.log(user);
 
   return (
     <>
-      <Navbar bg="light">
-        <LinkContainer to="/dashboard">
-          <Navbar.Brand className="changeText">
-            <GoGlobe className="mx-1" style={{ width: 50, height: 50 }} />
+      <Navbar bg='light'>
+        <LinkContainer to='/dashboard'>
+          <Navbar.Brand className='changeText'>
+            <GoGlobe className='mx-1' style={{ width: 50, height: 50 }} />
             GeoQuiz
           </Navbar.Brand>
         </LinkContainer>
-        <Navbar.Collapse className="justify-content-end">
+        <Navbar.Collapse className='justify-content-end'>
           <Nav>
             {user && (
-              <LinkContainer to="/profile">
+              <LinkContainer to='/profile'>
                 <Nav.Link>
-                  <MdAccountCircle className="mx-1 changeIcon" />
+                  <MdAccountCircle className='mx-1 changeIcon' />
                 </Nav.Link>
               </LinkContainer>
             )}
             {!user && (
-              <LinkContainer to="/login">
+              <LinkContainer to='/login'>
                 <Nav.Link>
                   <MainButton
                     text={'Login/Register'}
