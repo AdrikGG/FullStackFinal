@@ -21,6 +21,8 @@ app.use('/api/users/', userRoutes);
 // -------- Deployment --------
 
 __dirname = path.resolve();
+__dirname = path.join(__dirname, '/..');
+console.log(__dirname);
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '/client/build')));
   app.get('*', (req, res) => {
@@ -33,7 +35,7 @@ if (process.env.NODE_ENV === 'production') {
 mongoose
   .connect(process.env.DB_URL, {
     useUnifiedTopology: true,
-    useNewUrlParser: true,
+    useNewUrlParser: true
   })
   .then(() => console.log('Database connection established'))
   .catch((err) => console.log('Error connecting to database: ', err));
