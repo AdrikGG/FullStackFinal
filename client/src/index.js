@@ -7,9 +7,7 @@ import axios from 'axios';
 import { Provider } from 'react-redux';
 import store from './store/index';
 
-let url = 'http://localhost:5002';
-
-axios.defaults.baseURL = url;
+axios.defaults.baseURL = process.env.BASE_URL || 'http://localhost:5002';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.headers.common['Authorization'] =
   localStorage.getItem('JWT_PAYLOAD');
