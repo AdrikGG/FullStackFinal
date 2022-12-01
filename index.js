@@ -21,7 +21,6 @@ app.use('/api/users/', userRoutes);
 // -------- Deployment --------
 
 __dirname = path.resolve();
-__dirname = path.join(__dirname, '/..');
 console.log(__dirname);
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '/client/build')));
