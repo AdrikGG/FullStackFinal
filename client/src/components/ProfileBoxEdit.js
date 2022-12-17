@@ -4,7 +4,6 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Image from 'react-bootstrap/Image';
 import MainButton from '../components/MainButton';
-import cat from './cat.jpg';
 import { FaUserCircle } from 'react-icons/fa';
 
 import { useSelector } from 'react-redux';
@@ -23,7 +22,7 @@ const ProfileBoxEdit = () => {
     'jpeg',
     'image/jpg',
     'image/png',
-    'image/jpeg'
+    'image/jpeg',
   ];
 
   useEffect(
@@ -89,7 +88,7 @@ const ProfileBoxEdit = () => {
         '/api/users/upload-image',
         JSON.stringify({
           data: previewSrc,
-          _id: user._id
+          _id: user._id,
         })
       )
       .then((res) => {
@@ -121,7 +120,7 @@ const ProfileBoxEdit = () => {
         console.log(res);
         store.dispatch({
           type: 'update_user',
-          user: user
+          user: user,
         });
         window.location.reload();
       })
@@ -143,13 +142,13 @@ const ProfileBoxEdit = () => {
         username:
           username !== user.username && username !== '' ? username : null,
         password: password !== '' ? password : null,
-        oldPassword: oldPassword
+        oldPassword: oldPassword,
       })
       .then((res) => {
         console.log(res);
         store.dispatch({
           type: 'update_user',
-          user: user
+          user: user,
         });
         window.location.reload();
       })
@@ -182,8 +181,7 @@ const ProfileBoxEdit = () => {
           width={180}
           height={180}
           roundedCircle={true}
-          src={cat}
-          alt="no"
+          alt="profile avatar"
         ></Image>
       );
     } else {

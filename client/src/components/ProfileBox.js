@@ -3,8 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Image from 'react-bootstrap/Image';
-import MainButton from '../components/MainButton';
-import cat from './cat.jpg';
 import { FaUserCircle } from 'react-icons/fa';
 
 import { useSelector } from 'react-redux';
@@ -50,8 +48,7 @@ const ProfileBox = () => {
           width={180}
           height={180}
           roundedCircle={true}
-          src={cat}
-          alt="no"
+          alt="profile avatar"
         ></Image>
       );
     } else {

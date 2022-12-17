@@ -43,6 +43,10 @@ const AccountBox = () => {
       })
       .catch((err) => {
         console.log(err);
+        setErrorMessage(
+          `An issue occured while attempting to login. 
+          Please try again later.`
+        );
       });
   };
 
@@ -60,6 +64,10 @@ const AccountBox = () => {
       })
       .catch((err) => {
         console.log(err);
+        setErrorMessage(
+          `An issue occured while attempting to register. 
+          Please try again later.`
+        );
       });
   };
 
