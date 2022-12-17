@@ -7,7 +7,7 @@ import WorldMap from '../images/WorldMap.png';
 import AD from '../images/AD.png';
 import question from '../images/question.gif';
 import Button from 'react-bootstrap/Button';
-import './PlayGames.css';
+import './PlayGame.css';
 
 const PlayGame = (props) => {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ const PlayGame = (props) => {
     if (props.isGame1) {
       navigate('/silhouette');
     } else if (props.isGame2) {
-      navigate('/guess-game');
+      navigate('/hot-and-cold');
     }
   };
 

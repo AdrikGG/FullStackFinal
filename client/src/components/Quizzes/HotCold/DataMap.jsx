@@ -15,13 +15,16 @@ export default class Datamap extends React.Component {
     responsive: PropTypes.bool,
     style: PropTypes.object,
     updateChoroplethOptions: PropTypes.object,
-    width: PropTypes.any
+    width: PropTypes.any,
   };
 
   // Resize of map and construct it
   constructor(props) {
     super(props);
     this.resizeMap = this.resizeMap.bind(this);
+
+    // Create a ref using createRef
+    this.container = React.createRef();
   }
 
   // Verify components are mounting per react
@@ -29,6 +32,22 @@ export default class Datamap extends React.Component {
     if (this.props.responsive) {
       window.addEventListener('resize', this.resizeMap);
     }
+
+    // Create the Datamaps object in the constructor
+    this.map = new Datamaps({
+      ...this.props,
+      scope: 'world',
+      projection: 'mercator',
+      geographyConfig: {
+        highlightOnHover: false,
+      },
+      fills: {
+        defaultFill: '#919191',
+      },
+      data: this.props.data,
+      element: this.container.current,
+    });
+
     this.drawMap();
   }
 
@@ -54,7 +73,8 @@ export default class Datamap extends React.Component {
 
   // Clear any containers/arrays
   clear() {
-    const { container } = this.refs;
+    // Use the current property of the container ref to access the DOM element
+    const container = this.container.current;
 
     for (const child of Array.from(container.childNodes)) {
       container.removeChild(child);
@@ -65,32 +85,10 @@ export default class Datamap extends React.Component {
 
   // Draw the map onto the screen
   drawMap() {
-    const { data, updateChoroplethOptions, ...props } = this.props;
+    const { data, updateChoroplethOptions } = this.props;
 
-    let map = this.map;
-
-    if (!map) {
-      map = this.map = new Datamaps({
-        ...props,
-        scope: 'world',
-        projection: 'mercator',
-        geographyConfig: {
-          highlightOnHover: false
-        },
-        fills: {
-          defaultFill: '#919191',
-          farthest: '#540600',
-          far: '#963f0c',
-          close: '#dbb21f',
-          closest: '#bad90d',
-          correct: 'green'
-        },
-        data,
-        element: this.refs.container
-      });
-    } else {
-      map.updateChoropleth(data, updateChoroplethOptions);
-    }
+    // Use the existing map object to update the data and options
+    this.map.updateChoropleth(data, updateChoroplethOptions);
   }
 
   // Resize of map
@@ -104,9 +102,10 @@ export default class Datamap extends React.Component {
       height: '100%',
       position: 'relative',
       width: '100%',
-      ...this.props.style
+      ...this.props.style,
     };
 
-    return <div ref="container" style={style} />;
+    // Use the ref attribute to assign the ref to the container DOM element
+    return <div ref={this.container} style={style} />;
   }
 }

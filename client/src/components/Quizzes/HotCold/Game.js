@@ -5,7 +5,7 @@ import store from '../../../store/index';
 import chroma from 'chroma-js';
 import countryList from './countryList';
 import Datamap from './DataMap';
-import './GuessGame.css';
+import './Game.css';
 
 const GuessGame = () => {
   const [user, setUser] = useState(useSelector((state) => state.user));
@@ -14,29 +14,30 @@ const GuessGame = () => {
   const [guessCounter, setGuessCounter] = useState(0);
   const [currCountry, setCurrCountry] = useState({});
   const [data, setData] = useState({});
-  const [win, setWin] = useState(false);
+  const [hasWon, setWin] = useState(false);
 
-  useEffect(() => {
-    getRandCountry();
-    getUser();
-    return () => {};
-  }, []);
+  useEffect(
+    () => {
+      getRandCountry();
+      getUser();
+      return () => {};
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
-  const getUser = () => {
-    // console.log('get user');
+  const getUser = async () => {
     let id = localStorage.getItem('_ID');
     if (!id) {
       console.log('no user logged in');
       localStorage.clear();
-    } else {
-      axios
-        .get('/api/users/' + id)
-        .then((res) => {
-          setUser(res.data.user);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      return;
+    }
+
+    try {
+      const response = await axios.get(`/api/users/${id}`);
+      setUser(response.data.user);
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -104,41 +105,21 @@ const GuessGame = () => {
 
       const color = gradient(dist / maxDist).hex();
 
-      // data[guessCode['alpha3']] = color;
       setData({ [guessCode['alpha3']]: color });
       setGuessCounter(guessCounter + 1);
-
-      // console.log(
-      //   ' Lat: ' + guessCode['latitude'] + ' Long: ' + guessCode['longitude']
-      // );
-      // console.log(dist);
     }
   };
 
-  const updateProfile = () => {
-    if (user) {
-      if (user.highscores) {
-        if (user.highscores.quiz2) {
-          if (user.highscores.quiz2 <= guessCounter + 1) {
-            console.log('highscore is still: ', user.highscores.quiz2);
-            return;
-          }
-        }
-      }
-      axios
-        .patch(`/api/users/${user._id}`, {
-          hsq1: user.highscores ? user.highscores.quiz1 : '0',
-          hsq2: guessCounter + 1,
-        })
-        .then((res) => {
-          store.dispatch({
-            type: 'update_user',
-            user: user,
-          });
-        })
-        .catch((err) => {
-          console.log(err, 'Something went wrong updating your profile');
-        });
+  const updateProfile = async () => {
+    try {
+      const response = await axios.patch(`/scores/`, {
+        userId: user._id,
+        quizName: 'Hot&Cold',
+        score: guessCounter,
+      });
+      return response.data;
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -177,7 +158,7 @@ const GuessGame = () => {
             </div>
             <div className="container">
               <div className="col-md-12 text-center">
-                {win ? (
+                {hasWon ? (
                   <div style={{ position: 'relative', zIndex: 100 }}>
                     <h3>Congratulations!</h3>
                     <div>You found the country!</div>
@@ -199,7 +180,7 @@ const GuessGame = () => {
         </div>
       </div>
       <div className="map">
-        <Datamap data={data} />
+        <Datamap data={data} responsive={true} />
       </div>
     </div>
   );

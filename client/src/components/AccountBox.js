@@ -19,11 +19,10 @@ const AccountBox = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [repassword, setRepassword] = useState('');
-  const [email, setEmail] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmitLogin = (event) => {
     event.preventDefault();
-    //Do back end log in stuff?
     //Check for existsing account and give errors if incorrect username/pass
     axios
       .post('/api/users/login', { username, password })
@@ -36,9 +35,10 @@ const AccountBox = () => {
             token: res.data.token,
           });
           navigate('/dashboard');
-          window.location.reload();
+          // window.location.reload();
         } else {
           console.log(res);
+          setErrorMessage(res.data.message);
         }
       })
       .catch((err) => {
@@ -56,6 +56,7 @@ const AccountBox = () => {
           setKey('login');
         }
         console.log(res);
+        setErrorMessage(res.data.message);
       })
       .catch((err) => {
         console.log(err);
@@ -88,6 +89,7 @@ const AccountBox = () => {
                     <Form.Label className="">Username</Form.Label>
                     <Form.Control
                       type="text"
+                      autoComplete="username"
                       onChange={(e) => setUsername(e.target.value)}
                       value={username}
                     />
@@ -99,6 +101,7 @@ const AccountBox = () => {
                     <Form.Label className="">Password</Form.Label>
                     <Form.Control
                       type="password"
+                      autoComplete="current-password"
                       onChange={(e) => setPassword(e.target.value)}
                       value={password}
                     />
@@ -119,22 +122,16 @@ const AccountBox = () => {
                     <Form.Label>Username</Form.Label>
                     <Form.Control
                       type="text"
+                      autoComplete="username"
                       onChange={(e) => setUsername(e.target.value)}
                       value={username}
-                    />
-                  </Form.Group>
-                  <Form.Group className="mx-5 mb-2 p-2">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
-                      type="email"
-                      onChange={(e) => setEmail(e.target.value)}
-                      value={email}
                     />
                   </Form.Group>
                   <Form.Group className="mx-5 mb-2 p-2">
                     <Form.Label>Password</Form.Label>
                     <Form.Control
                       type="password"
+                      autoComplete="new-password"
                       onChange={(e) => setPassword(e.target.value)}
                       value={password}
                     />
@@ -143,6 +140,7 @@ const AccountBox = () => {
                     <Form.Label>Re-Enter Password</Form.Label>
                     <Form.Control
                       type="password"
+                      autoComplete="new-password"
                       onChange={(e) => setRepassword(e.target.value)}
                       value={repassword}
                     />
@@ -152,6 +150,11 @@ const AccountBox = () => {
                   </div>
                 </Form>
               </Tab.Pane>
+              {errorMessage === '' ? (
+                <></>
+              ) : (
+                <div style={{ color: 'red' }}>{errorMessage}</div>
+              )}
             </Tab.Content>
           </Tab.Container>
         </Col>

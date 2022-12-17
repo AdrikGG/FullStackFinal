@@ -5,94 +5,171 @@ const jwt = require('jsonwebtoken');
 const checkAuth = require('../middleware/check-auth');
 const {
   loginValidator,
-  registerValidator
+  registerValidator,
 } = require('../validators/validators');
 
 const router = express.Router();
 
-router.post('/login', (req, res) => {
+// router.post('/login', (req, res) => {
+//   // feeds login data from req.body to the loginValidator
+//   const { errors, isValid } = loginValidator(req.body);
+//   // check loginValidator isValid variable
+//   if (!isValid) {
+//     res.json({ success: false, errors });
+//   } else {
+//     // search database for user with entered username
+//     Users.findOne({ username: req.body.username }).then((user) => {
+//       // if no found user, throw error
+//       if (!user) {
+//         res.json({
+//           message: 'No account found with the username ' + req.body.username,
+//           success: false,
+//         });
+//       } else {
+//         // check if passwords match
+//         bcrypt.compare(req.body.password, user.password).then((success) => {
+//           if (!success) {
+//             res.json({
+//               message: `Incorrect password`,
+//               success: false,
+//             });
+//           } else {
+//             // store data and token in jwt (stored in browser cache)
+//             // jwt is used for authentication and staying logged in
+//             const payload = {
+//               id: user._id,
+//               username: user.username,
+//             };
+//             jwt.sign(
+//               payload,
+//               process.env.APP_SECRET || 'secret',
+//               { expiresIn: 2160000 },
+//               (err, token) => {
+//                 res.json({
+//                   user,
+//                   token: 'Bearer token: ' + token,
+//                   success: true,
+//                 });
+//               }
+//             );
+//           }
+//         });
+//       }
+//     });
+//   }
+// });
+
+router.post('/login', async (req, res) => {
   // feeds login data from req.body to the loginValidator
   const { errors, isValid } = loginValidator(req.body);
   // check loginValidator isValid variable
   if (!isValid) {
     res.json({ success: false, errors });
-  } else {
+    return;
+  }
+
+  try {
     // search database for user with entered username
-    Users.findOne({ username: req.body.username }).then((user) => {
-      // if no found user, throw error
-      if (!user) {
-        res.json({
-          message: 'No account found with the username ' + req.body.username,
-          success: false
-        });
-      } else {
-        // check if passwords match
-        bcrypt.compare(req.body.password, user.password).then((success) => {
-          if (!success) {
-            res.json({
-              message: `Incorrect password`,
-              success: false
-            });
-          } else {
-            // store data and token in jwt (stored in browser cache)
-            // jwt is used for authentication and staying logged in
-            const payload = {
-              id: user._id,
-              username: user.username
-            };
-            jwt.sign(
-              payload,
-              process.env.APP_SECRET || 'secret',
-              { expiresIn: 2160000 },
-              (err, token) => {
-                res.json({
-                  user,
-                  token: 'Bearer token: ' + token,
-                  success: true
-                });
-              }
-            );
-          }
-        });
-      }
+    const user = await Users.findOne({ username: req.body.username });
+    // if no found user, throw error
+    if (!user) {
+      throw new Error(
+        `No account found with the username ${req.body.username}`
+      );
+    }
+    // check if passwords match
+    const success = await bcrypt.compare(req.body.password, user.password);
+    if (!success) {
+      throw new Error('Incorrect password');
+    }
+    // store data and token in jwt (stored in browser cache)
+    // jwt is used for authentication and staying logged in
+    const payload = {
+      id: user._id,
+      username: user.username,
+    };
+    const token = await jwt.sign(payload, process.env.APP_SECRET, {
+      expiresIn: 2160000,
+    });
+    res.json({
+      user: {
+        id: user._id,
+        username: user.username,
+      },
+      token: 'Bearer token: ' + token,
+      success: true,
+    });
+  } catch (error) {
+    res.json({
+      message: error.message,
+      success: false,
     });
   }
 });
 
-router.post('/register', (req, res) => {
+// router.post('/register', (req, res) => {
+//   // feeds register data from req.body to the registerValidator
+//   const { errors, isValid } = registerValidator(req.body);
+//   // check registerValidator isValid variable
+//   if (!isValid) {
+//     res.json({ success: false, errors });
+//   } else {
+//     // destructure req.body
+//     const { username, password } = req.body;
+//     // create new user object with register data
+//     const registerUser = new Users({
+//       username,
+//       password,
+//       createdOn: new Date(),
+//     });
+//     // hash password
+//     bcrypt.genSalt(10, (genErr, salt) => {
+//       bcrypt.hash(registerUser.password, salt, (hashErr, hash) => {
+//         if (genErr || hashErr) {
+//           res.json({ message: 'Error occured while hashing', success: false });
+//           return;
+//         }
+//         // store hashed password
+//         registerUser.password = hash;
+//         // save new user object to database
+//         registerUser
+//           .save()
+//           .then(() => {
+//             res.json({ message: 'User created succefully', success: true });
+//           })
+//           // catches errors with storing new user, such as username already taked
+//           .catch((err) => res.json({ message: err.message, success: false }));
+//       });
+//     });
+//   }
+// });
+
+router.post('/register', async (req, res) => {
   // feeds register data from req.body to the registerValidator
   const { errors, isValid } = registerValidator(req.body);
   // check registerValidator isValid variable
   if (!isValid) {
     res.json({ success: false, errors });
-  } else {
+    return;
+  }
+
+  try {
     // destructure req.body
     const { username, password } = req.body;
     // create new user object with register data
     const registerUser = new Users({
       username,
       password,
-      createdOn: new Date()
+      createdOn: new Date(),
     });
     // hash password
-    bcrypt.genSalt(10, (genErr, salt) => {
-      bcrypt.hash(registerUser.password, salt, (hashErr, hash) => {
-        if (genErr || hashErr) {
-          res.json({ message: 'Error occured while hashing', success: false });
-          return;
-        }
-        // store hashed password
-        registerUser.password = hash;
-        // save new user object to database
-        registerUser
-          .save()
-          .then(() => {
-            res.json({ message: 'User created succefully', success: true });
-          })
-          // catches errors with storing new user, such as username already taked
-          .catch((err) => res.json({ message: err.message, success: false }));
-      });
-    });
+    const salt = await bcrypt.genSalt(10);
+    registerUser.password = await bcrypt.hash(registerUser.password, salt);
+    // save new user object to database
+    await registerUser.save();
+    res.json({ message: 'User created succefully', success: true });
+  } catch (error) {
+    res.json({ message: error.message, success: false });
   }
 });
 
@@ -114,19 +191,19 @@ router.post('/upload-image', checkAuth, async (req, res) => {
     Users.findOne({ _id: req.body._id }).then((user) => {
       user.avatar = {
         url: uploaded.url,
-        publicId: uploaded.public_id
+        publicId: uploaded.public_id,
       };
       user.save();
       if (user.images) {
         user.images.push({
           url: uploaded.url,
-          publicId: uploaded.public_id
+          publicId: uploaded.public_id,
         });
       } else {
         user.images = [];
         user.images.push({
           url: uploaded.url,
-          publicId: uploaded.public_id
+          publicId: uploaded.public_id,
         });
       }
       res.json({ success: true });
@@ -135,118 +212,120 @@ router.post('/upload-image', checkAuth, async (req, res) => {
     console.log(err);
     res.json({
       success: false,
-      message: 'Something went wrong, please try again.'
+      message: 'Something went wrong, please try again.',
     });
   }
 });
 
-router.patch('/:id', checkAuth, (req, res) => {
+// router.patch('/:id', checkAuth, (req, res) => {
+//   const id = req.params.id;
+//   const updateOps = {};
+//   Users.findOne({ _id: req.params.id })
+//     .then((user) => {
+//       if (req.body.oldPassword) {
+//         bcrypt.compare(req.body.oldPassword, user.password).then((success) => {
+//           if (!success) {
+//             res.json({
+//               message: `Incorrect password`,
+//               success: false,
+//             });
+//           } else {
+//             if (req.body.username) {
+//               updateOps.username = req.body.username;
+//             }
+//             if (req.body.password) {
+//               let updatedPassword = req.body.password;
+//               console.log('about to hash');
+//               bcrypt.genSalt(10, (genErr, salt) => {
+//                 bcrypt.hash(updatedPassword, salt, (hashErr, hash) => {
+//                   if (genErr || hashErr) {
+//                     res.json({
+//                       message: 'Error occured while hashing',
+//                       success: false,
+//                     });
+//                     return;
+//                   }
+//                   updatedPassword = hash;
+//                   updateOps.password = updatedPassword;
+//                   Users.updateOne({ _id: id }, { $set: updateOps })
+//                     .exec()
+//                     .then((result) => {
+//                       console.log('res', result);
+//                       res.status(200).json(result);
+//                     })
+//                     .catch((err) => {
+//                       console.log('err', err);
+//                       res
+//                         .status(500)
+//                         .json({ success: false, message: err.message });
+//                     });
+//                 });
+//               });
+//             } else {
+//               Users.updateOne({ _id: id }, { $set: updateOps })
+//                 .exec()
+//                 .then((result) => {
+//                   res.status(200).json(result);
+//                 })
+//                 .catch((err) => {
+//                   res
+//                     .status(500)
+//                     .json({ success: false, message: err.message });
+//                 });
+//             }
+//           }
+//         });
+//       }
+//     })
+//     .catch((err) => {
+//       res.json({ success: false, message: err.message });
+//     });
+// });
+
+router.patch('/:id', checkAuth, async (req, res) => {
   const id = req.params.id;
   const updateOps = {};
-  console.log(req.body);
-  Users.findOne({ _id: req.params.id })
-    .then((user) => {
-      if (req.body.oldPassword) {
-        bcrypt.compare(req.body.oldPassword, user.password).then((success) => {
-          if (!success) {
-            res.json({
-              message: `Incorrect password`,
-              success: false
-            });
-          } else {
-            if (req.body.username) {
-              updateOps.username = req.body.username;
-            }
-            if (req.body.password) {
-              let updatedPassword = req.body.password;
-              console.log('about to hash');
-              bcrypt.genSalt(10, (genErr, salt) => {
-                bcrypt.hash(updatedPassword, salt, (hashErr, hash) => {
-                  if (genErr || hashErr) {
-                    res.json({
-                      message: 'Error occured while hashing',
-                      success: false
-                    });
-                    return;
-                  }
-                  // store hashed password
-                  updatedPassword = hash;
-                  console.log('updated password: ', updatedPassword);
-                  updateOps.password = updatedPassword;
 
-                  console.log('updating params', updateOps);
-                  User.updateOne({ _id: id }, { $set: updateOps })
-                    .exec()
-                    .then((result) => {
-                      console.log('res', result);
-                      res.status(200).json(result);
-                    })
-                    .catch((err) => {
-                      console.log('err', err);
-                      res
-                        .status(500)
-                        .json({ success: false, message: err.message });
-                    });
-                });
-              });
-            } else {
-              console.log('updating params', updateOps);
-              User.updateOne({ _id: id }, { $set: updateOps })
-                .exec()
-                .then((result) => {
-                  console.log('res', result);
-                  res.status(200).json(result);
-                })
-                .catch((err) => {
-                  console.log('err', err);
-                  res
-                    .status(500)
-                    .json({ success: false, message: err.message });
-                });
-            }
-          }
-        });
+  try {
+    const user = await Users.findOne({ _id: req.params.id });
+    if (req.body.oldPassword) {
+      const success = await bcrypt.compare(req.body.oldPassword, user.password);
+      if (!success) {
+        throw new Error('Incorrect password');
       } else {
-        if (req.body.hsq1) {
-          if (!updateOps.highscores) updateOps.highscores = {};
-          updateOps.highscores.quiz1 = req.body.hsq1;
-        } else {
-          updateOps.highscores.quiz1 = user.highscores.quiz1;
+        if (req.body.username) {
+          updateOps.username = req.body.username;
         }
-        if (req.body.hsq2) {
-          if (!updateOps.highscores) updateOps.highscores = {};
-          updateOps.highscores.quiz2 = req.body.hsq2;
-        } else {
-          updateOps.highscores.quiz2 = user.highscores.quiz2;
-        }
+        if (req.body.password) {
+          let updatedPassword = req.body.password;
 
-        console.log('updating params', updateOps);
-        User.updateOne({ _id: id }, { $set: updateOps })
-          .exec()
-          .then((result) => {
-            console.log('res', result);
-            res.status(200).json(result);
-          })
-          .catch((err) => {
-            console.log('err', err);
-            res.status(500).json({ success: false, message: err.message });
-          });
+          console.log('about to hash');
+          const salt = await bcrypt.genSalt(10);
+          updatedPassword = await bcrypt.hash(updatedPassword, salt);
+
+          console.log('updated password: ', updatedPassword);
+          updateOps.password = updatedPassword;
+        }
       }
-    })
-    .catch((err) => {
-      res.json({ success: false, message: err.message });
-    });
+    }
+    const result = await Users.updateOne(
+      { _id: id },
+      { $set: updateOps }
+    ).exec();
+    res.status(200).json(result);
+  } catch (err) {
+    res.json({ success: false, message: err.message });
+  }
 });
 
 router.delete('/:id', checkAuth, (req, res) => {
   const id = req.params.id;
-  User.remove({ _id: id })
+  Users.remove({ _id: id })
     .exec()
     .then((result) => {
       res.status(200).json(result);
     })
     .catch((err) => {
-      console.log(err);
       res.status(500).json({ success: false, message: err.message });
     });
 });

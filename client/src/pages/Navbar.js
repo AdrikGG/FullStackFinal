@@ -1,19 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { LinkContainer } from 'react-router-bootstrap';
 import { MdAccountCircle } from 'react-icons/md';
 import { GoGlobe } from 'react-icons/go';
 import MainButton from '../components/MainButton';
-import './MyNavbar.css';
+import './Navbar.css';
 
 import { useSelector } from 'react-redux';
 
-const Layout = () => {
-  //const [isUser, setIsUser] = useState(false);
-  //let isUser = true;
+const AppNavbar = () => {
   const user = useSelector((state) => state.user);
   if (user) console.log(user);
 
@@ -53,4 +50,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default AppNavbar;

@@ -2,17 +2,11 @@ import React, { useRef, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import store from '../../../store/index';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Image from 'react-bootstrap/Image';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import countries from './countryNames';
+import { Button, Image, Row, Col, Container, Stack } from 'react-bootstrap';
+import countries from '../../../constants/countryNames';
 import ScoreBox from './ScoreBox';
-import Stack from 'react-bootstrap/Stack';
 
-const imageFldr = require.context('./countryshapes/', false);
+const imageFldr = require.context('../../../images/countryshapes', false);
 const maxScore = countries.length;
 
 const SiloGame = () => {
