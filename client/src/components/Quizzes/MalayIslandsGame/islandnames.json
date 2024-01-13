@@ -1,0 +1,2320 @@
+{
+  "islands": [
+    {
+      "name": "warilau",
+      "id": "2324"
+    },
+    {
+      "name": "wasir",
+      "id": "3806"
+    },
+    {
+      "name": "ujir",
+      "id": "2409"
+    },
+    {
+      "name": "wamar",
+      "id": "2219"
+    },
+    {
+      "name": "barakan",
+      "id": "2633"
+    },
+    {
+      "name": "mbokonumbeta",
+      "id": "3071"
+    },
+    {
+      "name": "savo",
+      "id": "2964"
+    },
+    {
+      "name": "mbanika",
+      "id": "2279"
+    },
+    {
+      "name": "nggatokae",
+      "id": "1547"
+    },
+    {
+      "name": "tetepare",
+      "id": "1301"
+    },
+    {
+      "name": "mbero",
+      "id": "3546"
+    },
+    {
+      "name": "barora ite",
+      "id": "1395"
+    },
+    {
+      "name": "barora fa",
+      "id": "1727"
+    },
+    {
+      "name": "ghaghe",
+      "id": "2554"
+    },
+    {
+      "name": "rob roy",
+      "id": "1865"
+    },
+    {
+      "name": "vaghena",
+      "id": "1749"
+    },
+    {
+      "name": "vonavona",
+      "id": "1855"
+    },
+    {
+      "name": "arundel",
+      "id": "1545"
+    },
+    {
+      "name": "gizo",
+      "id": "2808"
+    },
+    {
+      "name": "ranongga",
+      "id": "1128"
+    },
+    {
+      "name": "mbava",
+      "id": "3555"
+    },
+    {
+      "name": "mono",
+      "id": "1908"
+    },
+    {
+      "name": "fauro",
+      "id": "1804"
+    },
+    {
+      "name": "taiof",
+      "id": "3446"
+    },
+    {
+      "name": "uki",
+      "id": "2464"
+    },
+    {
+      "name": "ulawa",
+      "id": "1941"
+    },
+    {
+      "name": "bellona",
+      "id": "3714"
+    },
+    {
+      "name": "pana tinani",
+      "id": "1753"
+    },
+    {
+      "name": "pana wina",
+      "id": "2970"
+    },
+    {
+      "name": "deboyne",
+      "id": "2962"
+    },
+    {
+      "name": "kaileuna",
+      "id": "2343"
+    },
+    {
+      "name": "kitava",
+      "id": "3534"
+    },
+    {
+      "name": "vakuta",
+      "id": "3704"
+    },
+    {
+      "name": "madau",
+      "id": "2627"
+    },
+    {
+      "name": "sanaroa",
+      "id": "2267"
+    },
+    {
+      "name": "basilaki",
+      "id": "1434"
+    },
+    {
+      "name": "sideia",
+      "id": "1507"
+    },
+    {
+      "name": "sariba",
+      "id": "3437"
+    },
+    {
+      "name": "nissan",
+      "id": "2943"
+    },
+    {
+      "name": "ambitle",
+      "id": "1638"
+    },
+    {
+      "name": "babase",
+      "id": "3508"
+    },
+    {
+      "name": "boang",
+      "id": "3093"
+    },
+    {
+      "name": "malendok",
+      "id": "2806"
+    },
+    {
+      "name": "selapiu",
+      "id": "3260"
+    },
+    {
+      "name": "baudisson",
+      "id": "3459"
+    },
+    {
+      "name": "lihir",
+      "id": "942"
+    },
+    {
+      "name": "duke of york",
+      "id": "2164"
+    },
+    {
+      "name": "lolobau",
+      "id": "1894"
+    },
+    {
+      "name": "unea",
+      "id": "2812"
+    },
+    {
+      "name": "garove",
+      "id": "2108"
+    },
+    {
+      "name": "tabar",
+      "id": "1408"
+    },
+    {
+      "name": "tatau",
+      "id": "1311"
+    },
+    {
+      "name": "simberi",
+      "id": "2111"
+    },
+    {
+      "name": "dyaul",
+      "id": "1375"
+    },
+    {
+      "name": "emirau",
+      "id": "2733"
+    },
+    {
+      "name": "rambutyo",
+      "id": "1504"
+    },
+    {
+      "name": "lou",
+      "id": "2946"
+    },
+    {
+      "name": "mussau",
+      "id": "679"
+    },
+    {
+      "name": "sakar, morobe",
+      "id": "2361"
+    },
+    {
+      "name": "tolokiwa",
+      "id": "2370"
+    },
+    {
+      "name": "bagabag",
+      "id": "2705"
+    },
+    {
+      "name": "manam",
+      "id": "1709"
+    },
+    {
+      "name": "vokeo",
+      "id": "3066"
+    },
+    {
+      "name": "muschu",
+      "id": "2488"
+    },
+    {
+      "name": "kairiru",
+      "id": "2141"
+    },
+    {
+      "name": "kurudu",
+      "id": "3584"
+    },
+    {
+      "name": "utama",
+      "id": "3279"
+    },
+    {
+      "name": "angrameos",
+      "id": "3503"
+    },
+    {
+      "name": "roon",
+      "id": "2010"
+    },
+    {
+      "name": "mioswaar",
+      "id": "1425"
+    },
+    {
+      "name": "rumberpon",
+      "id": "1467"
+    },
+    {
+      "name": "amutu besar",
+      "id": "1656"
+    },
+    {
+      "name": "asap",
+      "id": "3493"
+    },
+    {
+      "name": "kayumerah",
+      "id": "3402"
+    },
+    {
+      "name": "namatota",
+      "id": "2453"
+    },
+    {
+      "name": "aiduma",
+      "id": "1925"
+    },
+    {
+      "name": "maru",
+      "id": "3342"
+    },
+    {
+      "name": "molu",
+      "id": "1743"
+    },
+    {
+      "name": "fordate",
+      "id": "2591"
+    },
+    {
+      "name": "walis",
+      "id": "3377"
+    },
+    {
+      "name": "tayandu",
+      "id": "3116"
+    },
+    {
+      "name": "namsar",
+      "id": "2581"
+    },
+    {
+      "name": "teor",
+      "id": "3663"
+    },
+    {
+      "name": "kisyui",
+      "id": "3023"
+    },
+    {
+      "name": "manawoka",
+      "id": "2236"
+    },
+    {
+      "name": "gorom",
+      "id": "1897"
+    },
+    {
+      "name": "panjang",
+      "id": "3706"
+    },
+    {
+      "name": "samai",
+      "id": "3461"
+    },
+    {
+      "name": "karas",
+      "id": "2207"
+    },
+    {
+      "name": "witamemea",
+      "id": "2566"
+    },
+    {
+      "name": "kadatuang",
+      "id": "3510"
+    },
+    {
+      "name": "siumpu",
+      "id": "2037"
+    },
+    {
+      "name": "tobea besar",
+      "id": "3528"
+    },
+    {
+      "name": "labengke",
+      "id": "2419"
+    },
+    {
+      "name": "bahubulu",
+      "id": "2831"
+    },
+    {
+      "name": "menui",
+      "id": "1719"
+    },
+    {
+      "name": "padamarang",
+      "id": "2725"
+    },
+    {
+      "name": "pasi",
+      "id": "3449"
+    },
+    {
+      "name": "tanakeke",
+      "id": "2902"
+    },
+    {
+      "name": "lahuy",
+      "id": "3790"
+    },
+    {
+      "name": "quinalasag",
+      "id": "2697"
+    },
+    {
+      "name": "pagbilao",
+      "id": "3164"
+    },
+    {
+      "name": "maricaban",
+      "id": "2862"
+    },
+    {
+      "name": "golo",
+      "id": "3518"
+    },
+    {
+      "name": "ambil",
+      "id": "3017"
+    },
+    {
+      "name": "maestre de campo",
+      "id": "3693"
+    },
+    {
+      "name": "simara",
+      "id": "3709"
+    },
+    {
+      "name": "banton",
+      "id": "3031"
+    },
+    {
+      "name": "carabao",
+      "id": "3078"
+    },
+    {
+      "name": "caluya",
+      "id": "3002"
+    },
+    {
+      "name": "sibay",
+      "id": "2408"
+    },
+    {
+      "name": "semirara",
+      "id": "2077"
+    },
+    {
+      "name": "ilin",
+      "id": "1774"
+    },
+    {
+      "name": "calagnaan",
+      "id": "3484"
+    },
+    {
+      "name": "liang",
+      "id": "3321"
+    },
+    {
+      "name": "ngali",
+      "id": "2899"
+    },
+    {
+      "name": "rakit",
+      "id": "3280"
+    },
+    {
+      "name": "tabuhan",
+      "id": "2760"
+    },
+    {
+      "name": "legundi",
+      "id": "3879"
+    },
+    {
+      "name": "sibesi",
+      "id": "3383"
+    },
+    {
+      "name": "simatang",
+      "id": "3654"
+    },
+    {
+      "name": "sakar",
+      "id": "3768"
+    },
+    {
+      "name": "tuluran",
+      "id": "3659"
+    },
+    {
+      "name": "maytiguid",
+      "id": "2223"
+    },
+    {
+      "name": "batas",
+      "id": "2945"
+    },
+    {
+      "name": "coron",
+      "id": "1781"
+    },
+    {
+      "name": "pandanan",
+      "id": "2524"
+    },
+    {
+      "name": "mantangule",
+      "id": "3656"
+    },
+    {
+      "name": "ramos",
+      "id": "2926"
+    },
+    {
+      "name": "malawali",
+      "id": "2587"
+    },
+    {
+      "name": "timbang",
+      "id": "2953"
+    },
+    {
+      "name": "san miguel",
+      "id": "3521"
+    },
+    {
+      "name": "cagraray",
+      "id": "1824"
+    },
+    {
+      "name": "rapu-rapu",
+      "id": "1901"
+    },
+    {
+      "name": "batan, albay",
+      "id": "1587"
+    },
+    {
+      "name": "capul",
+      "id": "2775"
+    },
+    {
+      "name": "dalupiri, san antonio",
+      "id": "3076"
+    },
+    {
+      "name": "laoang",
+      "id": "2905"
+    },
+    {
+      "name": "batag",
+      "id": "2824"
+    },
+    {
+      "name": "capual",
+      "id": "3772"
+    },
+    {
+      "name": "pilas",
+      "id": "3207"
+    },
+    {
+      "name": "balanguingui",
+      "id": "3303"
+    },
+    {
+      "name": "sacol",
+      "id": "2540"
+    },
+    {
+      "name": "bongo",
+      "id": "3726"
+    },
+    {
+      "name": "tagapul-an",
+      "id": "3015"
+    },
+    {
+      "name": "almagro",
+      "id": "3387"
+    },
+    {
+      "name": "limbangcavayan",
+      "id": "3583"
+    },
+    {
+      "name": "maripipi",
+      "id": "2991"
+    },
+    {
+      "name": "buad",
+      "id": "2680"
+    },
+    {
+      "name": "daram",
+      "id": "1496"
+    },
+    {
+      "name": "ponson",
+      "id": "2703"
+    },
+    {
+      "name": "panglao",
+      "id": "1579"
+    },
+    {
+      "name": "lapinig",
+      "id": "2229"
+    },
+    {
+      "name": "nonoc",
+      "id": "1978"
+    },
+    {
+      "name": "panaon",
+      "id": "935"
+    },
+    {
+      "name": "usu",
+      "id": "3867"
+    },
+    {
+      "name": "raijua",
+      "id": "2548"
+    },
+    {
+      "name": "mantehage",
+      "id": "3885"
+    },
+    {
+      "name": "tahulandang",
+      "id": "2074"
+    },
+    {
+      "name": "biaro",
+      "id": "3208"
+    },
+    {
+      "name": "banda besar",
+      "id": "3269"
+    },
+    {
+      "name": "nusalaut",
+      "id": "3173"
+    },
+    {
+      "name": "lembeh",
+      "id": "2000"
+    },
+    {
+      "name": "bangka, north sulawesi",
+      "id": "2659"
+    },
+    {
+      "name": "waleakodi",
+      "id": "2427"
+    },
+    {
+      "name": "waleabahi",
+      "id": "1723"
+    },
+    {
+      "name": "poat",
+      "id": "3616"
+    },
+    {
+      "name": "bakalan",
+      "id": "2507"
+    },
+    {
+      "name": "seku",
+      "id": "2432"
+    },
+    {
+      "name": "labobo",
+      "id": "1839"
+    },
+    {
+      "name": "timpaus",
+      "id": "3545"
+    },
+    {
+      "name": "molilis",
+      "id": "3868"
+    },
+    {
+      "name": "lifamatola",
+      "id": "3009"
+    },
+    {
+      "name": "tobalai",
+      "id": "2608"
+    },
+    {
+      "name": "gomumu",
+      "id": "3396"
+    },
+    {
+      "name": "obilatu",
+      "id": "1893"
+    },
+    {
+      "name": "tapat",
+      "id": "3106"
+    },
+    {
+      "name": "obit",
+      "id": "2444"
+    },
+    {
+      "name": "latalata",
+      "id": "3244"
+    },
+    {
+      "name": "muari",
+      "id": "3288"
+    },
+    {
+      "name": "tameti",
+      "id": "2989"
+    },
+    {
+      "name": "moti",
+      "id": "3504"
+    },
+    {
+      "name": "doi",
+      "id": "2688"
+    },
+    {
+      "name": "rau",
+      "id": "2052"
+    },
+    {
+      "name": "sayafi",
+      "id": "3784"
+    },
+    {
+      "name": "yoi",
+      "id": "3147"
+    },
+    {
+      "name": "warir",
+      "id": "2329"
+    },
+    {
+      "name": "joronga",
+      "id": "3146"
+    },
+    {
+      "name": "damar, north maluku",
+      "id": "1985"
+    },
+    {
+      "name": "Mios Koerweter",
+      "id": "3733"
+    },
+    {
+      "name": "kayoa",
+      "id": "1750"
+    },
+    {
+      "name": "tandubatu",
+      "id": "2542"
+    },
+    {
+      "name": "kabaruang",
+      "id": "1546"
+    },
+    {
+      "name": "salebabu",
+      "id": "1510"
+    },
+    {
+      "name": "ambelau",
+      "id": "1827"
+    },
+    {
+      "name": "saparua",
+      "id": "1090"
+    },
+    {
+      "name": "kawe",
+      "id": "2277"
+    },
+    {
+      "name": "nila",
+      "id": "3366"
+    },
+    {
+      "name": "wetan",
+      "id": "2433"
+    },
+    {
+      "name": "masela",
+      "id": "2295"
+    },
+    {
+      "name": "liran",
+      "id": "3195"
+    },
+    {
+      "name": "pura",
+      "id": "3095"
+    },
+    {
+      "name": "sera",
+      "id": "1497"
+    },
+    {
+      "name": "selu",
+      "id": "1681"
+    },
+    {
+      "name": "wotap",
+      "id": "2754"
+    },
+    {
+      "name": "wuliaru",
+      "id": "1133"
+    },
+    {
+      "name": "larat",
+      "id": "889"
+    },
+    {
+      "name": "sermata",
+      "id": "1357"
+    },
+    {
+      "name": "kalao",
+      "id": "1441"
+    },
+    {
+      "name": "bonerate",
+      "id": "1983"
+    },
+    {
+      "name": "besar",
+      "id": "2177"
+    },
+    {
+      "name": "palu",
+      "id": "2497"
+    },
+    {
+      "name": "banta",
+      "id": "3113"
+    },
+    {
+      "name": "genteng",
+      "id": "3876"
+    },
+    {
+      "name": "raas",
+      "id": "2163"
+    },
+    {
+      "name": "masalembu",
+      "id": "3343"
+    },
+    {
+      "name": "naduk",
+      "id": "3715"
+    },
+    {
+      "name": "gelam",
+      "id": "3117"
+    },
+    {
+      "name": "bawal",
+      "id": "2288"
+    },
+    {
+      "name": "penebangan",
+      "id": "3352"
+    },
+    {
+      "name": "serutu",
+      "id": "3497"
+    },
+    {
+      "name": "benua",
+      "id": "3830"
+    },
+    {
+      "name": "evergreen",
+      "id": "3687"
+    },
+    {
+      "name": "henry lawrence",
+      "id": "2131"
+    },
+    {
+      "name": "john lawrence",
+      "id": "2849"
+    },
+    {
+      "name": "sir william peel",
+      "id": "3744"
+    },
+    {
+      "name": "laut, natuna",
+      "id": "2776"
+    },
+    {
+      "name": "lagong",
+      "id": "3832"
+    },
+    {
+      "name": "pangkor",
+      "id": "3676"
+    },
+    {
+      "name": "klang",
+      "id": "2107"
+    },
+    {
+      "name": "cawan",
+      "id": "2871"
+    },
+    {
+      "name": "basu",
+      "id": "583"
+    },
+    {
+      "name": "topang",
+      "id": "2640"
+    },
+    {
+      "name": "ungar",
+      "id": "3239"
+    },
+    {
+      "name": "komoran",
+      "id": "401"
+    },
+    {
+      "name": "papan",
+      "id": "2363"
+    },
+    {
+      "name": "buru, karimun",
+      "id": "3658"
+    },
+    {
+      "name": "durian",
+      "id": "3623"
+    },
+    {
+      "name": "sugibawah",
+      "id": "3855"
+    },
+    {
+      "name": "combol",
+      "id": "2047"
+    },
+    {
+      "name": "citlim",
+      "id": "3571"
+    },
+    {
+      "name": "mapur",
+      "id": "2900"
+    },
+    {
+      "name": "gin besar",
+      "id": "3456"
+    },
+    {
+      "name": "mantang",
+      "id": "2642"
+    },
+    {
+      "name": "selajar",
+      "id": "2534"
+    },
+    {
+      "name": "bakung",
+      "id": "1834"
+    },
+    {
+      "name": "temiang",
+      "id": "2426"
+    },
+    {
+      "name": "sebangka",
+      "id": "1256"
+    },
+    {
+      "name": "galang-baru",
+      "id": "2859"
+    },
+    {
+      "name": "sugi",
+      "id": "1582"
+    },
+    {
+      "name": "kapalajernih",
+      "id": "3040"
+    },
+    {
+      "name": "belat",
+      "id": "2112"
+    },
+    {
+      "name": "poteran",
+      "id": "2198"
+    },
+    {
+      "name": "sapudi",
+      "id": "1253"
+    },
+    {
+      "name": "paliat",
+      "id": "2369"
+    },
+    {
+      "name": "sepanjang",
+      "id": "1539"
+    },
+    {
+      "name": "barung",
+      "id": "1711"
+    },
+    {
+      "name": "panaitan",
+      "id": "1318"
+    },
+    {
+      "name": "simuk",
+      "id": "3814"
+    },
+    {
+      "name": "musala",
+      "id": "1767"
+    },
+    {
+      "name": "bangkaru",
+      "id": "2032"
+    },
+    {
+      "name": "babi",
+      "id": "2421"
+    },
+    {
+      "name": "nasi",
+      "id": "3029"
+    },
+    {
+      "name": "breueh",
+      "id": "1968"
+    },
+    {
+      "name": "dayang bunting",
+      "id": "2153"
+    },
+    {
+      "name": "bokan besar",
+      "id": "1673"
+    },
+    {
+      "name": "bokan kecil",
+      "id": "3372"
+    },
+    {
+      "name": "maratua",
+      "id": "3081"
+    },
+    {
+      "name": "taiwan",
+      "id": "44"
+    },
+    {
+      "name": "wetar",
+      "id": "180"
+    },
+    {
+      "name": "christams",
+      "id": "1210"
+    },
+    {
+      "name": "penida",
+      "id": "965"
+    },
+    {
+      "name": "jemaja",
+      "id": "925"
+    },
+    {
+      "name": "hainan",
+      "id": "47"
+    },
+    {
+      "name": "magong",
+      "id": "1890"
+    },
+    {
+      "name": "xiyu",
+      "id": "3887"
+    },
+    {
+      "name": "orchid",
+      "id": "2287"
+    },
+    {
+      "name": "yonaguni",
+      "id": "3056"
+    },
+    {
+      "name": "iriomote",
+      "id": "764"
+    },
+    {
+      "name": "ishigaki",
+      "id": "882"
+    },
+    {
+      "name": "tarama",
+      "id": "3816"
+    },
+    {
+      "name": "irabu",
+      "id": "2545"
+    },
+    {
+      "name": "miyako",
+      "id": "1103"
+    },
+    {
+      "name": "minamidaito",
+      "id": "2994"
+    },
+    {
+      "name": "iwo",
+      "id": "3266"
+    },
+    {
+      "name": "agrihan",
+      "id": "2399"
+    },
+    {
+      "name": "pagan",
+      "id": "2303"
+    },
+    {
+      "name": "anatahan",
+      "id": "2840"
+    },
+    {
+      "name": "saipan",
+      "id": "1353"
+    },
+    {
+      "name": "tinian",
+      "id": "1503"
+    },
+    {
+      "name": "rota",
+      "id": "1689"
+    },
+    {
+      "name": "guam",
+      "id": "487"
+    },
+    {
+      "name": "yap",
+      "id": "1529"
+    },
+    {
+      "name": "babeldaob",
+      "id": "639"
+    },
+    {
+      "name": "ngeruktabel",
+      "id": "3381"
+    },
+    {
+      "name": "weno",
+      "id": "3815"
+    },
+    {
+      "name": "faichuk islands",
+      "id": "2832"
+    },
+    {
+      "name": "pohnpei",
+      "id": "666"
+    },
+    {
+      "name": "kosrae",
+      "id": "1403"
+    },
+    {
+      "name": "itbayat",
+      "id": "1657"
+    },
+    {
+      "name": "batan, batanes",
+      "id": "1814"
+    },
+    {
+      "name": "sabtang",
+      "id": "2744"
+    },
+    {
+      "name": "babuyan",
+      "id": "1808"
+    },
+    {
+      "name": "calayan",
+      "id": "978"
+    },
+    {
+      "name": "camiguin, cagayan",
+      "id": "1079"
+    },
+    {
+      "name": "fuga",
+      "id": "1525"
+    },
+    {
+      "name": "dalupiri, cagayan",
+      "id": "1934"
+    },
+    {
+      "name": "palaui",
+      "id": "3189"
+    },
+    {
+      "name": "santiago",
+      "id": "3635"
+    },
+    {
+      "name": "cabarruyan",
+      "id": "1793"
+    },
+    {
+      "name": "luzon",
+      "id": "23"
+    },
+    {
+      "name": "polillo",
+      "id": "423"
+    },
+    {
+      "name": "patnanongan",
+      "id": "1542"
+    },
+    {
+      "name": "jomalig",
+      "id": "2126"
+    },
+    {
+      "name": "alabat",
+      "id": "976"
+    },
+    {
+      "name": "marinduque",
+      "id": "337"
+    },
+    {
+      "name": "catanduanes",
+      "id": "254"
+    },
+    {
+      "name": "masbate",
+      "id": "162"
+    },
+    {
+      "name": "burias",
+      "id": "578"
+    },
+    {
+      "name": "lubang",
+      "id": "962"
+    },
+    {
+      "name": "mindoro",
+      "id": "82"
+    },
+    {
+      "name": "tablas",
+      "id": "409"
+    },
+    {
+      "name": "sibuyan",
+      "id": "547"
+    },
+    {
+      "name": "samar",
+      "id": "68"
+    },
+    {
+      "name": "biliran",
+      "id": "511"
+    },
+    {
+      "name": "leyte",
+      "id": "103"
+    },
+    {
+      "name": "panay",
+      "id": "72"
+    },
+    {
+      "name": "guimaras",
+      "id": "461"
+    },
+    {
+      "name": "negros",
+      "id": "67"
+    },
+    {
+      "name": "bantayan",
+      "id": "1367"
+    },
+    {
+      "name": "cebu",
+      "id": "134"
+    },
+    {
+      "name": "bohol",
+      "id": "150"
+    },
+    {
+      "name": "siquijor",
+      "id": "708"
+    },
+    {
+      "name": "camiguin",
+      "id": "843"
+    },
+    {
+      "name": "dinagat",
+      "id": "378"
+    },
+    {
+      "name": "siargao",
+      "id": "579"
+    },
+    {
+      "name": "mindanao",
+      "id": "25"
+    },
+    {
+      "name": "palawan",
+      "id": "71"
+    },
+    {
+      "name": "busuanga",
+      "id": "324"
+    },
+    {
+      "name": "culion",
+      "id": "611"
+    },
+    {
+      "name": "dumaran",
+      "id": "693"
+    },
+    {
+      "name": "basilan",
+      "id": "278"
+    },
+    {
+      "name": "jolo",
+      "id": "358"
+    },
+    {
+      "name": "tawitawi",
+      "id": "439"
+    },
+    {
+      "name": "sibutu",
+      "id": "1459"
+    },
+    {
+      "name": "sanga-sanga",
+      "id": "2378"
+    },
+    {
+      "name": "balabac",
+      "id": "707"
+    },
+    {
+      "name": "balambangan",
+      "id": "1448"
+    },
+    {
+      "name": "banggi",
+      "id": "565"
+    },
+    {
+      "name": "labuan",
+      "id": "1630"
+    },
+    {
+      "name": "borneo",
+      "id": "9"
+    },
+    {
+      "name": "tarakan",
+      "id": "845"
+    },
+    {
+      "name": "bruit",
+      "id": "591"
+    },
+    {
+      "name": "north andaman",
+      "id": "266"
+    },
+    {
+      "name": "middle andaman",
+      "id": "251"
+    },
+    {
+      "name": "south andaman",
+      "id": "272"
+    },
+    {
+      "name": "swaraj dweep",
+      "id": "1596"
+    },
+    {
+      "name": "baratang",
+      "id": "854"
+    },
+    {
+      "name": "north sentinel",
+      "id": "2298"
+    },
+    {
+      "name": "rutland",
+      "id": "1306"
+    },
+    {
+      "name": "little andaman",
+      "id": "382"
+    },
+    {
+      "name": "interview",
+      "id": "1482"
+    },
+    {
+      "name": "car nicobar",
+      "id": "1289"
+    },
+    {
+      "name": "teressa",
+      "id": "1640"
+    },
+    {
+      "name": "little nicobar",
+      "id": "1192"
+    },
+    {
+      "name": "great nicobar",
+      "id": "326"
+    },
+    {
+      "name": "camorta",
+      "id": "1213"
+    },
+    {
+      "name": "katchal",
+      "id": "1110"
+    },
+    {
+      "name": "nancowry",
+      "id": "2264"
+    },
+    {
+      "name": "langkawi",
+      "id": "648"
+    },
+    {
+      "name": "penang",
+      "id": "762"
+    },
+    {
+      "name": "tioman",
+      "id": "1233"
+    },
+    {
+      "name": "weh",
+      "id": "1304"
+    },
+    {
+      "name": "simeulue",
+      "id": "226"
+    },
+    {
+      "name": "nias",
+      "id": "141"
+    },
+    {
+      "name": "tuangku",
+      "id": "910"
+    },
+    {
+      "name": "pini",
+      "id": "718"
+    },
+    {
+      "name": "tanahmasa",
+      "id": "680"
+    },
+    {
+      "name": "tanahbala",
+      "id": "546"
+    },
+    {
+      "name": "siberut",
+      "id": "147"
+    },
+    {
+      "name": "sipura",
+      "id": "444"
+    },
+    {
+      "name": "pagai-utara",
+      "id": "441"
+    },
+    {
+      "name": "pagai-selatan",
+      "id": "351"
+    },
+    {
+      "name": "enggano",
+      "id": "610"
+    },
+    {
+      "name": "rupat",
+      "id": "249"
+    },
+    {
+      "name": "bengkalis",
+      "id": "331"
+    },
+    {
+      "name": "padang",
+      "id": "296"
+    },
+    {
+      "name": "rangsang",
+      "id": "333"
+    },
+    {
+      "name": "tebingtinggi",
+      "id": "238"
+    },
+    {
+      "name": "singapore",
+      "id": "484"
+    },
+    {
+      "name": "bintan",
+      "id": "287"
+    },
+    {
+      "name": "batam",
+      "id": "588"
+    },
+    {
+      "name": "bulan",
+      "id": "1300"
+    },
+    {
+      "name": "rempang",
+      "id": "1119"
+    },
+    {
+      "name": "galang",
+      "id": "1648"
+    },
+    {
+      "name": "kundur",
+      "id": "717"
+    },
+    {
+      "name": "karimunbesar",
+      "id": "1250"
+    },
+    {
+      "name": "mendol",
+      "id": "724"
+    },
+    {
+      "name": "lingga",
+      "id": "353"
+    },
+    {
+      "name": "singkep",
+      "id": "383"
+    },
+    {
+      "name": "bangka",
+      "id": "70"
+    },
+    {
+      "name": "lepar",
+      "id": "919"
+    },
+    {
+      "name": "liat",
+      "id": "2282"
+    },
+    {
+      "name": "mendanau",
+      "id": "1356"
+    },
+    {
+      "name": "belitung",
+      "id": "129"
+    },
+    {
+      "name": "karimata",
+      "id": "1025"
+    },
+    {
+      "name": "bawean",
+      "id": "953"
+    },
+    {
+      "name": "karimun jawa",
+      "id": "3650"
+    },
+    {
+      "name": "sumatra",
+      "id": "12"
+    },
+    {
+      "name": "java",
+      "id": "19"
+    },
+    {
+      "name": "matasiri",
+      "id": "2956"
+    },
+    {
+      "name": "kangean",
+      "id": "558"
+    },
+    {
+      "name": "madura",
+      "id": "133"
+    },
+    {
+      "name": "bali",
+      "id": "114"
+    },
+    {
+      "name": "lombok",
+      "id": "128"
+    },
+    {
+      "name": "moyo",
+      "id": "691"
+    },
+    {
+      "name": "sumbawa",
+      "id": "62"
+    },
+    {
+      "name": "sangeang",
+      "id": "1146"
+    },
+    {
+      "name": "komodo",
+      "id": "696"
+    },
+    {
+      "name": "rinca",
+      "id": "916"
+    },
+    {
+      "name": "sumba",
+      "id": "78"
+    },
+    {
+      "name": "rote",
+      "id": "282"
+    },
+    {
+      "name": "sawu",
+      "id": "625"
+    },
+    {
+      "name": "selayar",
+      "id": "422"
+    },
+    {
+      "name": "tanah jampea",
+      "id": "1116"
+    },
+    {
+      "name": "flores",
+      "id": "65"
+    },
+    {
+      "name": "lembata",
+      "id": "275"
+    },
+    {
+      "name": "alor",
+      "id": "198"
+    },
+    {
+      "name": "solor",
+      "id": "894"
+    },
+    {
+      "name": "adunara",
+      "id": "500"
+    },
+    {
+      "name": "pantar",
+      "id": "392"
+    },
+    {
+      "name": "semau",
+      "id": "913"
+    },
+    {
+      "name": "timor",
+      "id": "51"
+    },
+    {
+      "name": "yamdena",
+      "id": "161"
+    },
+    {
+      "name": "babar",
+      "id": "446"
+    },
+    {
+      "name": "moa",
+      "id": "655"
+    },
+    {
+      "name": "atauro",
+      "id": "1190"
+    },
+    {
+      "name": "kalaotoa",
+      "id": "1783"
+    },
+    {
+      "name": "damar",
+      "id": "960"
+    },
+    {
+      "name": "kai besar",
+      "id": "478"
+    },
+    {
+      "name": "kai kecil",
+      "id": "590"
+    },
+    {
+      "name": "dullah",
+      "id": "1575"
+    },
+    {
+      "name": "siantan",
+      "id": "1266"
+    },
+    {
+      "name": "matak",
+      "id": "1680"
+    },
+    {
+      "name": "mubur",
+      "id": "2562"
+    },
+    {
+      "name": "natuna-besar",
+      "id": "236"
+    },
+    {
+      "name": "subi-besar",
+      "id": "1265"
+    },
+    {
+      "name": "serasan",
+      "id": "1959"
+    },
+    {
+      "name": "mida",
+      "id": "3323"
+    },
+    {
+      "name": "tambelan besar",
+      "id": "2736"
+    },
+    {
+      "name": "airabu",
+      "id": "3169"
+    },
+    {
+      "name": "laut",
+      "id": "199"
+    },
+    {
+      "name": "sebuku",
+      "id": "908"
+    },
+    {
+      "name": "sulawesi",
+      "id": "17"
+    },
+    {
+      "name": "wowoni",
+      "id": "395"
+    },
+    {
+      "name": "wangiwangi",
+      "id": "1176"
+    },
+    {
+      "name": "kabaena",
+      "id": "348"
+    },
+    {
+      "name": "muna",
+      "id": "172"
+    },
+    {
+      "name": "buton",
+      "id": "132"
+    },
+    {
+      "name": "binongko",
+      "id": "1410"
+    },
+    {
+      "name": "tomea",
+      "id": "2133"
+    },
+    {
+      "name": "kaledupa",
+      "id": "1875"
+    },
+    {
+      "name": "peleng",
+      "id": "187"
+    },
+    {
+      "name": "togean",
+      "id": "491"
+    },
+    {
+      "name": "unauna",
+      "id": "1825"
+    },
+    {
+      "name": "banggai",
+      "id": "797"
+    },
+    {
+      "name": "taliabu",
+      "id": "173"
+    },
+    {
+      "name": "mangoli",
+      "id": "285"
+    },
+    {
+      "name": "sulabesi",
+      "id": "469"
+    },
+    {
+      "name": "bangkulu",
+      "id": "1394"
+    },
+    {
+      "name": "buru",
+      "id": "93"
+    },
+    {
+      "name": "seram",
+      "id": "58"
+    },
+    {
+      "name": "ambon",
+      "id": "379"
+    },
+    {
+      "name": "haruku",
+      "id": "1001"
+    },
+    {
+      "name": "obi",
+      "id": "182"
+    },
+    {
+      "name": "bacan",
+      "id": "219"
+    },
+    {
+      "name": "kasiruta",
+      "id": "541"
+    },
+    {
+      "name": "mandioli",
+      "id": "880"
+    },
+    {
+      "name": "makian",
+      "id": "1629"
+    },
+    {
+      "name": "tidore",
+      "id": "1327"
+    },
+    {
+      "name": "ternate",
+      "id": "1453"
+    },
+    {
+      "name": "halmahera",
+      "id": "57"
+    },
+    {
+      "name": "morotai",
+      "id": "191"
+    },
+    {
+      "name": "sangihe",
+      "id": "479"
+    },
+    {
+      "name": "karakelong",
+      "id": "374"
+    },
+    {
+      "name": "siau",
+      "id": "1346"
+    },
+    {
+      "name": "gebe",
+      "id": "1170"
+    },
+    {
+      "name": "gag",
+      "id": "1990"
+    },
+    {
+      "name": "misool",
+      "id": "203"
+    },
+    {
+      "name": "waigeo",
+      "id": "165"
+    },
+    {
+      "name": "kofiau",
+      "id": "1167"
+    },
+    {
+      "name": "salawati",
+      "id": "237"
+    },
+    {
+      "name": "gam",
+      "id": "957"
+    },
+    {
+      "name": "batanta",
+      "id": "553"
+    },
+    {
+      "name": "numfor",
+      "id": "677"
+    },
+    {
+      "name": "biak",
+      "id": "181"
+    },
+    {
+      "name": "num",
+      "id": "1618"
+    },
+    {
+      "name": "yapen",
+      "id": "189"
+    },
+    {
+      "name": "new guinea",
+      "id": "8"
+    },
+    {
+      "name": "yos sudarso",
+      "id": "69"
+    },
+    {
+      "name": "manus",
+      "id": "213"
+    },
+    {
+      "name": "kar kar",
+      "id": "607"
+    },
+    {
+      "name": "new britain",
+      "id": "45"
+    },
+    {
+      "name": "new ireland",
+      "id": "102"
+    },
+    {
+      "name": "umboi",
+      "id": "354"
+    },
+    {
+      "name": "long",
+      "id": "592"
+    },
+    {
+      "name": "new hanover",
+      "id": "283"
+    },
+    {
+      "name": "buka",
+      "id": "449"
+    },
+    {
+      "name": "bougainville",
+      "id": "91"
+    },
+    {
+      "name": "shortland",
+      "id": "904"
+    },
+    {
+      "name": "choiseul",
+      "id": "167"
+    },
+    {
+      "name": "vella lavella",
+      "id": "426"
+    },
+    {
+      "name": "kolombangara",
+      "id": "410"
+    },
+    {
+      "name": "rendova",
+      "id": "606"
+    },
+    {
+      "name": "santa isabel",
+      "id": "149"
+    },
+    {
+      "name": "new georgia",
+      "id": "204"
+    },
+    {
+      "name": "vangunu",
+      "id": "493"
+    },
+    {
+      "name": "pavuvu",
+      "id": "1257"
+    },
+    {
+      "name": "san jorge",
+      "id": "941"
+    },
+    {
+      "name": "nggela sule",
+      "id": "656"
+    },
+    {
+      "name": "guadalcanal",
+      "id": "116"
+    },
+    {
+      "name": "malaita",
+      "id": "144"
+    },
+    {
+      "name": "maramasike",
+      "id": "518"
+    },
+    {
+      "name": "san cristobal",
+      "id": "160"
+    },
+    {
+      "name": "rennell",
+      "id": "403"
+    },
+    {
+      "name": "muyua",
+      "id": "356"
+    },
+    {
+      "name": "rossel",
+      "id": "747"
+    },
+    {
+      "name": "sudest",
+      "id": "369"
+    },
+    {
+      "name": "misima",
+      "id": "911"
+    },
+    {
+      "name": "kiriwina",
+      "id": "782"
+    },
+    {
+      "name": "goodenough",
+      "id": "399"
+    },
+    {
+      "name": "fergusson",
+      "id": "267"
+    },
+    {
+      "name": "normanby",
+      "id": "342"
+    },
+    {
+      "name": "aun",
+      "id": "1449"
+    },
+    {
+      "name": "workai",
+      "id": "1113"
+    },
+    {
+      "name": "penambulai",
+      "id": "1252"
+    },
+    {
+      "name": "aru islands",
+      "id": "99"
+    },
+    {
+      "name": "adi",
+      "id": "1162"
+    },
+    {
+      "name": "selaru",
+      "id": "661"
+    },
+    {
+      "name": "romang",
+      "id": "1045"
+    },
+    {
+      "name": "lakor",
+      "id": "1368"
+    },
+    {
+      "name": "leti",
+      "id": "1526"
+    },
+    {
+      "name": "kisar",
+      "id": "1733"
+    },
+    {
+      "name": "manipa",
+      "id": "1363"
+    },
+    {
+      "name": "kelang",
+      "id": "1212"
+    },
+    {
+      "name": "buano",
+      "id": "1269"
+    },
+    {
+      "name": "bisa",
+      "id": "1053"
+    },
+    {
+      "name": "sayang",
+      "id": "3407"
+    },
+    {
+      "name": "mayu",
+      "id": "3370"
+    },
+    {
+      "name": "bunyu",
+      "id": "1324"
+    },
+    {
+      "name": "nunukan",
+      "id": "869"
+    },
+    {
+      "name": "sebatik",
+      "id": "564"
+    },
+    {
+      "name": "timbun mata",
+      "id": "1241"
+    },
+    {
+      "name": "bum bum",
+      "id": "2085"
+    },
+    {
+      "name": "jambongan",
+      "id": "1060"
+    },
+    {
+      "name": "mapun",
+      "id": "1833"
+    },
+    {
+      "name": "romblon",
+      "id": "1676"
+    },
+    {
+      "name": "ticao",
+      "id": "697"
+    },
+    {
+      "name": "cuyo",
+      "id": "2062"
+    },
+    {
+      "name": "bucas grande",
+      "id": "1284"
+    },
+    {
+      "name": "homonhon",
+      "id": "1455"
+    },
+    {
+      "name": "poro",
+      "id": "1488"
+    },
+    {
+      "name": "pacijan",
+      "id": "1528"
+    },
+    {
+      "name": "mactan",
+      "id": "2007"
+    },
+    {
+      "name": "lapak",
+      "id": "2572"
+    },
+    {
+      "name": "siasi",
+      "id": "1796"
+    },
+    {
+      "name": "lugus",
+      "id": "2661"
+    },
+    {
+      "name": "tapul",
+      "id": "2872"
+    },
+    {
+      "name": "pata",
+      "id": "2365"
+    },
+    {
+      "name": "pangutaran",
+      "id": "1533"
+    },
+    {
+      "name": "simunur",
+      "id": "2451"
+    },
+    {
+      "name": "tongkil",
+      "id": "2305"
+    },
+    {
+      "name": "balut",
+      "id": "2075"
+    },
+    {
+      "name": "sarangani",
+      "id": "2610"
+    },
+    {
+      "name": "olutanga",
+      "id": "964"
+    },
+    {
+      "name": "samal",
+      "id": "820"
+    },
+    {
+      "name": "talikud",
+      "id": "3060"
+    },
+    {
+      "name": "linapacan",
+      "id": "1432"
+    },
+    {
+      "name": "bugsuk",
+      "id": "1317"
+    }
+  ]
+}

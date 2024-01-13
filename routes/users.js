@@ -8,6 +8,16 @@ const {
   registerValidator
 } = require('../validators/validators');
 
+require('dotenv').config();
+
+const cloudinary = require('cloudinary').v2;
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
 const router = express.Router();
 
 router.post('/login', (req, res) => {
@@ -74,6 +84,7 @@ router.post('/register', (req, res) => {
       password,
       createdOn: new Date()
     });
+
     // hash password
     bcrypt.genSalt(10, (genErr, salt) => {
       bcrypt.hash(registerUser.password, salt, (hashErr, hash) => {
@@ -89,8 +100,14 @@ router.post('/register', (req, res) => {
           .then(() => {
             res.json({ message: 'User created succefully', success: true });
           })
-          // catches errors with storing new user, such as username already taked
-          .catch((err) => res.json({ message: err.message, success: false }));
+          .catch((err) => {
+            if (err.code === 11000 || err.name === 'MongoError') {
+              // MongoDB duplicate key error, indicating username is already taken
+              res.json({ message: 'Username already taken', success: false });
+            } else {
+              res.json({ message: err.message, success: false });
+            }
+          });
       });
     });
   }
@@ -103,47 +120,41 @@ router.get('/:id', checkAuth, (req, res) => {
       res.json({ user, success: true });
     })
     .catch((err) => {
-      res.json({ success: false, message: err.message });
+      res.status(404).json({ success: false, message: err.message });
     });
 });
 
 router.post('/upload-image', checkAuth, async (req, res) => {
   try {
-    const fileStr = req.body.data;
-    // const uploaded = await cloudinary.uploader.upload(fileStr);
-    Users.findOne({ _id: req.body._id }).then((user) => {
-      user.avatar = {
-        url: uploaded.url,
-        publicId: uploaded.public_id
-      };
-      user.save();
-      if (user.images) {
-        user.images.push({
-          url: uploaded.url,
-          publicId: uploaded.public_id
-        });
-      } else {
-        user.images = [];
-        user.images.push({
-          url: uploaded.url,
-          publicId: uploaded.public_id
-        });
-      }
-      res.json({ success: true });
+    const uploaded = await cloudinary.uploader.upload(req.body.image, {
+      folder: 'avatars',
+      resource_type: 'auto'
     });
+
+    const user = await Users.findOne({ _id: req.body.userID });
+
+    if (!user) {
+      return res
+        .status(404)
+        .json({ success: false, message: 'User not found' });
+    }
+
+    user.avatar = {
+      url: uploaded.url,
+      publicID: uploaded.public_id
+    };
+
+    await user.save();
+    res.json({ success: true });
   } catch (err) {
-    console.log(err);
-    res.json({
-      success: false,
-      message: 'Something went wrong, please try again.'
-    });
+    console.error('Error uploading image:', err);
+    res.status(500).json({ success: false, message: 'Something went wrong' });
   }
 });
 
 router.patch('/:id', checkAuth, (req, res) => {
   const id = req.params.id;
   const updateOps = {};
-  console.log(req.body);
   Users.findOne({ _id: req.params.id })
     .then((user) => {
       if (req.body.oldPassword) {
@@ -159,7 +170,6 @@ router.patch('/:id', checkAuth, (req, res) => {
             }
             if (req.body.password) {
               let updatedPassword = req.body.password;
-              console.log('about to hash');
               bcrypt.genSalt(10, (genErr, salt) => {
                 bcrypt.hash(updatedPassword, salt, (hashErr, hash) => {
                   if (genErr || hashErr) {
@@ -171,14 +181,11 @@ router.patch('/:id', checkAuth, (req, res) => {
                   }
                   // store hashed password
                   updatedPassword = hash;
-                  console.log('updated password: ', updatedPassword);
                   updateOps.password = updatedPassword;
 
-                  console.log('updating params', updateOps);
                   User.updateOne({ _id: id }, { $set: updateOps })
                     .exec()
                     .then((result) => {
-                      console.log('res', result);
                       res.status(200).json(result);
                     })
                     .catch((err) => {
@@ -190,11 +197,9 @@ router.patch('/:id', checkAuth, (req, res) => {
                 });
               });
             } else {
-              console.log('updating params', updateOps);
               User.updateOne({ _id: id }, { $set: updateOps })
                 .exec()
                 .then((result) => {
-                  console.log('res', result);
                   res.status(200).json(result);
                 })
                 .catch((err) => {
@@ -207,24 +212,15 @@ router.patch('/:id', checkAuth, (req, res) => {
           }
         });
       } else {
-        if (req.body.hsq1) {
-          if (!updateOps.highscores) updateOps.highscores = {};
-          updateOps.highscores.quiz1 = req.body.hsq1;
+        if (req.body.highscores) {
+          updateOps.highscores = req.body.highscores;
         } else {
-          updateOps.highscores.quiz1 = user.highscores.quiz1;
-        }
-        if (req.body.hsq2) {
-          if (!updateOps.highscores) updateOps.highscores = {};
-          updateOps.highscores.quiz2 = req.body.hsq2;
-        } else {
-          updateOps.highscores.quiz2 = user.highscores.quiz2;
+          updateOps.highscores = user.highscores;
         }
 
-        console.log('updating params', updateOps);
         User.updateOne({ _id: id }, { $set: updateOps })
           .exec()
           .then((result) => {
-            console.log('res', result);
             res.status(200).json(result);
           })
           .catch((err) => {

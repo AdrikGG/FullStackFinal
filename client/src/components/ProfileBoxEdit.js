@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Image from 'react-bootstrap/Image';
+import { Container, Col, Row } from 'react-bootstrap';
 import MainButton from '../components/MainButton';
-import cat from './cat.jpg';
 import { FaUserCircle } from 'react-icons/fa';
 
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import store from '../store/index';
+import { useTheme } from '../global styles/ThemeContext';
+import { DarkTheme, LightTheme } from '../global styles/ColorTheme';
 
 const ProfileBoxEdit = () => {
+  const { theme } = useTheme();
+  const primaryColor =
+    theme === 'light' ? LightTheme.PrimaryColor : DarkTheme.PrimaryColor;
+
   const navigate = useNavigate();
   const [user, setUser] = useState(useSelector((state) => state.user));
   const [previewSrc, setPreviewSrc] = useState('');
@@ -23,7 +25,8 @@ const ProfileBoxEdit = () => {
     'jpeg',
     'image/jpg',
     'image/png',
-    'image/jpeg'
+    'image/jpeg',
+    'application/pdf'
   ];
 
   useEffect(
@@ -38,14 +41,15 @@ const ProfileBoxEdit = () => {
   const [oldPassword, setOldPassword] = useState('');
 
   const getUser = () => {
-    // console.log('get user');
     let id = localStorage.getItem('_ID');
+
     if (!id) {
       console.log('invalid path: no user logged in');
       localStorage.clear();
       navigate('/dashboard');
       window.location.reload();
     }
+
     axios
       .get('/api/users/' + id)
       .then((res) => {
@@ -57,7 +61,6 @@ const ProfileBoxEdit = () => {
   };
 
   const handleFileInputChange = (e) => {
-    console.log('handle file input change');
     const file = e.target.files[0];
     if (!fileTypes.includes(file.type)) {
       setMessage('Must be either jpg, pdf, or png');
@@ -68,7 +71,6 @@ const ProfileBoxEdit = () => {
   };
 
   const previewFile = (file) => {
-    console.log('preview file');
     if (file.size > 10000000) {
       setMessage('File size too big');
       return;
@@ -81,25 +83,21 @@ const ProfileBoxEdit = () => {
   };
 
   const handleSubmitFile = (e) => {
-    console.log('handle submit file');
     e.preventDefault();
     if (message.length > 0 || !previewSrc || Object.keys(user) < 1) return;
+
     axios
-      .post(
-        '/api/users/upload-image',
-        JSON.stringify({
-          data: previewSrc,
-          _id: user._id
-        })
-      )
+      .post('/api/users/upload-image', {
+        image: previewSrc,
+        userID: user._id
+      })
       .then((res) => {
-        if (res.data && res.data.message) {
-          setMessage(res.data.message);
-          setPreviewSrc('');
-        } else {
-          setMessage('Success');
-          setPreviewSrc('');
-        }
+        setMessage(res.data?.message);
+        setPreviewSrc('');
+        store.dispatch({
+          type: 'update_user',
+          user: user
+        });
         getUser();
       })
       .catch((err) => {
@@ -108,17 +106,17 @@ const ProfileBoxEdit = () => {
       });
   };
 
-  const clearHS = (hsTag) => {
-    let hs = { hsq1: user.highscores.quiz1, hsq2: user.highscores.quiz2 };
-    if (hsTag === 'hsq1') {
-      hs.hsq1 = null;
-    } else {
-      hs.hsq2 = null;
-    }
+  const updateProfile = (e) => {
+    e.preventDefault();
+
     axios
-      .patch(`/api/users/${user._id}`, hs)
+      .patch(`/api/users/${user._id}`, {
+        username:
+          username !== user.username && username !== '' ? username : null,
+        password: password !== '' ? password : null,
+        oldPassword: oldPassword
+      })
       .then((res) => {
-        console.log(res);
         store.dispatch({
           type: 'update_user',
           user: user
@@ -131,32 +129,31 @@ const ProfileBoxEdit = () => {
       });
   };
 
-  const updateProfile = (e) => {
-    e.preventDefault();
-    console.log('updating profile');
-    console.log(
-      username !== user.username ? username : null,
-      password !== '' ? password : null
-    );
-    axios
-      .patch(`/api/users/${user._id}`, {
-        username:
-          username !== user.username && username !== '' ? username : null,
-        password: password !== '' ? password : null,
-        oldPassword: oldPassword
-      })
-      .then((res) => {
-        console.log(res);
-        store.dispatch({
-          type: 'update_user',
-          user: user
-        });
-        window.location.reload();
-      })
-      .catch((err) => {
-        console.log(err);
-        setMessage('Something went wrong updating your profile');
-      });
+  const clearHS = () => {};
+
+  const getQuizes = () => {
+    if (user?.highscores && user.highscores.length > 0) {
+      return user.highscores.map((entry) => (
+        <Row key={entry.quiz} className="py-1">
+          <Col className="d-flex">{entry.quiz}:</Col>
+          <Col className="text-primary">
+            {entry.score ? entry.score : 'No score'}
+          </Col>
+          <Col className="col-2">
+            <MainButton
+              text="Clear"
+              onClick={() => clearHS('hsq1')}
+            ></MainButton>
+          </Col>
+        </Row>
+      ));
+    } else {
+      return (
+        <Row>
+          <Col>No quiz scores available</Col>
+        </Row>
+      );
+    }
   };
 
   const deleteUser = () => {
@@ -173,37 +170,42 @@ const ProfileBoxEdit = () => {
       });
   };
 
-  const displayAvi = (hasAvi) => {
+  const displayAvi = () => {
     let profilePic = '';
-    if (hasAvi) {
-      //for now the profile pic will be of a cat, will need to figure out back end stuff to allow user uploading.
+
+    if (user?.avatar) {
       profilePic = (
-        <Image
-          width={180}
-          height={180}
-          roundedCircle={true}
-          src={cat}
-          alt="no"
-        ></Image>
+        <div
+          style={{
+            borderRadius: '50%',
+            backgroundImage: `url(${user.avatar.url})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            height: 180,
+            width: 180
+          }}
+          alt="profile picture"
+        ></div>
       );
     } else {
       profilePic = (
         <FaUserCircle
           size={180}
           className="m-3"
-          style={{ color: '#6d8fae ' }}
+          style={{ color: primaryColor }}
         ></FaUserCircle>
       );
     }
+
     return profilePic;
   };
 
   //have a function to check if account has an avi from back end
   //for now it will be false bc we want to show default icon for no avi
-  let pix = displayAvi(true);
+  let pix = displayAvi();
 
   return (
-    <Container>
+    <Container className="">
       <Row>
         <Col className="d-flex justify-content-center">{pix}</Col>
         <input
@@ -222,12 +224,6 @@ const ProfileBoxEdit = () => {
           {user?.username}
         </Col>
       </Row>
-      {/* <Row className="my-3">
-        <Col className="d-flex justify-content-around fw-bold">Email:</Col>
-        <Col className="d-flex justify-content-around  text-primary">
-          mnaya@pdx.edu
-        </Col>
-      </Row> */}
       <Row className="m-3">
         <label htmlFor={'usernameUpdate'}>Change username:</label>
         <input
@@ -248,35 +244,13 @@ const ProfileBoxEdit = () => {
           onChange={(e) => setPassword(e.target.value)}
         ></input>
       </Row>
-      <Row className="border m-3">
-        <Row className="m-2">
-          <Col className="d-flex justify-content-around fw-bold">
-            High Score Game1
-          </Col>
-          <Col className="d-flex justify-content-around  text-primary">
-            {user?.highscores?.quiz1 ? user.highscores.quiz1 : 'No score'}
-          </Col>
-          <Col>
-            <MainButton
-              text="Clear"
-              onClick={() => clearHS('hsq1')}
-            ></MainButton>
-          </Col>
+      <Row className="m-2 border">
+        <Row>
+          <Col className="fw-bold">Game</Col>
+          <Col className="fw-bold">Highscore</Col>
+          <Col className="col-2"></Col>
         </Row>
-        <Row className="m-2">
-          <Col className="d-flex justify-content-around fw-bold">
-            High Score Game2
-          </Col>
-          <Col className="d-flex justify-content-around  text-primary">
-            {user?.highscores?.quiz2 ? user.highscores.quiz2 : 'No score'}
-          </Col>
-          <Col>
-            <MainButton
-              text="Clear"
-              onClick={() => clearHS('hsq2')}
-            ></MainButton>
-          </Col>
-        </Row>
+        {getQuizes()}
       </Row>
       <Row className="m-3">
         <label htmlFor={'passCheck'}>Enter old password to save changes:</label>

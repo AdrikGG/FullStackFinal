@@ -5,7 +5,7 @@ const countryList = [
     alpha3: 'ALB',
     numeric: 8,
     latitude: 41,
-    longitude: 20,
+    longitude: 20
   },
   {
     country: 'Algeria',
@@ -13,23 +13,23 @@ const countryList = [
     alpha3: 'DZA',
     numeric: 12,
     latitude: 28,
-    longitude: 3,
+    longitude: 3
   },
-  {
-    country: 'American Samoa',
-    alpha2: 'AS',
-    alpha3: 'ASM',
-    numeric: 16,
-    latitude: -14.3333,
-    longitude: -170,
-  },
+  // {
+  //   country: 'American Samoa',
+  //   alpha2: 'AS',
+  //   alpha3: 'ASM',
+  //   numeric: 16,
+  //   latitude: -14.3333,
+  //   longitude: -170
+  // },
   {
     country: 'Andorra',
     alpha2: 'AD',
     alpha3: 'AND',
     numeric: 20,
     latitude: 42.5,
-    longitude: 1.6,
+    longitude: 1.6
   },
   {
     country: 'Angola',
@@ -37,31 +37,31 @@ const countryList = [
     alpha3: 'AGO',
     numeric: 24,
     latitude: -12.5,
-    longitude: 18.5,
+    longitude: 18.5
   },
-  {
-    country: 'Anguilla',
-    alpha2: 'AI',
-    alpha3: 'AIA',
-    numeric: 660,
-    latitude: 18.25,
-    longitude: -63.1667,
-  },
-  {
-    country: 'Antarctica',
-    alpha2: 'AQ',
-    alpha3: 'ATA',
-    numeric: 10,
-    latitude: -90,
-    longitude: 0,
-  },
+  // {
+  //   country: 'Anguilla',
+  //   alpha2: 'AI',
+  //   alpha3: 'AIA',
+  //   numeric: 660,
+  //   latitude: 18.25,
+  //   longitude: -63.1667
+  // },
+  // {
+  //   country: 'Antarctica',
+  //   alpha2: 'AQ',
+  //   alpha3: 'ATA',
+  //   numeric: 10,
+  //   latitude: -90,
+  //   longitude: 0
+  // },
   {
     country: 'Antigua and Barbuda',
     alpha2: 'AG',
     alpha3: 'ATG',
     numeric: 28,
     latitude: 17.05,
-    longitude: -61.8,
+    longitude: -61.8
   },
   {
     country: 'Argentina',
@@ -69,7 +69,7 @@ const countryList = [
     alpha3: 'ARG',
     numeric: 32,
     latitude: -34,
-    longitude: -64,
+    longitude: -64
   },
   {
     country: 'Armenia',
@@ -77,23 +77,23 @@ const countryList = [
     alpha3: 'ARM',
     numeric: 51,
     latitude: 40,
-    longitude: 45,
+    longitude: 45
   },
-  {
-    country: 'Aruba',
-    alpha2: 'AW',
-    alpha3: 'ABW',
-    numeric: 533,
-    latitude: 12.5,
-    longitude: -69.9667,
-  },
+  // {
+  //   country: 'Aruba',
+  //   alpha2: 'AW',
+  //   alpha3: 'ABW',
+  //   numeric: 533,
+  //   latitude: 12.5,
+  //   longitude: -69.9667
+  // },
   {
     country: 'Australia',
     alpha2: 'AU',
     alpha3: 'AUS',
     numeric: 36,
     latitude: -27,
-    longitude: 133,
+    longitude: 133
   },
   {
     country: 'Austria',
@@ -101,7 +101,7 @@ const countryList = [
     alpha3: 'AUT',
     numeric: 40,
     latitude: 47.3333,
-    longitude: 13.3333,
+    longitude: 13.3333
   },
   {
     country: 'Azerbaijan',
@@ -109,7 +109,7 @@ const countryList = [
     alpha3: 'AZE',
     numeric: 31,
     latitude: 40.5,
-    longitude: 47.5,
+    longitude: 47.5
   },
   {
     country: 'Bahamas',
@@ -117,7 +117,7 @@ const countryList = [
     alpha3: 'BHS',
     numeric: 44,
     latitude: 24.25,
-    longitude: -76,
+    longitude: -76
   },
   {
     country: 'Bahrain',
@@ -125,7 +125,7 @@ const countryList = [
     alpha3: 'BHR',
     numeric: 48,
     latitude: 26,
-    longitude: 50.55,
+    longitude: 50.55
   },
   {
     country: 'Bangladesh',
@@ -133,7 +133,7 @@ const countryList = [
     alpha3: 'BGD',
     numeric: 50,
     latitude: 24,
-    longitude: 90,
+    longitude: 90
   },
   {
     country: 'Barbados',
@@ -141,7 +141,7 @@ const countryList = [
     alpha3: 'BRB',
     numeric: 52,
     latitude: 13.1667,
-    longitude: -59.5333,
+    longitude: -59.5333
   },
   {
     country: 'Belarus',
@@ -149,7 +149,7 @@ const countryList = [
     alpha3: 'BLR',
     numeric: 112,
     latitude: 53,
-    longitude: 28,
+    longitude: 28
   },
   {
     country: 'Belgium',
@@ -157,7 +157,7 @@ const countryList = [
     alpha3: 'BEL',
     numeric: 56,
     latitude: 50.8333,
-    longitude: 4,
+    longitude: 4
   },
   {
     country: 'Belize',
@@ -165,7 +165,7 @@ const countryList = [
     alpha3: 'BLZ',
     numeric: 84,
     latitude: 17.25,
-    longitude: -88.75,
+    longitude: -88.75
   },
   {
     country: 'Benin',
@@ -173,23 +173,23 @@ const countryList = [
     alpha3: 'BEN',
     numeric: 204,
     latitude: 9.5,
-    longitude: 2.25,
+    longitude: 2.25
   },
-  {
-    country: 'Bermuda',
-    alpha2: 'BM',
-    alpha3: 'BMU',
-    numeric: 60,
-    latitude: 32.3333,
-    longitude: -64.75,
-  },
+  // {
+  //   country: 'Bermuda',
+  //   alpha2: 'BM',
+  //   alpha3: 'BMU',
+  //   numeric: 60,
+  //   latitude: 32.3333,
+  //   longitude: -64.75
+  // },
   {
     country: 'Bhutan',
     alpha2: 'BT',
     alpha3: 'BTN',
     numeric: 64,
     latitude: 27.5,
-    longitude: 90.5,
+    longitude: 90.5
   },
   {
     country: 'Bolivia',
@@ -197,7 +197,7 @@ const countryList = [
     alpha3: 'BOL',
     numeric: 68,
     latitude: -17,
-    longitude: -65,
+    longitude: -65
   },
   {
     country: 'Bosnia and Herzegovina',
@@ -205,7 +205,7 @@ const countryList = [
     alpha3: 'BIH',
     numeric: 70,
     latitude: 44,
-    longitude: 18,
+    longitude: 18
   },
   {
     country: 'Botswana',
@@ -213,7 +213,7 @@ const countryList = [
     alpha3: 'BWA',
     numeric: 72,
     latitude: -22,
-    longitude: 24,
+    longitude: 24
   },
   {
     country: 'Brazil',
@@ -221,7 +221,7 @@ const countryList = [
     alpha3: 'BRA',
     numeric: 76,
     latitude: -10,
-    longitude: -55,
+    longitude: -55
   },
   {
     country: 'Brunei',
@@ -229,7 +229,7 @@ const countryList = [
     alpha3: 'BRN',
     numeric: 96,
     latitude: 4.5,
-    longitude: 114.6667,
+    longitude: 114.6667
   },
   {
     country: 'Bulgaria',
@@ -237,7 +237,7 @@ const countryList = [
     alpha3: 'BGR',
     numeric: 100,
     latitude: 43,
-    longitude: 25,
+    longitude: 25
   },
   {
     country: 'Burkina Faso',
@@ -245,7 +245,7 @@ const countryList = [
     alpha3: 'BFA',
     numeric: 854,
     latitude: 13,
-    longitude: -2,
+    longitude: -2
   },
   {
     country: 'Burundi',
@@ -253,7 +253,7 @@ const countryList = [
     alpha3: 'BDI',
     numeric: 108,
     latitude: -3.5,
-    longitude: 30,
+    longitude: 30
   },
   {
     country: 'Cambodia',
@@ -261,7 +261,7 @@ const countryList = [
     alpha3: 'KHM',
     numeric: 116,
     latitude: 13,
-    longitude: 105,
+    longitude: 105
   },
   {
     country: 'Cameroon',
@@ -269,7 +269,7 @@ const countryList = [
     alpha3: 'CMR',
     numeric: 120,
     latitude: 6,
-    longitude: 12,
+    longitude: 12
   },
   {
     country: 'Canada',
@@ -277,7 +277,7 @@ const countryList = [
     alpha3: 'CAN',
     numeric: 124,
     latitude: 60,
-    longitude: -95,
+    longitude: -95
   },
   {
     country: 'Cape Verde',
@@ -285,7 +285,7 @@ const countryList = [
     alpha3: 'CPV',
     numeric: 132,
     latitude: 16,
-    longitude: -24,
+    longitude: -24
   },
   {
     country: 'Central African Republic',
@@ -293,7 +293,7 @@ const countryList = [
     alpha3: 'CAF',
     numeric: 140,
     latitude: 7,
-    longitude: 21,
+    longitude: 21
   },
   {
     country: 'Chad',
@@ -301,7 +301,7 @@ const countryList = [
     alpha3: 'TCD',
     numeric: 148,
     latitude: 15,
-    longitude: 19,
+    longitude: 19
   },
   {
     country: 'Chile',
@@ -309,7 +309,7 @@ const countryList = [
     alpha3: 'CHL',
     numeric: 152,
     latitude: -30,
-    longitude: -71,
+    longitude: -71
   },
   {
     country: 'China',
@@ -317,7 +317,7 @@ const countryList = [
     alpha3: 'CHN',
     numeric: 156,
     latitude: 35,
-    longitude: 105,
+    longitude: 105
   },
   {
     country: 'Colombia',
@@ -325,7 +325,7 @@ const countryList = [
     alpha3: 'COL',
     numeric: 170,
     latitude: 4,
-    longitude: -72,
+    longitude: -72
   },
   {
     country: 'Comoros',
@@ -333,7 +333,7 @@ const countryList = [
     alpha3: 'COM',
     numeric: 174,
     latitude: -12.1667,
-    longitude: 44.25,
+    longitude: 44.25
   },
   {
     country: 'Congo',
@@ -341,7 +341,7 @@ const countryList = [
     alpha3: 'COG',
     numeric: 178,
     latitude: -1,
-    longitude: 15,
+    longitude: 15
   },
   {
     country: 'Congo',
@@ -349,7 +349,7 @@ const countryList = [
     alpha3: 'COD',
     numeric: 180,
     latitude: 0,
-    longitude: 25,
+    longitude: 25
   },
   {
     country: 'Costa Rica',
@@ -357,7 +357,7 @@ const countryList = [
     alpha3: 'CRI',
     numeric: 188,
     latitude: 10,
-    longitude: -84,
+    longitude: -84
   },
   {
     country: 'Croatia',
@@ -365,7 +365,7 @@ const countryList = [
     alpha3: 'HRV',
     numeric: 191,
     latitude: 45.1667,
-    longitude: 15.5,
+    longitude: 15.5
   },
   {
     country: 'Cuba',
@@ -373,7 +373,7 @@ const countryList = [
     alpha3: 'CUB',
     numeric: 192,
     latitude: 21.5,
-    longitude: -80,
+    longitude: -80
   },
   {
     country: 'Cyprus',
@@ -381,15 +381,15 @@ const countryList = [
     alpha3: 'CYP',
     numeric: 196,
     latitude: 35,
-    longitude: 33,
+    longitude: 33
   },
   {
-    country: 'Czech Republic',
+    country: 'Czechia',
     alpha2: 'CZ',
     alpha3: 'CZE',
     numeric: 203,
     latitude: 49.75,
-    longitude: 15.5,
+    longitude: 15.5
   },
   {
     country: 'Denmark',
@@ -397,7 +397,7 @@ const countryList = [
     alpha3: 'DNK',
     numeric: 208,
     latitude: 56,
-    longitude: 10,
+    longitude: 10
   },
   {
     country: 'Djibouti',
@@ -405,7 +405,7 @@ const countryList = [
     alpha3: 'DJI',
     numeric: 262,
     latitude: 11.5,
-    longitude: 43,
+    longitude: 43
   },
   {
     country: 'Dominica',
@@ -413,7 +413,7 @@ const countryList = [
     alpha3: 'DMA',
     numeric: 212,
     latitude: 15.4167,
-    longitude: -61.3333,
+    longitude: -61.3333
   },
   {
     country: 'Dominican Republic',
@@ -421,7 +421,7 @@ const countryList = [
     alpha3: 'DOM',
     numeric: 214,
     latitude: 19,
-    longitude: -70.6667,
+    longitude: -70.6667
   },
   {
     country: 'Ecuador',
@@ -429,7 +429,7 @@ const countryList = [
     alpha3: 'ECU',
     numeric: 218,
     latitude: -2,
-    longitude: -77.5,
+    longitude: -77.5
   },
   {
     country: 'Egypt',
@@ -437,7 +437,7 @@ const countryList = [
     alpha3: 'EGY',
     numeric: 818,
     latitude: 27,
-    longitude: 30,
+    longitude: 30
   },
   {
     country: 'El Salvador',
@@ -445,15 +445,15 @@ const countryList = [
     alpha3: 'SLV',
     numeric: 222,
     latitude: 13.8333,
-    longitude: -88.9167,
+    longitude: -88.9167
   },
   {
-    country: 'Guinea',
+    country: 'Equatorial Guinea',
     alpha2: 'GQ',
     alpha3: 'GNQ',
     numeric: 226,
     latitude: 2,
-    longitude: 10,
+    longitude: 10
   },
   {
     country: 'Eritrea',
@@ -461,7 +461,7 @@ const countryList = [
     alpha3: 'ERI',
     numeric: 232,
     latitude: 15,
-    longitude: 39,
+    longitude: 39
   },
   {
     country: 'Estonia',
@@ -469,7 +469,7 @@ const countryList = [
     alpha3: 'EST',
     numeric: 233,
     latitude: 59,
-    longitude: 26,
+    longitude: 26
   },
   {
     country: 'Ethiopia',
@@ -477,7 +477,7 @@ const countryList = [
     alpha3: 'ETH',
     numeric: 231,
     latitude: 8,
-    longitude: 38,
+    longitude: 38
   },
   {
     country: 'Fiji',
@@ -485,7 +485,7 @@ const countryList = [
     alpha3: 'FJI',
     numeric: 242,
     latitude: -18,
-    longitude: 175,
+    longitude: 175
   },
   {
     country: 'Finland',
@@ -493,7 +493,7 @@ const countryList = [
     alpha3: 'FIN',
     numeric: 246,
     latitude: 64,
-    longitude: 26,
+    longitude: 26
   },
   {
     country: 'France',
@@ -501,7 +501,7 @@ const countryList = [
     alpha3: 'FRA',
     numeric: 250,
     latitude: 46,
-    longitude: 2,
+    longitude: 2
   },
   {
     country: 'Gabon',
@@ -509,7 +509,7 @@ const countryList = [
     alpha3: 'GAB',
     numeric: 266,
     latitude: -1,
-    longitude: 11.75,
+    longitude: 11.75
   },
   {
     country: 'Gambia',
@@ -517,7 +517,7 @@ const countryList = [
     alpha3: 'GMB',
     numeric: 270,
     latitude: 13.4667,
-    longitude: -16.5667,
+    longitude: -16.5667
   },
   {
     country: 'Georgia',
@@ -525,7 +525,7 @@ const countryList = [
     alpha3: 'GEO',
     numeric: 268,
     latitude: 42,
-    longitude: 43.5,
+    longitude: 43.5
   },
   {
     country: 'Germany',
@@ -533,7 +533,7 @@ const countryList = [
     alpha3: 'DEU',
     numeric: 276,
     latitude: 51,
-    longitude: 9,
+    longitude: 9
   },
   {
     country: 'Ghana',
@@ -541,7 +541,7 @@ const countryList = [
     alpha3: 'GHA',
     numeric: 288,
     latitude: 8,
-    longitude: -2,
+    longitude: -2
   },
   {
     country: 'Greece',
@@ -549,7 +549,7 @@ const countryList = [
     alpha3: 'GRC',
     numeric: 300,
     latitude: 39,
-    longitude: 22,
+    longitude: 22
   },
   {
     country: 'Greenland',
@@ -557,7 +557,7 @@ const countryList = [
     alpha3: 'GRL',
     numeric: 304,
     latitude: 72,
-    longitude: -40,
+    longitude: -40
   },
   {
     country: 'Grenada',
@@ -565,7 +565,7 @@ const countryList = [
     alpha3: 'GRD',
     numeric: 308,
     latitude: 12.1167,
-    longitude: -61.6667,
+    longitude: -61.6667
   },
   {
     country: 'Guatemala',
@@ -573,7 +573,7 @@ const countryList = [
     alpha3: 'GTM',
     numeric: 320,
     latitude: 15.5,
-    longitude: -90.25,
+    longitude: -90.25
   },
   {
     country: 'Guinea',
@@ -581,7 +581,7 @@ const countryList = [
     alpha3: 'GIN',
     numeric: 324,
     latitude: 11,
-    longitude: -10,
+    longitude: -10
   },
   {
     country: 'Guinea-Bissau',
@@ -589,7 +589,7 @@ const countryList = [
     alpha3: 'GNB',
     numeric: 624,
     latitude: 12,
-    longitude: -15,
+    longitude: -15
   },
   {
     country: 'Guyana',
@@ -597,7 +597,7 @@ const countryList = [
     alpha3: 'GUY',
     numeric: 328,
     latitude: 5,
-    longitude: -59,
+    longitude: -59
   },
   {
     country: 'Haiti',
@@ -605,7 +605,7 @@ const countryList = [
     alpha3: 'HTI',
     numeric: 332,
     latitude: 19,
-    longitude: -72.4167,
+    longitude: -72.4167
   },
   {
     country: 'Honduras',
@@ -613,7 +613,7 @@ const countryList = [
     alpha3: 'HND',
     numeric: 340,
     latitude: 15,
-    longitude: -86.5,
+    longitude: -86.5
   },
   {
     country: 'Hungary',
@@ -621,7 +621,7 @@ const countryList = [
     alpha3: 'HUN',
     numeric: 348,
     latitude: 47,
-    longitude: 20,
+    longitude: 20
   },
   {
     country: 'Iceland',
@@ -629,7 +629,7 @@ const countryList = [
     alpha3: 'ISL',
     numeric: 352,
     latitude: 65,
-    longitude: -18,
+    longitude: -18
   },
   {
     country: 'India',
@@ -637,7 +637,7 @@ const countryList = [
     alpha3: 'IND',
     numeric: 356,
     latitude: 20,
-    longitude: 77,
+    longitude: 77
   },
   {
     country: 'Indonesia',
@@ -645,7 +645,7 @@ const countryList = [
     alpha3: 'IDN',
     numeric: 360,
     latitude: -5,
-    longitude: 120,
+    longitude: 120
   },
   {
     country: 'Iran',
@@ -653,7 +653,7 @@ const countryList = [
     alpha3: 'IRN',
     numeric: 364,
     latitude: 32,
-    longitude: 53,
+    longitude: 53
   },
   {
     country: 'Iraq',
@@ -661,7 +661,7 @@ const countryList = [
     alpha3: 'IRQ',
     numeric: 368,
     latitude: 33,
-    longitude: 44,
+    longitude: 44
   },
   {
     country: 'Ireland',
@@ -669,7 +669,7 @@ const countryList = [
     alpha3: 'IRL',
     numeric: 372,
     latitude: 53,
-    longitude: -8,
+    longitude: -8
   },
   {
     country: 'Israel',
@@ -677,7 +677,7 @@ const countryList = [
     alpha3: 'ISR',
     numeric: 376,
     latitude: 31.5,
-    longitude: 34.75,
+    longitude: 34.75
   },
   {
     country: 'Italy',
@@ -685,7 +685,15 @@ const countryList = [
     alpha3: 'ITA',
     numeric: 380,
     latitude: 42.8333,
-    longitude: 12.8333,
+    longitude: 12.8333
+  },
+  {
+    country: 'Ivory Coast',
+    alpha2: 'CI',
+    alpha3: 'CIV',
+    numeric: 382,
+    latitude: 7.54,
+    longitude: -5.5471
   },
   {
     country: 'Jamaica',
@@ -693,7 +701,7 @@ const countryList = [
     alpha3: 'JAM',
     numeric: 388,
     latitude: 18.25,
-    longitude: -77.5,
+    longitude: -77.5
   },
   {
     country: 'Japan',
@@ -701,7 +709,7 @@ const countryList = [
     alpha3: 'JPN',
     numeric: 392,
     latitude: 36,
-    longitude: 138,
+    longitude: 138
   },
   {
     country: 'Jordan',
@@ -709,7 +717,7 @@ const countryList = [
     alpha3: 'JOR',
     numeric: 400,
     latitude: 31,
-    longitude: 36,
+    longitude: 36
   },
   {
     country: 'Kazakhstan',
@@ -717,7 +725,7 @@ const countryList = [
     alpha3: 'KAZ',
     numeric: 398,
     latitude: 48,
-    longitude: 68,
+    longitude: 68
   },
   {
     country: 'Kenya',
@@ -725,7 +733,7 @@ const countryList = [
     alpha3: 'KEN',
     numeric: 404,
     latitude: 1,
-    longitude: 38,
+    longitude: 38
   },
   {
     country: 'Kiribati',
@@ -733,7 +741,7 @@ const countryList = [
     alpha3: 'KIR',
     numeric: 296,
     latitude: 1.4167,
-    longitude: 173,
+    longitude: 173
   },
   {
     country: 'North Korea',
@@ -741,7 +749,7 @@ const countryList = [
     alpha3: 'PRK',
     numeric: 408,
     latitude: 40,
-    longitude: 127,
+    longitude: 127
   },
   {
     country: 'South Korea',
@@ -749,15 +757,23 @@ const countryList = [
     alpha3: 'KOR',
     numeric: 410,
     latitude: 37,
-    longitude: 127.5,
+    longitude: 127.5
   },
+  // {
+  //   country: 'Kosovo',
+  //   alpha2: 'XK',
+  //   alpha3: 'KOS',
+  //   numeric: 410,
+  //   latitude: 42.6026,
+  //   longitude: 20.903
+  // },
   {
     country: 'Kuwait',
     alpha2: 'KW',
     alpha3: 'KWT',
     numeric: 414,
     latitude: 29.3375,
-    longitude: 47.6581,
+    longitude: 47.6581
   },
   {
     country: 'Kyrgyzstan',
@@ -765,7 +781,7 @@ const countryList = [
     alpha3: 'KGZ',
     numeric: 417,
     latitude: 41,
-    longitude: 75,
+    longitude: 75
   },
   {
     country: 'Laos',
@@ -773,7 +789,7 @@ const countryList = [
     alpha3: 'LAO',
     numeric: 418,
     latitude: 18,
-    longitude: 105,
+    longitude: 105
   },
   {
     country: 'Latvia',
@@ -781,7 +797,7 @@ const countryList = [
     alpha3: 'LVA',
     numeric: 428,
     latitude: 57,
-    longitude: 25,
+    longitude: 25
   },
   {
     country: 'Lebanon',
@@ -789,7 +805,7 @@ const countryList = [
     alpha3: 'LBN',
     numeric: 422,
     latitude: 33.8333,
-    longitude: 35.8333,
+    longitude: 35.8333
   },
   {
     country: 'Lesotho',
@@ -797,7 +813,7 @@ const countryList = [
     alpha3: 'LSO',
     numeric: 426,
     latitude: -29.5,
-    longitude: 28.5,
+    longitude: 28.5
   },
   {
     country: 'Liberia',
@@ -805,7 +821,7 @@ const countryList = [
     alpha3: 'LBR',
     numeric: 430,
     latitude: 6.5,
-    longitude: -9.5,
+    longitude: -9.5
   },
   {
     country: 'Libya',
@@ -813,7 +829,7 @@ const countryList = [
     alpha3: 'LBY',
     numeric: 434,
     latitude: 25,
-    longitude: 17,
+    longitude: 17
   },
   {
     country: 'Liechtenstein',
@@ -821,7 +837,7 @@ const countryList = [
     alpha3: 'LIE',
     numeric: 438,
     latitude: 47.1667,
-    longitude: 9.5333,
+    longitude: 9.5333
   },
   {
     country: 'Lithuania',
@@ -829,7 +845,7 @@ const countryList = [
     alpha3: 'LTU',
     numeric: 440,
     latitude: 56,
-    longitude: 24,
+    longitude: 24
   },
   {
     country: 'Luxembourg',
@@ -837,23 +853,23 @@ const countryList = [
     alpha3: 'LUX',
     numeric: 442,
     latitude: 49.75,
-    longitude: 6.1667,
+    longitude: 6.1667
   },
-  {
-    country: 'Macao',
-    alpha2: 'MO',
-    alpha3: 'MAC',
-    numeric: 446,
-    latitude: 22.1667,
-    longitude: 113.55,
-  },
+  // {
+  //   country: 'Macao',
+  //   alpha2: 'MO',
+  //   alpha3: 'MAC',
+  //   numeric: 446,
+  //   latitude: 22.1667,
+  //   longitude: 113.55
+  // },
   {
     country: 'Macedonia',
     alpha2: 'MK',
     alpha3: 'MKD',
     numeric: 807,
     latitude: 41.8333,
-    longitude: 22,
+    longitude: 22
   },
   {
     country: 'Madagascar',
@@ -861,7 +877,7 @@ const countryList = [
     alpha3: 'MDG',
     numeric: 450,
     latitude: -20,
-    longitude: 47,
+    longitude: 47
   },
   {
     country: 'Malawi',
@@ -869,7 +885,7 @@ const countryList = [
     alpha3: 'MWI',
     numeric: 454,
     latitude: -13.5,
-    longitude: 34,
+    longitude: 34
   },
   {
     country: 'Malaysia',
@@ -877,7 +893,7 @@ const countryList = [
     alpha3: 'MYS',
     numeric: 458,
     latitude: 2.5,
-    longitude: 112.5,
+    longitude: 112.5
   },
   {
     country: 'Maldives',
@@ -885,7 +901,7 @@ const countryList = [
     alpha3: 'MDV',
     numeric: 462,
     latitude: 3.25,
-    longitude: 73,
+    longitude: 73
   },
   {
     country: 'Mali',
@@ -893,7 +909,7 @@ const countryList = [
     alpha3: 'MLI',
     numeric: 466,
     latitude: 17,
-    longitude: -4,
+    longitude: -4
   },
   {
     country: 'Malta',
@@ -901,7 +917,7 @@ const countryList = [
     alpha3: 'MLT',
     numeric: 470,
     latitude: 35.8333,
-    longitude: 14.5833,
+    longitude: 14.5833
   },
   {
     country: 'Marshall Islands',
@@ -909,7 +925,7 @@ const countryList = [
     alpha3: 'MHL',
     numeric: 584,
     latitude: 9,
-    longitude: 168,
+    longitude: 168
   },
   {
     country: 'Mauritania',
@@ -917,7 +933,7 @@ const countryList = [
     alpha3: 'MRT',
     numeric: 478,
     latitude: 20,
-    longitude: -12,
+    longitude: -12
   },
   {
     country: 'Mauritius',
@@ -925,7 +941,7 @@ const countryList = [
     alpha3: 'MUS',
     numeric: 480,
     latitude: -20.2833,
-    longitude: 57.55,
+    longitude: 57.55
   },
   {
     country: 'Mexico',
@@ -933,7 +949,7 @@ const countryList = [
     alpha3: 'MEX',
     numeric: 484,
     latitude: 23,
-    longitude: -102,
+    longitude: -102
   },
   {
     country: 'Micronesia',
@@ -941,7 +957,7 @@ const countryList = [
     alpha3: 'FSM',
     numeric: 583,
     latitude: 6.9167,
-    longitude: 158.25,
+    longitude: 158.25
   },
   {
     country: 'Moldova',
@@ -949,7 +965,7 @@ const countryList = [
     alpha3: 'MDA',
     numeric: 498,
     latitude: 47,
-    longitude: 29,
+    longitude: 29
   },
   {
     country: 'Monaco',
@@ -957,7 +973,7 @@ const countryList = [
     alpha3: 'MCO',
     numeric: 492,
     latitude: 43.7333,
-    longitude: 7.4,
+    longitude: 7.4
   },
   {
     country: 'Mongolia',
@@ -965,7 +981,7 @@ const countryList = [
     alpha3: 'MNG',
     numeric: 496,
     latitude: 46,
-    longitude: 105,
+    longitude: 105
   },
   {
     country: 'Montenegro',
@@ -973,7 +989,7 @@ const countryList = [
     alpha3: 'MNE',
     numeric: 499,
     latitude: 42,
-    longitude: 19,
+    longitude: 19
   },
   {
     country: 'Morocco',
@@ -981,7 +997,7 @@ const countryList = [
     alpha3: 'MAR',
     numeric: 504,
     latitude: 32,
-    longitude: -5,
+    longitude: -5
   },
   {
     country: 'Mozambique',
@@ -989,7 +1005,7 @@ const countryList = [
     alpha3: 'MOZ',
     numeric: 508,
     latitude: -18.25,
-    longitude: 35,
+    longitude: 35
   },
   {
     country: 'Myanmar',
@@ -997,7 +1013,7 @@ const countryList = [
     alpha3: 'MMR',
     numeric: 104,
     latitude: 22,
-    longitude: 98,
+    longitude: 98
   },
   {
     country: 'Namibia',
@@ -1005,7 +1021,7 @@ const countryList = [
     alpha3: 'NAM',
     numeric: 516,
     latitude: -22,
-    longitude: 17,
+    longitude: 17
   },
   {
     country: 'Nauru',
@@ -1013,7 +1029,7 @@ const countryList = [
     alpha3: 'NRU',
     numeric: 520,
     latitude: -0.5333,
-    longitude: 166.9167,
+    longitude: 166.9167
   },
   {
     country: 'Nepal',
@@ -1021,7 +1037,7 @@ const countryList = [
     alpha3: 'NPL',
     numeric: 524,
     latitude: 28,
-    longitude: 84,
+    longitude: 84
   },
   {
     country: 'Netherlands',
@@ -1029,7 +1045,7 @@ const countryList = [
     alpha3: 'NLD',
     numeric: 528,
     latitude: 52.5,
-    longitude: 5.75,
+    longitude: 5.75
   },
   {
     country: 'New Zealand',
@@ -1037,7 +1053,7 @@ const countryList = [
     alpha3: 'NZL',
     numeric: 554,
     latitude: -41,
-    longitude: 174,
+    longitude: 174
   },
   {
     country: 'Nicaragua',
@@ -1045,7 +1061,7 @@ const countryList = [
     alpha3: 'NIC',
     numeric: 558,
     latitude: 13,
-    longitude: -85,
+    longitude: -85
   },
   {
     country: 'Niger',
@@ -1053,7 +1069,7 @@ const countryList = [
     alpha3: 'NER',
     numeric: 562,
     latitude: 16,
-    longitude: 8,
+    longitude: 8
   },
   {
     country: 'Nigeria',
@@ -1061,7 +1077,7 @@ const countryList = [
     alpha3: 'NGA',
     numeric: 566,
     latitude: 10,
-    longitude: 8,
+    longitude: 8
   },
   {
     country: 'Norway',
@@ -1069,7 +1085,7 @@ const countryList = [
     alpha3: 'NOR',
     numeric: 578,
     latitude: 62,
-    longitude: 10,
+    longitude: 10
   },
   {
     country: 'Oman',
@@ -1077,7 +1093,7 @@ const countryList = [
     alpha3: 'OMN',
     numeric: 512,
     latitude: 21,
-    longitude: 57,
+    longitude: 57
   },
   {
     country: 'Pakistan',
@@ -1085,7 +1101,7 @@ const countryList = [
     alpha3: 'PAK',
     numeric: 586,
     latitude: 30,
-    longitude: 70,
+    longitude: 70
   },
   {
     country: 'Palau',
@@ -1093,7 +1109,7 @@ const countryList = [
     alpha3: 'PLW',
     numeric: 585,
     latitude: 7.5,
-    longitude: 134.5,
+    longitude: 134.5
   },
   {
     country: 'Panama',
@@ -1101,7 +1117,7 @@ const countryList = [
     alpha3: 'PAN',
     numeric: 591,
     latitude: 9,
-    longitude: -80,
+    longitude: -80
   },
   {
     country: 'Papua New Guinea',
@@ -1109,7 +1125,7 @@ const countryList = [
     alpha3: 'PNG',
     numeric: 598,
     latitude: -6,
-    longitude: 147,
+    longitude: 147
   },
   {
     country: 'Paraguay',
@@ -1117,7 +1133,7 @@ const countryList = [
     alpha3: 'PRY',
     numeric: 600,
     latitude: -23,
-    longitude: -58,
+    longitude: -58
   },
   {
     country: 'Peru',
@@ -1125,7 +1141,7 @@ const countryList = [
     alpha3: 'PER',
     numeric: 604,
     latitude: -10,
-    longitude: -76,
+    longitude: -76
   },
   {
     country: 'Philippines',
@@ -1133,7 +1149,7 @@ const countryList = [
     alpha3: 'PHL',
     numeric: 608,
     latitude: 13,
-    longitude: 122,
+    longitude: 122
   },
   {
     country: 'Poland',
@@ -1141,7 +1157,7 @@ const countryList = [
     alpha3: 'POL',
     numeric: 616,
     latitude: 52,
-    longitude: 20,
+    longitude: 20
   },
   {
     country: 'Portugal',
@@ -1149,23 +1165,23 @@ const countryList = [
     alpha3: 'PRT',
     numeric: 620,
     latitude: 39.5,
-    longitude: -8,
+    longitude: -8
   },
-  {
-    country: 'Puerto Rico',
-    alpha2: 'PR',
-    alpha3: 'PRI',
-    numeric: 630,
-    latitude: 18.25,
-    longitude: -66.5,
-  },
+  // {
+  //   country: 'Puerto Rico',
+  //   alpha2: 'PR',
+  //   alpha3: 'PRI',
+  //   numeric: 630,
+  //   latitude: 18.25,
+  //   longitude: -66.5
+  // },
   {
     country: 'Qatar',
     alpha2: 'QA',
     alpha3: 'QAT',
     numeric: 634,
     latitude: 25.5,
-    longitude: 51.25,
+    longitude: 51.25
   },
   {
     country: 'Romania',
@@ -1173,7 +1189,7 @@ const countryList = [
     alpha3: 'ROU',
     numeric: 642,
     latitude: 46,
-    longitude: 25,
+    longitude: 25
   },
   {
     country: 'Russia',
@@ -1181,7 +1197,7 @@ const countryList = [
     alpha3: 'RUS',
     numeric: 643,
     latitude: 60,
-    longitude: 100,
+    longitude: 100
   },
   {
     country: 'Rwanda',
@@ -1189,7 +1205,7 @@ const countryList = [
     alpha3: 'RWA',
     numeric: 646,
     latitude: -2,
-    longitude: 30,
+    longitude: 30
   },
   {
     country: 'Saint Kitts and Nevis',
@@ -1197,7 +1213,7 @@ const countryList = [
     alpha3: 'KNA',
     numeric: 659,
     latitude: 17.3333,
-    longitude: -62.75,
+    longitude: -62.75
   },
   {
     country: 'Saint Lucia',
@@ -1205,7 +1221,7 @@ const countryList = [
     alpha3: 'LCA',
     numeric: 662,
     latitude: 13.8833,
-    longitude: -61.1333,
+    longitude: -61.1333
   },
   {
     country: 'Saint Vincent and the Grenadines',
@@ -1213,7 +1229,7 @@ const countryList = [
     alpha3: 'VCT',
     numeric: 670,
     latitude: 13.25,
-    longitude: -61.2,
+    longitude: -61.2
   },
   {
     country: 'Samoa',
@@ -1221,7 +1237,7 @@ const countryList = [
     alpha3: 'WSM',
     numeric: 882,
     latitude: -13.5833,
-    longitude: -172.3333,
+    longitude: -172.3333
   },
   {
     country: 'San Marino',
@@ -1229,7 +1245,7 @@ const countryList = [
     alpha3: 'SMR',
     numeric: 674,
     latitude: 43.7667,
-    longitude: 12.4167,
+    longitude: 12.4167
   },
   {
     country: 'Saudi Arabia',
@@ -1237,7 +1253,7 @@ const countryList = [
     alpha3: 'SAU',
     numeric: 682,
     latitude: 25,
-    longitude: 45,
+    longitude: 45
   },
   {
     country: 'Senegal',
@@ -1245,7 +1261,7 @@ const countryList = [
     alpha3: 'SEN',
     numeric: 686,
     latitude: 14,
-    longitude: -14,
+    longitude: -14
   },
   {
     country: 'Serbia',
@@ -1253,7 +1269,7 @@ const countryList = [
     alpha3: 'SRB',
     numeric: 688,
     latitude: 44,
-    longitude: 21,
+    longitude: 21
   },
   {
     country: 'Sierra Leone',
@@ -1261,7 +1277,7 @@ const countryList = [
     alpha3: 'SLE',
     numeric: 694,
     latitude: 8.5,
-    longitude: -11.5,
+    longitude: -11.5
   },
   {
     country: 'Singapore',
@@ -1269,7 +1285,7 @@ const countryList = [
     alpha3: 'SGP',
     numeric: 702,
     latitude: 1.3667,
-    longitude: 103.8,
+    longitude: 103.8
   },
   {
     country: 'Slovakia',
@@ -1277,7 +1293,7 @@ const countryList = [
     alpha3: 'SVK',
     numeric: 703,
     latitude: 48.6667,
-    longitude: 19.5,
+    longitude: 19.5
   },
   {
     country: 'Slovenia',
@@ -1285,7 +1301,7 @@ const countryList = [
     alpha3: 'SVN',
     numeric: 705,
     latitude: 46,
-    longitude: 15,
+    longitude: 15
   },
   {
     country: 'Solomon Islands',
@@ -1293,7 +1309,7 @@ const countryList = [
     alpha3: 'SLB',
     numeric: 90,
     latitude: -8,
-    longitude: 159,
+    longitude: 159
   },
   {
     country: 'Somalia',
@@ -1301,7 +1317,7 @@ const countryList = [
     alpha3: 'SOM',
     numeric: 706,
     latitude: 10,
-    longitude: 49,
+    longitude: 49
   },
   {
     country: 'South Africa',
@@ -1309,7 +1325,15 @@ const countryList = [
     alpha3: 'ZAF',
     numeric: 710,
     latitude: -29,
-    longitude: 24,
+    longitude: 24
+  },
+  {
+    country: 'South Sudan',
+    alpha2: 'SS',
+    alpha3: 'SSD',
+    numeric: 710,
+    latitude: 6.877,
+    longitude: 31.307
   },
   {
     country: 'Spain',
@@ -1317,7 +1341,7 @@ const countryList = [
     alpha3: 'ESP',
     numeric: 724,
     latitude: 40,
-    longitude: -4,
+    longitude: -4
   },
   {
     country: 'Sri Lanka',
@@ -1325,7 +1349,7 @@ const countryList = [
     alpha3: 'LKA',
     numeric: 144,
     latitude: 7,
-    longitude: 81,
+    longitude: 81
   },
   {
     country: 'Sudan',
@@ -1333,7 +1357,7 @@ const countryList = [
     alpha3: 'SDN',
     numeric: 736,
     latitude: 15,
-    longitude: 30,
+    longitude: 30
   },
   {
     country: 'Suriname',
@@ -1341,15 +1365,15 @@ const countryList = [
     alpha3: 'SUR',
     numeric: 740,
     latitude: 4,
-    longitude: -56,
+    longitude: -56
   },
   {
-    country: 'Swaziland',
+    country: 'Eswatini',
     alpha2: 'SZ',
     alpha3: 'SWZ',
     numeric: 748,
     latitude: -26.5,
-    longitude: 31.5,
+    longitude: 31.5
   },
   {
     country: 'Sweden',
@@ -1357,7 +1381,7 @@ const countryList = [
     alpha3: 'SWE',
     numeric: 752,
     latitude: 62,
-    longitude: 15,
+    longitude: 15
   },
   {
     country: 'Switzerland',
@@ -1365,7 +1389,7 @@ const countryList = [
     alpha3: 'CHE',
     numeric: 756,
     latitude: 47,
-    longitude: 8,
+    longitude: 8
   },
   {
     country: 'Syria',
@@ -1373,7 +1397,7 @@ const countryList = [
     alpha3: 'SYR',
     numeric: 760,
     latitude: 35,
-    longitude: 38,
+    longitude: 38
   },
   {
     country: 'Taiwan',
@@ -1381,7 +1405,7 @@ const countryList = [
     alpha3: 'TWN',
     numeric: 158,
     latitude: 23.5,
-    longitude: 121,
+    longitude: 121
   },
   {
     country: 'Tajikistan',
@@ -1389,7 +1413,7 @@ const countryList = [
     alpha3: 'TJK',
     numeric: 762,
     latitude: 39,
-    longitude: 71,
+    longitude: 71
   },
   {
     country: 'Tanzania',
@@ -1397,7 +1421,7 @@ const countryList = [
     alpha3: 'TZA',
     numeric: 834,
     latitude: -6,
-    longitude: 35,
+    longitude: 35
   },
   {
     country: 'Thailand',
@@ -1405,7 +1429,7 @@ const countryList = [
     alpha3: 'THA',
     numeric: 764,
     latitude: 15,
-    longitude: 100,
+    longitude: 100
   },
   {
     country: 'Timor Leste',
@@ -1413,7 +1437,7 @@ const countryList = [
     alpha3: 'TLS',
     numeric: 626,
     latitude: -8.55,
-    longitude: 125.5167,
+    longitude: 125.5167
   },
   {
     country: 'Togo',
@@ -1421,7 +1445,7 @@ const countryList = [
     alpha3: 'TGO',
     numeric: 768,
     latitude: 8,
-    longitude: 1.1667,
+    longitude: 1.1667
   },
   {
     country: 'Tonga',
@@ -1429,7 +1453,7 @@ const countryList = [
     alpha3: 'TON',
     numeric: 776,
     latitude: -20,
-    longitude: -175,
+    longitude: -175
   },
   {
     country: 'Trinidad and Tobago',
@@ -1437,7 +1461,7 @@ const countryList = [
     alpha3: 'TTO',
     numeric: 780,
     latitude: 11,
-    longitude: -61,
+    longitude: -61
   },
   {
     country: 'Tunisia',
@@ -1445,7 +1469,7 @@ const countryList = [
     alpha3: 'TUN',
     numeric: 788,
     latitude: 34,
-    longitude: 9,
+    longitude: 9
   },
   {
     country: 'Turkey',
@@ -1453,7 +1477,7 @@ const countryList = [
     alpha3: 'TUR',
     numeric: 792,
     latitude: 39,
-    longitude: 35,
+    longitude: 35
   },
   {
     country: 'Turkmenistan',
@@ -1461,7 +1485,7 @@ const countryList = [
     alpha3: 'TKM',
     numeric: 795,
     latitude: 40,
-    longitude: 60,
+    longitude: 60
   },
   {
     country: 'Tuvalu',
@@ -1469,7 +1493,7 @@ const countryList = [
     alpha3: 'TUV',
     numeric: 798,
     latitude: -8,
-    longitude: 178,
+    longitude: 178
   },
   {
     country: 'Uganda',
@@ -1477,7 +1501,7 @@ const countryList = [
     alpha3: 'UGA',
     numeric: 800,
     latitude: 1,
-    longitude: 32,
+    longitude: 32
   },
   {
     country: 'Ukraine',
@@ -1485,7 +1509,7 @@ const countryList = [
     alpha3: 'UKR',
     numeric: 804,
     latitude: 49,
-    longitude: 32,
+    longitude: 32
   },
   {
     country: 'United Arab Emirates',
@@ -1493,7 +1517,7 @@ const countryList = [
     alpha3: 'ARE',
     numeric: 784,
     latitude: 24,
-    longitude: 54,
+    longitude: 54
   },
   {
     country: 'United Kingdom',
@@ -1501,7 +1525,7 @@ const countryList = [
     alpha3: 'GBR',
     numeric: 826,
     latitude: 54,
-    longitude: -2,
+    longitude: -2
   },
   {
     country: 'United States',
@@ -1509,7 +1533,7 @@ const countryList = [
     alpha3: 'USA',
     numeric: 840,
     latitude: 38,
-    longitude: -97,
+    longitude: -97
   },
   {
     country: 'Uruguay',
@@ -1517,7 +1541,7 @@ const countryList = [
     alpha3: 'URY',
     numeric: 858,
     latitude: -33,
-    longitude: -56,
+    longitude: -56
   },
   {
     country: 'Uzbekistan',
@@ -1525,7 +1549,7 @@ const countryList = [
     alpha3: 'UZB',
     numeric: 860,
     latitude: 41,
-    longitude: 64,
+    longitude: 64
   },
   {
     country: 'Vanuatu',
@@ -1533,7 +1557,7 @@ const countryList = [
     alpha3: 'VUT',
     numeric: 548,
     latitude: -16,
-    longitude: 167,
+    longitude: 167
   },
   {
     country: 'Venezuela',
@@ -1541,7 +1565,7 @@ const countryList = [
     alpha3: 'VEN',
     numeric: 862,
     latitude: 8,
-    longitude: -66,
+    longitude: -66
   },
   {
     country: 'Vietnam',
@@ -1549,7 +1573,7 @@ const countryList = [
     alpha3: 'VNM',
     numeric: 704,
     latitude: 16,
-    longitude: 106,
+    longitude: 106
   },
   {
     country: 'Yemen',
@@ -1557,7 +1581,7 @@ const countryList = [
     alpha3: 'YEM',
     numeric: 887,
     latitude: 15,
-    longitude: 48,
+    longitude: 48
   },
   {
     country: 'Zambia',
@@ -1565,7 +1589,7 @@ const countryList = [
     alpha3: 'ZMB',
     numeric: 894,
     latitude: -15,
-    longitude: 30,
+    longitude: 30
   },
   {
     country: 'Zimbabwe',
@@ -1573,7 +1597,7 @@ const countryList = [
     alpha3: 'ZWE',
     numeric: 716,
     latitude: -20,
-    longitude: 30,
+    longitude: 30
   },
   {
     country: 'Afghanistan',
@@ -1581,8 +1605,8 @@ const countryList = [
     alpha3: 'AFG',
     numeric: 4,
     latitude: 33,
-    longitude: 65,
-  },
+    longitude: 65
+  }
 ];
 
 export default countryList;

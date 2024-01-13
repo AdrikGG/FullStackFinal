@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
-import Tab from 'react-bootstrap/Tab';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import { Tab, Form, Nav, Container, Col, Row } from 'react-bootstrap';
 import MainButton from './MainButton';
 import './AccountBox.css';
 
@@ -19,11 +14,11 @@ const AccountBox = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [repassword, setRepassword] = useState('');
-  const [email, setEmail] = useState('');
+  const [error, setError] = useState(false);
+  const [message, setMessage] = useState('');
 
   const handleSubmitLogin = (event) => {
     event.preventDefault();
-    //Do back end log in stuff?
     //Check for existsing account and give errors if incorrect username/pass
     axios
       .post('/api/users/login', { username, password })
@@ -33,12 +28,19 @@ const AccountBox = () => {
             type: 'login',
             _id: res.data.user._id,
             user: res.data.user,
-            token: res.data.token,
+            token: res.data.token
           });
+          setError(false);
+          setMessage('');
           navigate('/dashboard');
           window.location.reload();
-        } else {
+        } else if (res.data.message.includes('Incorrect password')) {
+          setError(true);
+          setMessage('Incorrect username or password');
           console.log(res);
+        } else {
+          setError(true);
+          setMessage('Something went wrong. Please Try again.');
         }
       })
       .catch((err) => {
@@ -49,17 +51,30 @@ const AccountBox = () => {
   const handleSubmitRegister = (event) => {
     event.preventDefault();
 
-    axios
-      .post('/api/users/register', { username, password })
-      .then((res) => {
-        if (res.data.success) {
-          setKey('login');
-        }
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (password === repassword) {
+      axios
+        .post('/api/users/register', { username, password })
+        .then((res) => {
+          if (res.data.success) {
+            setError(false);
+            setMessage('');
+            setKey('login');
+          } else if (res.data.message.includes('Username already taken')) {
+            setError(true);
+            setMessage('Username already taken');
+          } else {
+            setError(true);
+            setMessage('Something went wrong. Please Try again.');
+          }
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      setError(true);
+      setMessage('Passwords do not match');
+    }
   };
 
   return (
@@ -68,7 +83,7 @@ const AccountBox = () => {
         <Col sm={10} md={8} lg={6} xl={5}>
           <Tab.Container activeKey={key} onSelect={(temp) => setKey(temp)}>
             <Nav className="nav-justified" variant="pills">
-              <Nav.Item className="pill1 rounded bg-white">
+              <Nav.Item className="pill1 rounded bg-white" style={{}}>
                 <Nav.Link eventKey={'login'}>Login</Nav.Link>
               </Nav.Item>
               <Nav.Item className="pill2 rounded bg-white">
@@ -103,6 +118,9 @@ const AccountBox = () => {
                       value={password}
                     />
                   </Form.Group>
+                  {error && (
+                    <p className="text-center text-danger">{message}</p>
+                  )}
                   <Form.Group>
                     <div className="d-grid mx-5">
                       <MainButton text="Submit" type="submit" />
@@ -124,14 +142,6 @@ const AccountBox = () => {
                     />
                   </Form.Group>
                   <Form.Group className="mx-5 mb-2 p-2">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
-                      type="email"
-                      onChange={(e) => setEmail(e.target.value)}
-                      value={email}
-                    />
-                  </Form.Group>
-                  <Form.Group className="mx-5 mb-2 p-2">
                     <Form.Label>Password</Form.Label>
                     <Form.Control
                       type="password"
@@ -147,6 +157,9 @@ const AccountBox = () => {
                       value={repassword}
                     />
                   </Form.Group>
+                  {error && (
+                    <p className="text-center text-danger">{message}</p>
+                  )}
                   <div className="d-grid mx-5">
                     <MainButton text="Create Account" type="submit" />
                   </div>

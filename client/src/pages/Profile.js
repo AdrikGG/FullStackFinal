@@ -16,8 +16,8 @@ const Profile = () => {
     setIsEdit(false);
   };
   return (
-    <Container className="mt-5 pt-3 bg-light border rounded w-50">
-      <Row className="d-flex text-center my-3">
+    <Container className="my-3 bg-light border rounded w-50">
+      <Row className="my-3 d-flex text-center">
         {!isEdit && (
           <div>
             <ProfileBox></ProfileBox>

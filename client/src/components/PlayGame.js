@@ -4,8 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import WorldMap from '../images/WorldMap.png';
-import AD from '../images/AD.png';
-import question from '../images/question.gif';
+import Andorra from '../images/AD.png';
+import Malay from '../images/Malay_Archipelago_in_Southeast_Asia.png';
+
+import question from '../images/QuestionMarks.gif';
 import Button from 'react-bootstrap/Button';
 import './PlayGames.css';
 
@@ -18,6 +20,8 @@ const PlayGame = (props) => {
       navigate('/silhouette');
     } else if (props.isGame2) {
       navigate('/guess-game');
+    } else if (props.isGame3) {
+      navigate('/malay-islands');
     }
   };
 
@@ -35,7 +39,7 @@ const PlayGame = (props) => {
         <div>
           <Image
             className="gameOnePic mx-auto d-block pt-4"
-            src={AD}
+            src={Andorra}
             alt="Picture of a country map."
           ></Image>
           <Image className={'qMark'} src={question}></Image>
@@ -46,7 +50,15 @@ const PlayGame = (props) => {
         <Image
           className="gameTwoPic mx-auto d-block pt-4"
           src={WorldMap}
-          alt="Picture of world map."
+          alt="Picture of the world map."
+        ></Image>
+      );
+    } else if (props.isGame3) {
+      return (
+        <Image
+          className="gameThreePic mx-auto d-block pt-4"
+          src={Malay}
+          alt="Picture of the Malay archipelago."
         ></Image>
       );
     }

@@ -24,18 +24,18 @@ const UserSchema = new Schema({
       }
     }
   },
-  highscores: {
-    type: Object,
-    required: false,
-    contains: {
-      quiz1: {
-        type: String
+  highscores: [
+    {
+      quiz: {
+        type: String,
+        required: true
       },
-      quiz2: {
-        type: String
+      score: {
+        type: Number,
+        required: true
       }
     }
-  },
+  ],
   createdOn: {
     type: Date,
     default: new Date()

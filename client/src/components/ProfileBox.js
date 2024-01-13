@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Image from 'react-bootstrap/Image';
-import MainButton from '../components/MainButton';
-import cat from './cat.jpg';
+import { Container, Col, Row } from 'react-bootstrap';
 import { FaUserCircle } from 'react-icons/fa';
 
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { DarkTheme, LightTheme } from '../global styles/ColorTheme';
+import { useTheme } from '../global styles/ThemeContext';
 
 const ProfileBox = () => {
+  const { theme } = useTheme();
+  const primaryColor =
+    theme === 'light' ? LightTheme.PrimaryColor : DarkTheme.PrimaryColor;
+
   const navigate = useNavigate();
   const [user, setUser] = useState(useSelector((state) => state.user));
 
@@ -23,7 +24,6 @@ const ProfileBox = () => {
   );
 
   const getUser = () => {
-    console.log('get user');
     let id = localStorage.getItem('_ID');
     if (!id) {
       console.log('invalid path: no user logged in');
@@ -41,29 +41,53 @@ const ProfileBox = () => {
       });
   };
 
-  const displayAvi = (hasAvi) => {
+  const displayAvi = () => {
     let profilePic = '';
-    if (hasAvi) {
-      //for now the profile pic will be of a cat, will need to figure out back end stuff to allow user uploading.
+
+    if (user?.avatar) {
       profilePic = (
-        <Image
-          width={180}
-          height={180}
-          roundedCircle={true}
-          src={cat}
-          alt="no"
-        ></Image>
+        <div
+          style={{
+            borderRadius: '50%',
+            backgroundImage: `url(${user.avatar.url})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            height: 180,
+            width: 180
+          }}
+          alt="profile picture"
+        ></div>
       );
     } else {
       profilePic = (
         <FaUserCircle
           size={180}
           className="m-3"
-          style={{ color: '#6d8fae ' }}
+          style={{ color: primaryColor }}
         ></FaUserCircle>
       );
     }
+
     return profilePic;
+  };
+
+  const getQuizes = () => {
+    if (user?.highscores && user.highscores.length > 0) {
+      return user.highscores.map((entry) => (
+        <Row key={entry.quiz}>
+          <Col className="d-flex">{entry.quiz}:</Col>
+          <Col className="text-primary">
+            {entry.score ? entry.score : 'No score'}
+          </Col>
+        </Row>
+      ));
+    } else {
+      return (
+        <Row>
+          <Col>No quiz scores available</Col>
+        </Row>
+      );
+    }
   };
 
   //have a function to check if account has an avi from back end
@@ -76,33 +100,15 @@ const ProfileBox = () => {
         <Col className="d-flex justify-content-center">{pix}</Col>
       </Row>
       <Row className="my-3">
-        <Col className="d-flex justify-content-around fw-bold">Username:</Col>
-        <Col className="d-flex justify-content-around text-primary">
-          {user?.username}
-        </Col>
+        <Col className="d-flex justify-content-end fw-bold">Username:</Col>
+        <Col className="d-flex text-primary">{user?.username}</Col>
       </Row>
-      {/* <Row className="my-3">
-        <Col className="d-flex justify-content-around fw-bold">Email:</Col>
-        <Col className="d-flex justify-content-around  text-primary">
-        </Col>
-      </Row> */}
-      <Row className="border m-2">
-        <Row className="m-2">
-          <Col className="d-flex justify-content-around fw-bold">
-            High Score Game1
-          </Col>
-          <Col className="d-flex justify-content-around  text-primary">
-            {user?.highscores?.quiz1 ? user.highscores.quiz1 : 'No score'}
-          </Col>
+      <Row className="m-2 p-2 border">
+        <Row>
+          <Col className="fw-bold">Game</Col>
+          <Col className="fw-bold">Highscore</Col>
         </Row>
-        <Row className="m-2">
-          <Col className="d-flex justify-content-around fw-bold">
-            High Score Game2
-          </Col>
-          <Col className="d-flex justify-content-around  text-primary">
-            {user?.highscores?.quiz2 ? user.highscores.quiz2 : 'No score'}
-          </Col>
-        </Row>
+        {getQuizes()}
       </Row>
     </Container>
   );

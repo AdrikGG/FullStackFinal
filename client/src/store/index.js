@@ -5,27 +5,24 @@ const initState = {
 };
 
 const reducer = (state = initState, action) => {
-  if (action.type === 'login') {
-    localStorage.setItem('JWT_PAYLOAD', action.token);
-    localStorage.setItem('_ID', action._id);
+  switch (action.type) {
+    case 'login':
+      localStorage.setItem('JWT_PAYLOAD', action.token);
+      localStorage.setItem('_ID', action._id);
 
-    console.log(action);
-    return {
-      ...state,
-      user: action.user
-    };
-  } else if (action.type === 'set_user') {
-    return {
-      ...state,
-      user: action.user
-    };
-  } else if (action.type === 'update_user') {
-    return {
-      ...state,
-      user: action.user
-    };
-  } else {
-    return state;
+      return {
+        ...state,
+        user: action.user
+      };
+    case 'set_user':
+    case 'update_user':
+      console.log(action.user);
+      return {
+        ...state,
+        user: action.user
+      };
+    default:
+      return state;
   }
 };
 
