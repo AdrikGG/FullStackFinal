@@ -9,10 +9,7 @@ import MainButton from '../../MainButton';
 import { useTheme } from '../../../global styles/ThemeContext';
 import { DarkTheme, LightTheme } from '../../../global styles/ColorTheme';
 
-const imageFldr = require.context('./countryshapes/', false);
 const maxScore = countries.length;
-const firstIdx = Math.floor(Math.random() * maxScore);
-console.log(countries[firstIdx].imageSrc);
 
 const SilhouettesGame = () => {
   const { theme } = useTheme();
@@ -24,13 +21,12 @@ const SilhouettesGame = () => {
   const inputRef = useRef(null);
   const [score, setScore] = useState(0);
   const [countryList, setCountryList] = useState(countries);
-  const [countryHint, setCountryHint] = useState(countries[firstIdx].hint);
-  const [rotationVal, setRotationVal] = useState(Math.random() * 359);
-  const [currentMap, setCurrentMap] = useState(
-    imageFldr(`./${countries[firstIdx].imageSrc}`)
-  );
-  const [currentCountry, setCountry] = useState(countries[firstIdx]);
-  const [countryId, setCountryId] = useState(firstIdx);
+  const [countryHint, setCountryHint] = useState('');
+  const [rotationVal, setRotationVal] = useState(0);
+  const [imageUrls, setImageUrls] = useState([]);
+  const [currentMap, setCurrentMap] = useState('');
+  const [currentCountry, setCountry] = useState({});
+  const [countryId, setCountryId] = useState(0);
   const [isError, setIsError] = useState(false);
   const [isHint, setIsHint] = useState(false);
   const [isEnd, setIsEnd] = useState(false);
@@ -38,6 +34,31 @@ const SilhouettesGame = () => {
   useEffect(
     () => {
       getUser();
+
+      const fetchImageURLs = async () => {
+        try {
+          const firstIdx = Math.floor(Math.random() * maxScore);
+          await axios.get('/api/games/silhouettes').then((res) => {
+            setImageUrls(res.data.images);
+
+            const currentImageUrl = res.data.images.find((url) =>
+              url.includes(countries[firstIdx].imageSrc)
+            );
+            setCurrentMap(currentImageUrl);
+
+            setCountryHint(countries[firstIdx].hint);
+            setCountry(countries[firstIdx]);
+            setCountryId(firstIdx);
+          });
+
+          // You might want to store the image URLs in state for later use
+          // For example, setCountryMapURLs(imageUrls);
+        } catch (error) {
+          console.error('Error fetching images from API:', error);
+        }
+      };
+
+      fetchImageURLs();
     }, // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
@@ -72,11 +93,19 @@ const SilhouettesGame = () => {
 
     if (currCountry) {
       setCurrentMap(getCountryMap(currCountry['imageSrc']));
+      setRotationVal(Math.random() * 359);
       setCountry(currCountry);
       setCountryHint(currCountry['hint']);
     } else {
       setIsEnd(true);
     }
+  };
+
+  const getCountryMap = (src) => {
+    // Find the URL corresponding to the current country's image
+    const currentImageUrl = imageUrls.find((url) => url.includes(src));
+
+    return currentImageUrl || ''; // Return the URL or an empty string if not found
   };
 
   const submitAnswer = (guess) => {
@@ -96,15 +125,10 @@ const SilhouettesGame = () => {
     }
   };
 
-  const getCountryMap = (pathMap) => {
-    randomRotation();
-    return imageFldr(`./${pathMap}`);
-  };
-
   const endGame = () => {
     if (user) {
       const quizIndex = user.highscores.findIndex(
-        (entry) => entry.quiz === 'Sihouettes'
+        (entry) => entry.quiz === 'Silhouettes'
       );
 
       if (quizIndex !== -1 && user.highscores[quizIndex].score >= score + 1) {
@@ -115,8 +139,8 @@ const SilhouettesGame = () => {
       axios
         .patch(`/api/users/${user._id}`, {
           highscores: [
-            ...user.highscores.filter((entry) => entry.quiz !== 'Sihouettes'),
-            { quiz: 'Sihouettes', score: score + 1 }
+            ...user.highscores.filter((entry) => entry.quiz !== 'Silhouettes'),
+            { quiz: 'Silhouettes', score: score + 1 }
           ]
         })
         .then((res) => {
@@ -131,10 +155,6 @@ const SilhouettesGame = () => {
     }
   };
 
-  const randomRotation = () => {
-    setRotationVal(Math.random() * 359);
-  };
-
   const filterGuess = (guess) => {
     return guess.replace(/[^a-zA-Z]/g, '');
   };
@@ -142,7 +162,7 @@ const SilhouettesGame = () => {
   const showHint = () => {
     const newVal = !isHint;
     setIsHint(newVal);
-    console.log(countryId);
+    console.log(countryId, currentCountry);
   };
 
   return (
@@ -153,6 +173,7 @@ const SilhouettesGame = () => {
           style={{ height: 340, maxWidth: 500 }}
         >
           <Image
+            key={currentMap} // Ensure Image component re-renders when currentMap changes
             fluid={true}
             src={currentMap}
             style={{

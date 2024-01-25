@@ -9,7 +9,7 @@ import { Row, Col, Container, Stack } from 'react-bootstrap';
 // import CustomModal from './DevModal';
 
 import GeoJSON from './GSHHS_h_L1.json';
-import Names from './islandnames.json';
+import Names from './islandNames.json';
 import { useTheme } from '../../../global styles/ThemeContext';
 import { DarkTheme, LightTheme } from '../../../global styles/ColorTheme';
 import MainButton from '../../MainButton';

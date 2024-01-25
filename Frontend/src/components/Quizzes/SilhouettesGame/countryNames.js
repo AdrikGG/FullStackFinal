@@ -1,391 +1,391 @@
 const countries = [
   {
-    imageSrc: 'AD.png',
+    imageSrc: 'AD',
     hint: 'West Europe',
     answer: ['andorra']
   },
   {
-    imageSrc: 'AE.png',
+    imageSrc: 'AE',
     hint: 'Middle East',
     answer: ['united arab emirates', 'uae', 'the emirates', 'emirates']
   },
   {
-    imageSrc: 'AF.png',
+    imageSrc: 'AF',
     hint: 'Central Asia',
     answer: ['afghanistan']
   },
   {
-    imageSrc: 'AG.png',
+    imageSrc: 'AG',
     hint: 'Caribbean',
     answer: ['antigua and barbuda', 'antigua']
   },
   {
-    imageSrc: 'AL.png',
+    imageSrc: 'AL',
     hint: 'Balkans',
     answer: ['albania']
   },
   {
-    imageSrc: 'AM.png',
+    imageSrc: 'AM',
     hint: 'Near East',
     answer: ['armenia']
   },
   {
-    imageSrc: 'AO.png',
+    imageSrc: 'AO',
     hint: 'Southern Africa',
     answer: ['angola']
   },
   {
-    imageSrc: 'AR.png',
+    imageSrc: 'AR',
     hint: 'South America',
     answer: ['argentina']
   },
   {
-    imageSrc: 'AT.png',
+    imageSrc: 'AT',
     hint: 'West Europe',
     answer: ['austria']
   },
   {
-    imageSrc: 'AU.png',
+    imageSrc: 'AU',
     hint: 'Oceania',
     answer: ['australia']
   },
   {
-    imageSrc: 'AZ.png',
+    imageSrc: 'AZ',
     hint: 'Near East',
     answer: ['azerbaijan']
   },
   {
-    imageSrc: 'BA.png',
+    imageSrc: 'BA',
     hint: 'Balkans',
     answer: ['bosnia and herzagovina', 'bosnia']
   },
   {
-    imageSrc: 'BB.png',
+    imageSrc: 'BB',
     hint: 'Caribbean',
     answer: ['barbados']
   },
   {
-    imageSrc: 'BD.png',
+    imageSrc: 'BD',
     hint: 'Indian Subcontinent',
     answer: ['bangladesh']
   },
   {
-    imageSrc: 'BE.png',
+    imageSrc: 'BE',
     hint: 'West Europe',
     answer: ['belgium']
   },
   {
-    imageSrc: 'BF.png',
+    imageSrc: 'BF',
     hint: 'West Africa',
     answer: ['burkina faso']
   },
   {
-    imageSrc: 'BH.png',
+    imageSrc: 'BH',
     hint: 'Middle East',
     answer: ['bahrain']
   },
   {
-    imageSrc: 'BI.png',
+    imageSrc: 'BI',
     hint: 'East Africa',
     answer: ['burundi']
   },
   {
-    imageSrc: 'BJ.png',
+    imageSrc: 'BJ',
     hint: 'West Africa',
     answer: ['benin']
   },
   {
-    imageSrc: 'BN.png',
+    imageSrc: 'BN',
     hint: 'South East Asia',
     answer: ['brunei']
   },
   {
-    imageSrc: 'BO.png',
+    imageSrc: 'BO',
     hint: 'South America',
     answer: ['bolivia']
   },
   {
-    imageSrc: 'BR.png',
+    imageSrc: 'BR',
     hint: 'South America',
     answer: ['brazil']
   },
   {
-    imageSrc: 'BS.png',
+    imageSrc: 'BS',
     hint: 'Caribbean',
     answer: ['bahamas']
   },
   {
-    imageSrc: 'BT.png',
+    imageSrc: 'BT',
     hint: 'Indian Subcontinent',
     answer: ['bhutan']
   },
   {
-    imageSrc: 'BW.png',
+    imageSrc: 'BW',
     hint: 'Southern Africa',
     answer: ['botswana']
   },
   {
-    imageSrc: 'BY.png',
+    imageSrc: 'BY',
     hint: 'East Europe',
     answer: ['belarus']
   },
   {
-    imageSrc: 'BZ.png',
+    imageSrc: 'BZ',
     hint: 'Central America',
     answer: ['belize']
   },
   {
-    imageSrc: 'CA.png',
+    imageSrc: 'CA',
     hint: 'North America',
     answer: ['canada']
   },
   {
-    imageSrc: 'CD.png',
+    imageSrc: 'CD',
     hint: 'Central Africa',
     answer: ['democratic republic of the congo', 'drc', 'congo']
   },
   {
-    imageSrc: 'CF.png',
+    imageSrc: 'CF',
     hint: 'Central Africa',
     answer: ['central african republic', 'car']
   },
   {
-    imageSrc: 'CG.png',
+    imageSrc: 'CG',
     hint: 'Central Africa',
     answer: ['republic of the congo', 'congo']
   },
   {
-    imageSrc: 'CH.png',
+    imageSrc: 'CH',
     hint: 'West Europe',
     answer: ['switzerland']
   },
   {
-    imageSrc: 'CI.png',
+    imageSrc: 'CI',
     hint: 'West Africa',
     answer: ["cote d'ivoire", 'ivory coast']
   },
   {
-    imageSrc: 'CL.png',
+    imageSrc: 'CL',
     hint: 'South America',
     answer: ['chile']
   },
   {
-    imageSrc: 'CM.png',
+    imageSrc: 'CM',
     hint: 'Central Africa',
     answer: ['cameroon']
   },
   {
-    imageSrc: 'CO.png',
+    imageSrc: 'CO',
     hint: 'South America',
     answer: ['colombia']
   },
   {
-    imageSrc: 'CR.png',
+    imageSrc: 'CR',
     hint: 'Central America',
     answer: ['costa rica']
   },
   {
-    imageSrc: 'CV.png',
+    imageSrc: 'CV',
     hint: 'West Africa',
     answer: ['cabo verde', 'cape verde']
   },
   {
-    imageSrc: 'CZ.png',
+    imageSrc: 'CZ',
     hint: 'East Europe',
     answer: ['czechia', 'czech republic']
   },
   {
-    imageSrc: 'DE.png',
+    imageSrc: 'DE',
     hint: 'West Europe',
     answer: ['germany']
   },
   {
-    imageSrc: 'DJ.png',
+    imageSrc: 'DJ',
     hint: 'East Africa',
     answer: ['djibouti']
   },
   {
-    imageSrc: 'DK.png',
+    imageSrc: 'DK',
     hint: 'West Europe',
     answer: ['denmark']
   },
   {
-    imageSrc: 'DM.png',
+    imageSrc: 'DM',
     hint: 'Caribbean',
     answer: ['dominica']
   },
   {
-    imageSrc: 'DO.png',
+    imageSrc: 'DO',
     hint: 'Caribbean',
     answer: ['dominican republic']
   },
   {
-    imageSrc: 'DZ.png',
+    imageSrc: 'DZ',
     hint: 'North Africa',
     answer: ['algeria']
   },
   {
-    imageSrc: 'EC.png',
+    imageSrc: 'EC',
     hint: 'South America',
     answer: ['ecuador']
   },
   {
-    imageSrc: 'EE.png',
+    imageSrc: 'EE',
     hint: 'East Europe',
     answer: ['estonia']
   },
   {
-    imageSrc: 'EG.png',
+    imageSrc: 'EG',
     hint: 'North Africa',
     answer: ['egypt']
   },
   {
-    imageSrc: 'ER.png',
+    imageSrc: 'ER',
     hint: 'East Africa',
     answer: ['eritrea']
   },
   {
-    imageSrc: 'ES.png',
+    imageSrc: 'ES',
     hint: 'West Europe',
     answer: ['spain']
   },
   {
-    imageSrc: 'ET.png',
+    imageSrc: 'ET',
     hint: 'East Africa',
     answer: ['ethiopia']
   },
   {
-    imageSrc: 'FI.png',
+    imageSrc: 'FI',
     hint: 'East Europe',
     answer: ['finland']
   },
   {
-    imageSrc: 'FM.png',
+    imageSrc: 'FM',
     hint: 'Oceania',
     answer: ['the federated state of micronesia', 'micronesia']
   },
   {
-    imageSrc: 'FR.png',
+    imageSrc: 'FR',
     hint: 'West Europe',
     answer: ['france']
   },
   {
-    imageSrc: 'GA.png',
+    imageSrc: 'GA',
     hint: 'Central Africa',
     answer: ['gabon']
   },
   {
-    imageSrc: 'GB.png',
+    imageSrc: 'GB',
     hint: 'West Europe',
     answer: ['united kingdom', 'uk']
   },
   {
-    imageSrc: 'GD.png',
+    imageSrc: 'GD',
     hint: 'Caribbean',
     answer: ['grenada']
   },
   {
-    imageSrc: 'GE.png',
+    imageSrc: 'GE',
     hint: 'Near East',
     answer: ['georgia']
   },
   {
-    imageSrc: 'GH.png',
+    imageSrc: 'GH',
     hint: 'West Africa',
     answer: ['ghana']
   },
   {
-    imageSrc: 'GM.png',
+    imageSrc: 'GM',
     hint: 'West Africa',
     answer: ['the gambia', 'gambia']
   },
   {
-    imageSrc: 'GN.png',
+    imageSrc: 'GN',
     hint: 'West Africa',
     answer: ['guinea']
   },
   {
-    imageSrc: 'GQ.png',
+    imageSrc: 'GQ',
     hint: 'Central Africa',
     answer: ['equatorial guinea']
   },
   {
-    imageSrc: 'GT.png',
+    imageSrc: 'GT',
     hint: 'Central America',
     answer: ['guatemala']
   },
   {
-    imageSrc: 'GW.png',
+    imageSrc: 'GW',
     hint: 'West Africa',
     answer: ['guinea bissau']
   },
   {
-    imageSrc: 'GY.png',
+    imageSrc: 'GY',
     hint: 'South America',
     answer: ['guyana']
   },
   {
-    imageSrc: 'HN.png',
+    imageSrc: 'HN',
     hint: 'Central America',
     answer: ['honduras']
   },
   {
-    imageSrc: 'HU.png',
+    imageSrc: 'HU',
     hint: 'East Europe',
     answer: ['hungary']
   },
   {
-    imageSrc: 'ID.png',
+    imageSrc: 'ID',
     hint: 'South East Asia',
     answer: ['indonesia']
   },
   {
-    imageSrc: 'IE.png',
+    imageSrc: 'IE',
     hint: 'West Europe',
     answer: ['ireland']
   },
   {
-    imageSrc: 'IN.png',
+    imageSrc: 'IN',
     hint: 'Indian Subcontinent',
     answer: ['india']
   },
   {
-    imageSrc: 'IS.png',
+    imageSrc: 'IS',
     hint: 'West Europe',
     answer: ['iceland']
   },
   {
-    imageSrc: 'IT.png',
+    imageSrc: 'IT',
     hint: 'West Europe',
     answer: ['italy']
   },
   {
-    imageSrc: 'JM.png',
+    imageSrc: 'JM',
     hint: 'Caribbean',
     answer: ['jamaica']
   },
   {
-    imageSrc: 'KE.png',
+    imageSrc: 'KE',
     hint: 'East Africa',
     answer: ['kenya']
   },
   {
-    imageSrc: 'KG.png',
+    imageSrc: 'KG',
     hint: 'Central Asia',
     answer: ['kyrgyzstan']
   },
   {
-    imageSrc: 'KH.png',
+    imageSrc: 'KH',
     hint: 'South East Asia',
     answer: ['cambodia']
   },
   {
-    imageSrc: 'KM.png',
+    imageSrc: 'KM',
     hint: 'East Africa',
     answer: ['comoros']
   },
   {
-    imageSrc: 'KN.png',
+    imageSrc: 'KN',
     hint: 'Caribbean',
     answer: [
       'saint kitts and nevis',
@@ -395,427 +395,427 @@ const countries = [
     ]
   },
   {
-    imageSrc: 'KP.png',
+    imageSrc: 'KP',
     hint: 'East Asia',
     answer: ['north korea']
   },
   {
-    imageSrc: 'KR.png',
+    imageSrc: 'KR',
     hint: 'East Asia',
     answer: ['south korea']
   },
   {
-    imageSrc: 'KW.png',
+    imageSrc: 'KW',
     hint: 'Middle East',
     answer: ['kuwait']
   },
   {
-    imageSrc: 'KZ.png',
+    imageSrc: 'KZ',
     hint: 'Central Asia',
     answer: ['kazakhstan']
   },
   {
-    imageSrc: 'LA.png',
+    imageSrc: 'LA',
     hint: 'South East Asia',
     answer: ['laos']
   },
   {
-    imageSrc: 'LB.png',
+    imageSrc: 'LB',
     hint: 'Near East',
     answer: ['lebanon']
   },
   {
-    imageSrc: 'LC.png',
+    imageSrc: 'LC',
     hint: 'Caribbean',
     answer: ['saint lucia', 'st lucia']
   },
   {
-    imageSrc: 'LI.png',
+    imageSrc: 'LI',
     hint: 'West Europe',
     answer: ['liechtenstein']
   },
   {
-    imageSrc: 'LK.png',
+    imageSrc: 'LK',
     hint: 'Indian Subcontinent',
     answer: ['sri lanka']
   },
   {
-    imageSrc: 'LR.png',
+    imageSrc: 'LR',
     hint: 'West Africa',
     answer: ['liberia']
   },
   {
-    imageSrc: 'LS.png',
+    imageSrc: 'LS',
     hint: 'Southern Africa',
     answer: ['lesotho']
   },
   {
-    imageSrc: 'LT.png',
+    imageSrc: 'LT',
     hint: 'East Europe',
     answer: ['lithuania']
   },
   {
-    imageSrc: 'LU.png',
+    imageSrc: 'LU',
     hint: 'West Europe',
     answer: ['luxembourg']
   },
   {
-    imageSrc: 'LV.png',
+    imageSrc: 'LV',
     hint: 'East Europe',
     answer: ['latvia']
   },
   {
-    imageSrc: 'LY.png',
+    imageSrc: 'LY',
     hint: 'North Africa',
     answer: ['libya']
   },
   {
-    imageSrc: 'MA.png',
+    imageSrc: 'MA',
     hint: 'North Africa',
     answer: ['morocco']
   },
   {
-    imageSrc: 'MC.png',
+    imageSrc: 'MC',
     hint: 'West Europe',
     answer: ['monaco']
   },
   {
-    imageSrc: 'MD.png',
+    imageSrc: 'MD',
     hint: 'East Europe',
     answer: ['moldova']
   },
   {
-    imageSrc: 'ME.png',
+    imageSrc: 'ME',
     hint: 'Balkans',
     answer: ['montenegro']
   },
   {
-    imageSrc: 'MG.png',
+    imageSrc: 'MG',
     hint: 'East Africa',
     answer: ['madagascar']
   },
   {
-    imageSrc: 'MH.png',
+    imageSrc: 'MH',
     hint: 'Oceania',
     answer: ['marshall islands']
   },
   {
-    imageSrc: 'MK.png',
+    imageSrc: 'MK',
     hint: 'Balkans',
     answer: ['north macedonia', 'macedonia']
   },
   {
-    imageSrc: 'MM.png',
+    imageSrc: 'MM',
     hint: 'South East Asia',
     answer: ['myanmar', 'burma']
   },
   {
-    imageSrc: 'MN.png',
+    imageSrc: 'MN',
     hint: 'East Asia',
     answer: ['mongolia']
   },
   {
-    imageSrc: 'MR.png',
+    imageSrc: 'MR',
     hint: 'West Africa',
     answer: ['mauritania']
   },
   {
-    imageSrc: 'MT.png',
+    imageSrc: 'MT',
     hint: 'West Europe',
     answer: ['malta']
   },
   {
-    imageSrc: 'MU.png',
+    imageSrc: 'MU',
     hint: 'East Africa',
     answer: ['mauritius']
   },
   {
-    imageSrc: 'MV.png',
+    imageSrc: 'MV',
     hint: 'Indian Subcontinent',
     answer: ['maldives']
   },
   {
-    imageSrc: 'MW.png',
+    imageSrc: 'MW',
     hint: 'Southern Africa',
     answer: ['malawi']
   },
   {
-    imageSrc: 'MX.png',
+    imageSrc: 'MX',
     hint: 'North America',
     answer: ['mexico']
   },
   {
-    imageSrc: 'MY.png',
+    imageSrc: 'MY',
     hint: 'South East Asia',
     answer: ['malaysia']
   },
   {
-    imageSrc: 'MZ.png',
+    imageSrc: 'MZ',
     hint: 'Southern Africa',
     answer: ['mozambique']
   },
   {
-    imageSrc: 'NA.png',
+    imageSrc: 'NA',
     hint: 'Southern Africa',
     answer: ['namibia']
   },
   {
-    imageSrc: 'NE.png',
+    imageSrc: 'NE',
     hint: 'West Africa',
     answer: ['niger']
   },
   {
-    imageSrc: 'NG.png',
+    imageSrc: 'NG',
     hint: 'West Africa',
     answer: ['nigeria']
   },
   {
-    imageSrc: 'NI.png',
+    imageSrc: 'NI',
     hint: 'Central America',
     answer: ['nicaragua']
   },
   {
-    imageSrc: 'NL.png',
+    imageSrc: 'NL',
     hint: 'West Europe',
     answer: ['netherlands']
   },
   {
-    imageSrc: 'NO.png',
+    imageSrc: 'NO',
     hint: 'West Europe',
     answer: ['norway']
   },
   {
-    imageSrc: 'NP.png',
+    imageSrc: 'NP',
     hint: 'Indian Subcontinent',
     answer: ['nepal']
   },
   {
-    imageSrc: 'NZ.png',
+    imageSrc: 'NZ',
     hint: 'Oceania',
     answer: ['new zealand']
   },
   {
-    imageSrc: 'PA.png',
+    imageSrc: 'PA',
     hint: 'Central America',
     answer: ['panama']
   },
   {
-    imageSrc: 'PE.png',
+    imageSrc: 'PE',
     hint: 'South America',
     answer: ['peru']
   },
   {
-    imageSrc: 'PG.png',
+    imageSrc: 'PG',
     hint: 'Oceania',
     answer: ['papua new guinea', 'papua']
   },
   {
-    imageSrc: 'PH.png',
+    imageSrc: 'PH',
     hint: 'South East Asia',
     answer: ['philippines']
   },
   {
-    imageSrc: 'PK.png',
+    imageSrc: 'PK',
     hint: 'Indian Subcontinent',
     answer: ['pakistan']
   },
   {
-    imageSrc: 'PL.png',
+    imageSrc: 'PL',
     hint: 'East Europe',
     answer: ['poland']
   },
   {
-    imageSrc: 'PT.png',
+    imageSrc: 'PT',
     hint: 'West Europe',
     answer: ['portugal']
   },
   {
-    imageSrc: 'PY.png',
+    imageSrc: 'PY',
     hint: 'South America',
     answer: ['paraguay']
   },
   {
-    imageSrc: 'QA.png',
+    imageSrc: 'QA',
     hint: 'Middle East',
     answer: ['qatar']
   },
   {
-    imageSrc: 'RO.png',
+    imageSrc: 'RO',
     hint: 'East Europe',
     answer: ['romania']
   },
   {
-    imageSrc: 'RS.png',
+    imageSrc: 'RS',
     hint: 'East Europe',
     answer: ['serbia']
   },
   {
-    imageSrc: 'RU.png',
+    imageSrc: 'RU',
     hint: 'East Europe',
     answer: ['russia']
   },
   {
-    imageSrc: 'RW.png',
+    imageSrc: 'RW',
     hint: 'East Africa',
     answer: ['rwanda']
   },
   {
-    imageSrc: 'SA.png',
+    imageSrc: 'SA',
     hint: 'Middle East',
     answer: ['saudi arabia']
   },
   {
-    imageSrc: 'SB.png',
+    imageSrc: 'SB',
     hint: 'Oceania',
     answer: ['solomon islands']
   },
   {
-    imageSrc: 'SC.png',
+    imageSrc: 'SC',
     hint: 'East Africa',
     answer: ['seychelles']
   },
   {
-    imageSrc: 'SD.png',
+    imageSrc: 'SD',
     hint: 'East Africa',
     answer: ['sudan']
   },
   {
-    imageSrc: 'SE.png',
+    imageSrc: 'SE',
     hint: 'West Europe',
     answer: ['sweden']
   },
   {
-    imageSrc: 'SG.png',
+    imageSrc: 'SG',
     hint: 'South East Asia',
     answer: ['singapore']
   },
   {
-    imageSrc: 'SI.png',
+    imageSrc: 'SI',
     hint: 'East Europe',
     answer: ['slovenia']
   },
   {
-    imageSrc: 'SK.png',
+    imageSrc: 'SK',
     hint: 'East Europe',
     answer: ['slovakia']
   },
   {
-    imageSrc: 'SL.png',
+    imageSrc: 'SL',
     hint: 'West Africa',
     answer: ['sierra leone']
   },
   {
-    imageSrc: 'SM.png',
+    imageSrc: 'SM',
     hint: 'West Europe',
     answer: ['san marino']
   },
   {
-    imageSrc: 'SN.png',
+    imageSrc: 'SN',
     hint: 'West Africa',
     answer: ['senegal']
   },
   {
-    imageSrc: 'SO.png',
+    imageSrc: 'SO',
     hint: 'East Africa',
     answer: ['somalia']
   },
   {
-    imageSrc: 'SR.png',
+    imageSrc: 'SR',
     hint: 'South America',
     answer: ['suriname']
   },
   {
-    imageSrc: 'SS.png',
+    imageSrc: 'SS',
     hint: 'East Africa',
     answer: ['south sudan']
   },
   {
-    imageSrc: 'ST.png',
+    imageSrc: 'ST',
     hint: 'Central Africa',
     answer: ['sao tome and principe', 'sao tome']
   },
   {
-    imageSrc: 'SV.png',
+    imageSrc: 'SV',
     hint: 'Central America',
     answer: ['el salvador']
   },
   {
-    imageSrc: 'SZ.png',
+    imageSrc: 'SZ',
     hint: 'Southern Africa',
     answer: ['eswatini', 'swaziland']
   },
   {
-    imageSrc: 'TD.png',
+    imageSrc: 'TD',
     hint: 'Central Africa',
     answer: ['chad']
   },
   {
-    imageSrc: 'TH.png',
+    imageSrc: 'TH',
     hint: 'South East Asia',
     answer: ['thailand']
   },
   {
-    imageSrc: 'TJ.png',
+    imageSrc: 'TJ',
     hint: 'Central Asia',
     answer: ['tajikistan']
   },
   {
-    imageSrc: 'TL.png',
+    imageSrc: 'TL',
     hint: 'South East Asia',
     answer: ['timor leste', 'east timor']
   },
   {
-    imageSrc: 'TM.png',
+    imageSrc: 'TM',
     hint: 'Central Asia',
     answer: ['turkmenistan']
   },
   {
-    imageSrc: 'TN.png',
+    imageSrc: 'TN',
     hint: 'North Africa',
     answer: ['tunisia']
   },
   {
-    imageSrc: 'TT.png',
+    imageSrc: 'TT',
     hint: 'Caribbean',
     answer: ['trinidad and tobago', 'trinidad']
   },
   {
-    imageSrc: 'TZ.png',
+    imageSrc: 'TZ',
     hint: 'East Africa',
     answer: ['tanzania']
   },
   {
-    imageSrc: 'UA.png',
+    imageSrc: 'UA',
     hint: 'East Europe',
     answer: ['ukraine']
   },
   {
-    imageSrc: 'UG.png',
+    imageSrc: 'UG',
     hint: 'East Africa',
     answer: ['uganda']
   },
   {
-    imageSrc: 'US.png',
+    imageSrc: 'US',
     hint: 'North America',
     answer: ['united states of america', 'usa', 'united states']
   },
   {
-    imageSrc: 'UY.png',
+    imageSrc: 'UY',
     hint: 'South America',
     answer: ['uruguay']
   },
   {
-    imageSrc: 'UZ.png',
+    imageSrc: 'UZ',
     hint: 'Central Asia',
     answer: ['uzbekistan']
   },
   {
-    imageSrc: 'VA.png',
+    imageSrc: 'VA',
     hint: 'West Europe',
     answer: ['vatican city', 'vatican', 'the vatican']
   },
   {
-    imageSrc: 'VC.png',
+    imageSrc: 'VC',
     hint: 'Caribbean',
     answer: [
       'saint vincent and the grenedines',
@@ -825,32 +825,32 @@ const countries = [
     ]
   },
   {
-    imageSrc: 'VE.png',
+    imageSrc: 'VE',
     hint: 'South America',
     answer: ['venezuela']
   },
   {
-    imageSrc: 'VN.png',
+    imageSrc: 'VN',
     hint: 'South East Asia',
     answer: ['vietnam']
   },
   {
-    imageSrc: 'YE.png',
+    imageSrc: 'YE',
     hint: 'Middle East',
     answer: ['yemen']
   },
   {
-    imageSrc: 'ZA.png',
+    imageSrc: 'ZA',
     hint: 'Southern Africa',
     answer: ['South Africa']
   },
   {
-    imageSrc: 'ZM.png',
+    imageSrc: 'ZM',
     hint: 'Southern Africa',
     answer: ['zambia']
   },
   {
-    imageSrc: 'ZW.png',
+    imageSrc: 'ZW',
     hint: 'Southern Africa',
     answer: ['zimbabwe']
   }

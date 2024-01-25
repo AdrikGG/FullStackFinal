@@ -45,6 +45,8 @@ const AccountBox = () => {
       })
       .catch((err) => {
         console.log(err);
+        setError(true);
+        setMessage('Something went wrong. Please Try again.');
       });
   };
 
