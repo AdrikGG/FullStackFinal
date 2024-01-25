@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c03794f8.css",
+    "main.js": "/static/js/main.94f1a9f5.js",
+    "static/media/QuestionMarks.gif": "/static/media/QuestionMarks.4219b8b4961bfd70dc9b.gif",
+    "static/media/WorldMap.png": "/static/media/WorldMap.909383340f890c760cb8.png",
+    "static/media/Malay_Archipelago_in_Southeast_Asia.png": "/static/media/Malay_Archipelago_in_Southeast_Asia.a88a2e2bf41e6e0f646a.png",
+    "static/media/AD.png": "/static/media/AD.0bf36f373797189aabdb.png",
+    "index.html": "/index.html",
+    "main.c03794f8.css.map": "/static/css/main.c03794f8.css.map",
+    "main.94f1a9f5.js.map": "/static/js/main.94f1a9f5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c03794f8.css",
+    "static/js/main.94f1a9f5.js"
+  ]
+}
