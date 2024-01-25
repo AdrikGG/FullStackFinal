@@ -9,7 +9,7 @@ bcrypt - encrypt information, ie passwords
 jsonwebtoken - expirable tokens for authentication
 validator - library for string validation
 is-empty - checks for empty values
-cloudinary - api for cloudinary batabase
+cloudinary - api for cloudinary database
 
 ## References and Resources
 
